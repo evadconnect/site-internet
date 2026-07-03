@@ -134,7 +134,7 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
   );
 };
 
-const NAV_LINKS = [['#ecosystem', 'Solutions'], ['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Boucle'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
+const NAV_LINKS = [['#ecosystem', 'Solutions'], ['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Spirale'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
 
 const NavBar = ({ accent, onLogin, persona, onChoose }) => {
   const [scrolled, setScrolled] = React.useState(false);

@@ -287,7 +287,7 @@ const Footer = () => (
           ['Les profils', '#roles'],
           ['Les solutions', '#ecosystem'],
           ['Les piliers', '#foundations'],
-          ['La boucle REGEN', '#cycle'],
+          ['La spirale VADE', '#cycle'],
           ['Deva', '#deva'],
         ] },
         { t: "L'association", l: [

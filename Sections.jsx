@@ -94,43 +94,39 @@ const Roles = ({ onChoose, persona }) => (
   </Section>
 );
 
-const REGEN_STEPS = [
-  { L: 'R', name: 'Rêver',       title: 'Rêver le monde de demain',           subtitle: 'avec Luanti',                  color: '#018262', desc: 'Prototyper des lieux solarpunk dans un jeu en ligne collaboratif. Inventer, construire, tester des scénarios, l\'imagination est la première brique.' },
-  { L: 'E', name: 'Explorer',    title: 'Explorer les solutions',             subtitle: 'avec la Bibliothèque',         color: '#3a6e8c', desc: 'Puiser dans la bibliothèque commune et open source de fiches low-tech, permaculture, gouvernance, autonomie… afin d\'adapter les techniques éprouvées à son lieu.' },
-  { L: 'G', name: 'Générer',     title: 'Générer les fiches et tableaux de bord', subtitle: 'fiches & cockpits',        color: '#c8732a', desc: 'Chaque profil génère sa fiche de présentation et son tableau de bord. La mesure est outillée, transparente, exportable.' },
-  { L: 'E', name: 'Entreprendre',title: 'Entreprendre les quêtes',            subtitle: 'mise en ligne · financement',  color: '#016b52', desc: 'Mettre les quêtes en ligne, mobiliser sa communauté, sécuriser le financement, documenter les preuves, créditer les graines.' },
-  { L: 'N', name: 'Nourrir',     title: "Nourrir l'écosystème",               subtitle: "retours d'expérience",         color: '#7a6ea8', desc: 'Récolter les apprentissages, affiner les fiches, améliorer les outils. Les retours remontent dans les communs et nourrissent le parcours suivant.' },
+const VADE_STEPS = [
+  { L: 'V', name: 'Valoriser',  title: 'Valoriser le potentiel',        color: '#018262', desc: "Connaître la base : les ressources, les forces et les limites. Ce socle pose la Vadance, la promesse d'impact, ce que le projet s'engage à devenir." },
+  { L: 'A', name: 'Activer',    title: 'Activer les solutions',         color: '#3a6e8c', desc: "Puiser dans la bibliothèque commune (low-tech, permaculture, gouvernance), générer fiche et tableau de bord. La promesse s'outille et se met en mouvement." },
+  { L: 'D', name: 'Développer', title: "Développer l'écosystème",       color: '#c8732a', desc: 'Mettre les quêtes en ligne, mobiliser la communauté, sécuriser le financement et documenter chaque preuve. La Vadance se change en résultats mesurés sur le terrain.' },
+  { L: 'E', name: 'Essaimer',   title: 'Essaimer preuves et pratiques', color: '#7a6ea8', desc: 'La promesse devient Vadité. Les apprentissages essaiment dans les communs et relancent la spirale un cran plus haut.' },
 ];
 
 const ROLE_ROWS = [
   {
     id: 'pilote', emoji: '🏡', name: "Pilote d'impact", short: 'Pilote', color: '#018262', tint: '#dcefe7',
     cells: [
-      'Modélise son lieu en voxel, teste des aménagements avant les travaux réels.',
-      'Consulte les fiches solutions, choisit les modules adaptés à sa biorégion.',
-      'Génère la fiche d\'impact de son lieu, configure ses indicateurs et son cockpit.',
-      'Met les quêtes en ligne, anime la communauté, sécurise le financement, valide les preuves.',
-      'Partage les apprentissages, ajuste sa stratégie, contribue aux communs.',
+      "Diagnostiquer les ressources, les forces et les limites de votre lieu. Ce socle pose votre Vadance : la promesse d'impact que votre lieu s'engage à tenir.",
+      "Puiser dans la bibliothèque commune (low-tech, permaculture, gouvernance), générer la fiche de votre lieu et son tableau de bord. Votre promesse s'outille.",
+      "Publier vos quêtes, mobiliser les Bâtisseurs, sécuriser les financements des Semeurs, documenter chaque preuve sur le terrain.",
+      "Votre Vadance devient Vadité : un score vérifié, lisible par les financeurs. Vos apprentissages rejoignent les communs et votre lieu repart un cran plus haut.",
     ],
   },
   {
     id: 'batisseur', emoji: '🌿', name: "Bâtisseur d'impact", short: 'Bâtisseur', color: '#c8732a', tint: '#fce8d8',
     cells: [
-      'Co-construit dans Luanti, explore des designs solarpunk avec la communauté.',
-      'Apprend la permaculture, le biomimétisme, les techniques low-tech.',
-      'Crée son tableau de bord personnel : graines, quêtes, coopétiteurs, biorégions.',
-      'Accomplit les quêtes, documente les preuves, encaisse ses graines.',
-      'Rédige des retours, vote au Conseil régénératif, propose des améliorations.',
+      "Identifier vos compétences, vos envies, ce que vous voulez apporter aux lieux qui vous entourent. Votre profil devient votre promesse de contribution.",
+      "Explorer la bibliothèque, découvrir les solutions et les cartes compétences, vous former aux pratiques régénératives éprouvées.",
+      "Entreprendre les missions des lieux, contribuer sur le terrain, créditer vos Graines, documenter vos réalisations.",
+      "Vos contributions vérifiées construisent votre parcours. Transmettre, devenir référent, porter les pratiques vers d'autres lieux, et reprendre la spirale un cran plus haut.",
     ],
   },
   {
     id: 'semeur', emoji: '🌾', name: "Semeur d'impact", short: 'Semeur', color: '#3a6e8c', tint: '#e0eef6',
     cells: [
-      "Visualise les projets à financer en immersion 3D avant d'engager des fonds.",
-      'Étudie les solutions éprouvées pour cibler des investissements à fort impact.',
-      'Construit son rapport de portefeuille, agrège les preuves de ses dons et fonds.',
-      "Abonde les pots, finance les modules, suit l'allocation en temps réel.",
-      'Diffuse les preuves, fait essaimer les bonnes pratiques entre lieux soutenus.',
+      "Lire la Vadance des lieux : une promesse d'impact structurée, comparable, adossée à des indicateurs, pas une plaquette.",
+      "Flécher votre financement vers des solutions et des quêtes précises, avec une visibilité directe sur ce que votre apport déclenche.",
+      "Suivre en continu les résultats mesurés sur le terrain : chaque preuve documentée alimente le tableau de bord de votre portefeuille de lieux.",
+      "La Vadité consolide ce qui a été tenu. Comparer promesse et réalisation, capitaliser les enseignements, réinvestir un cran plus haut.",
     ],
   },
 ];
@@ -145,7 +141,7 @@ const ParcoursMatrix = () => (
     <div style={{ marginBottom: 28 }}>
       <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#018262', marginBottom: 10 }}>Qui fait quoi ?</div>
       <h3 style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 700, fontSize: 'clamp(22px, 2.4vw, 28px)', lineHeight: 1.2, color: '#0d2b22', margin: 0, marginBottom: 16 }}>
-        La boucle REGEN, vécue par les trois rôles :
+        La spirale VADE, vécue par les trois rôles :
       </h3>
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
         {ROLE_ROWS.map(r => (
@@ -166,7 +162,7 @@ const ParcoursMatrix = () => (
         {/* corner */}
         <div/>
         {/* step headers */}
-        {REGEN_STEPS.map((s, i) => (
+        {VADE_STEPS.map((s, i) => (
           <div key={i} style={{
             display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px',
             background: '#fff', borderRadius: 14, border: '1px solid rgba(46,102,66,.08)',
@@ -217,61 +213,80 @@ const ParcoursMatrix = () => (
   </div>
 );
 
-const RegenWheel = () => {
-  const R = 140;
-  const cx = 200, cy = 200;
-  // 5 evenly distributed positions starting at top
-  const pts = REGEN_STEPS.map((_, i) => {
-    const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
-    return { x: cx + Math.cos(a) * R, y: cy + Math.sin(a) * R, a };
-  });
+const VadeWheel = () => {
+  const cx = 300, cy = 320;
+  const DEG = Math.PI / 180;
+  // Archimedean spiral: t = rotation from V (deg), clockwise; radius grows outward.
+  // V is the tightest turn, then A, D, E open wider, and the run escapes at the top.
+  const R_STOPS = [[0, 138], [90, 193], [180, 216], [270, 236], [360, 288]];
+  const rAt = (t) => {
+    for (let i = 0; i < R_STOPS.length - 1; i++) {
+      const [t0, r0] = R_STOPS[i], [t1, r1] = R_STOPS[i + 1];
+      if (t <= t1) return r0 + (r1 - r0) * (t - t0) / (t1 - t0);
+    }
+    return R_STOPS[R_STOPS.length - 1][1];
+  };
+  const ptAt = (t) => {
+    const phi = (-90 + t) * DEG, r = rAt(t);
+    return [cx + r * Math.cos(phi), cy + r * Math.sin(phi)];
+  };
+  const segPath = (t0, t1) => {
+    let d = '';
+    for (let t = t0; t <= t1 + 0.001; t += 3) {
+      const [x, y] = ptAt(t);
+      d += (d ? 'L' : 'M') + x.toFixed(1) + ',' + y.toFixed(1);
+    }
+    return d;
+  };
+  // nodes sit on the spiral at V=0°, A=90°, D=180°, E=270°
+  const nodePos = [0, 90, 180, 270].map(ptAt);
+  const nameOff = [-54, -54, 60, 60]; // V & A above, D & E below
+  // arrowhead at the spiral's outer end (t = 360°)
+  const [ex, ey] = ptAt(360);
+  const [bx, by] = ptAt(355);
+  const ang = Math.atan2(ey - by, ex - bx), AH = 17, AW = 9;
+  const perp = ang + Math.PI / 2;
+  const arrow = [
+    [ex, ey],
+    [ex - Math.cos(ang) * AH + Math.cos(perp) * AW, ey - Math.sin(ang) * AH + Math.sin(perp) * AW],
+    [ex - Math.cos(ang) * AH - Math.cos(perp) * AW, ey - Math.sin(ang) * AH - Math.sin(perp) * AW],
+  ].map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const segs = [
+    { d: segPath(0, 90),   c: '#018262' }, // V → A
+    { d: segPath(90, 180), c: '#3a6e8c' }, // A → D
+    { d: segPath(180, 270), c: '#c8732a' }, // D → E
+    { d: segPath(270, 360), c: '#7a6ea8' }, // E → sortie
+  ];
   return (
-    <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ maxWidth: 560 }}>
-      {/* arrow paths between consecutive points */}
-      {pts.map((p, i) => {
-        const next = pts[(i + 1) % pts.length];
-        // curve outwards a bit
-        const mx = (p.x + next.x) / 2;
-        const my = (p.y + next.y) / 2;
-        const dx = mx - cx, dy = my - cy;
-        const len = Math.hypot(dx, dy) || 1;
-        const k = 30;
-        const c1x = mx + (dx / len) * k, c1y = my + (dy / len) * k;
-        // shorten endpoints to clear circles
-        const ang = Math.atan2(next.y - p.y, next.x - p.x);
-        const r0 = 32;
-        const sx = p.x + Math.cos(ang) * r0;
-        const sy = p.y + Math.sin(ang) * r0;
-        const ex = next.x - Math.cos(ang) * r0;
-        const ey = next.y - Math.sin(ang) * r0;
-        return (
-          <g key={i}>
-            <path d={`M${sx},${sy} Q${c1x},${c1y} ${ex},${ey}`} fill="none" stroke="#7ec9b0" strokeWidth="1.6" opacity=".75"/>
-            {/* arrow head */}
-            <polygon points={`${ex},${ey} ${ex - Math.cos(ang - 0.4) * 7},${ey - Math.sin(ang - 0.4) * 7} ${ex - Math.cos(ang + 0.4) * 7},${ey - Math.sin(ang + 0.4) * 7}`} fill="#7ec9b0"/>
-          </g>
-        );
-      })}
+    <svg viewBox="10 -26 560 640" width="100%" height="100%" style={{ maxWidth: 560 }}>
+      {/* the spiral itself, one growing turn V→A→D→E and a cran plus haut */}
+      {segs.map((s, i) => (
+        <path key={i} d={s.d} fill="none" stroke={s.c} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/>
+      ))}
+      <polygon points={arrow} fill="#7a6ea8"/>
+      <text x={ex - 46} y="0" fontFamily="Satoshi" fontSize="14" fontWeight="700" fill="#018262" textAnchor="middle">un cran plus haut</text>
+
       {/* center label */}
-      <circle cx={cx} cy={cy} r="68" fill="#f5fbf8" stroke="rgba(1,130,98,.15)" strokeWidth="1"/>
-      <text x={cx} y={cy - 14} fontFamily="Satoshi" fontSize="9" fontWeight="700" letterSpacing="2.5" fill="#018262" textAnchor="middle">BOUCLE</text>
-      <text x={cx} y={cy + 6} fontFamily="Satoshi" fontSize="22" fontWeight="900" fill="#0d2b22" textAnchor="middle">REGEN</text>
-      <g transform={`translate(${cx},${cy + 30})`}>
+      <circle cx={cx} cy={cy} r="92" fill="#f5fbf8" stroke="rgba(1,130,98,.15)" strokeWidth="1"/>
+      <text x={cx} y={cy - 22} fontFamily="Satoshi" fontSize="12" fontWeight="700" letterSpacing="3.5" fill="#018262" textAnchor="middle">SPIRALE</text>
+      <text x={cx} y={cy + 10} fontFamily="Satoshi" fontSize="34" fontWeight="900" fill="#0d2b22" textAnchor="middle">VADE</text>
+      <g transform={`translate(${cx},${cy + 44})`}>
         {['🏡','🌿','🌾'].map((e, i) => (
-          <g key={i} transform={`translate(${(i - 1) * 22},0)`}>
-            <circle r="10" fill="#fff" stroke="rgba(1,130,98,.15)"/>
-            <text y="4" fontSize="12" textAnchor="middle">{e}</text>
+          <g key={i} transform={`translate(${(i - 1) * 28},0)`}>
+            <circle r="13" fill="#fff" stroke="rgba(1,130,98,.15)"/>
+            <text y="5" fontSize="15" textAnchor="middle">{e}</text>
           </g>
         ))}
       </g>
+
       {/* nodes */}
-      {pts.map((p, i) => {
-        const s = REGEN_STEPS[i];
+      {VADE_STEPS.map((s, i) => {
+        const [x, y] = nodePos[i];
         return (
-          <g key={i} transform={`translate(${p.x},${p.y})`}>
-            <circle r="30" fill="#fff" stroke={s.color} strokeWidth="2"/>
-            <text y="9" fontFamily="Satoshi" fontSize="26" fontWeight="900" fill={s.color} textAnchor="middle">{s.L}</text>
-            <text y={p.y > cy ? 52 : -38} fontFamily="Satoshi" fontSize="12" fontWeight="700" fill="#0d2b22" textAnchor="middle">{s.name}</text>
+          <g key={i}>
+            <circle cx={x} cy={y} r="36" fill="#fff" stroke={s.color} strokeWidth="2.4"/>
+            <text x={x} y={y + 11} fontFamily="Satoshi" fontSize="32" fontWeight="900" fill={s.color} textAnchor="middle">{s.L}</text>
+            <text x={x} y={y + nameOff[i]} fontFamily="Satoshi" fontSize="15" fontWeight="700" fill="#0d2b22" textAnchor="middle">{s.name}</text>
           </g>
         );
       })}
@@ -283,15 +298,15 @@ const Cycle = ({ role, onChoose }) => {
   const activeRow = role && ROLE_ROWS.find(r => r.id === role);
   return (
   <Section id="cycle" eyebrow="Et comment ça fonctionne ?"
-    title={<>La Boucle REGEN, <span style={{ fontStyle: 'italic', fontWeight: 600, color: activeRow ? activeRow.color : '#018262' }}>{activeRow ? <>vécue en <span style={{ whiteSpace: 'nowrap' }}>{activeRow.name}</span>.</> : 'une boucle partagée.'}</span></>}
+    title={<>Spirale VADE, <span style={{ fontStyle: 'italic', fontWeight: 600, color: activeRow ? activeRow.color : '#018262' }}>{activeRow ? <>vécue en <span style={{ whiteSpace: 'nowrap' }}>{activeRow.name}</span>.</> : 'la spirale partagée.'}</span></>}
     sub={activeRow ? (
-      <>Voici les cinq étapes telles que vous, <b style={{ color: activeRow.color }}>{activeRow.name}</b>, les traversez. La même boucle nourrit aussi les autres profils, la valeur circule.</>
+      <>Voici les quatre étapes telles que vous, <b style={{ color: activeRow.color }}>{activeRow.name}</b>, les traversez. La même spirale nourrit aussi les autres profils, la valeur circule.</>
     ) : (
-      <>REGEN est la boucle partagée par les <b style={{ color: '#0d2b22' }}>Pilotes</b>, les <b style={{ color: '#0d2b22' }}>Bâtisseurs</b> et les <b style={{ color: '#0d2b22' }}>Semeurs</b>. Cinq étapes pour passer de l'imagination à la régénération.</>
+      <>VADE est la spirale partagée par les <b style={{ color: '#0d2b22' }}>Pilotes</b>, les <b style={{ color: '#0d2b22' }}>Bâtisseurs</b> et les <b style={{ color: '#0d2b22' }}>Semeurs</b> : <b style={{ color: '#0d2b22' }}>V</b>aloriser, <b style={{ color: '#0d2b22' }}>A</b>ctiver, <b style={{ color: '#0d2b22' }}>D</b>évelopper, <b style={{ color: '#0d2b22' }}>E</b>ssaimer.</>
     )}>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="regen-flow">
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-        <RegenWheel/>
+        <VadeWheel/>
         <div style={{
           padding: '16px 20px',
           background: '#fff', borderRadius: 16, border: '1px solid rgba(46,102,66,.1)',
@@ -303,14 +318,14 @@ const Cycle = ({ role, onChoose }) => {
           <span style={{ fontSize: 20, color: activeRow ? activeRow.color : '#018262', flexShrink: 0 }}>{activeRow ? activeRow.emoji : '⟲'}</span>
           <p style={{ fontSize: 14, lineHeight: 1.5, color: '#3d6b5a', margin: 0 }}>
             {activeRow
-              ? <>Vue adaptée à votre profil <b style={{ color: activeRow.color, whiteSpace: 'nowrap' }}>{activeRow.name}</b>. La boucle reste la même, vos actions changent. <b style={{ color: activeRow.color }}>Vous êtes libre d'y entrer à n'importe quelle étape</b>, selon là où vous en êtes.</>
-              : <>Une même boucle pour les trois profils : la valeur circule entre eux et nourrit l'écosystème. <b style={{ color: '#018262' }}>Pas besoin de commencer au début</b> : on entre dans la boucle à l'étape qui nous correspond.</>}
+              ? <>Vue adaptée à votre profil <b style={{ color: activeRow.color, whiteSpace: 'nowrap' }}>{activeRow.name}</b>. La spirale reste la même, vos actions changent. <b style={{ color: activeRow.color }}>Vous êtes libre d'y entrer à n'importe quelle étape</b>, selon là où vous en êtes.</>
+              : <>Une même spirale pour les trois profils : la valeur circule entre eux et nourrit l'écosystème. <b style={{ color: '#018262' }}>Pas besoin de commencer au début</b> : on entre dans la spirale à l'étape qui nous correspond.</>}
           </p>
         </div>
 
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        {REGEN_STEPS.map((s, i) => {
+        {VADE_STEPS.map((s, i) => {
           const myCell = activeRow ? activeRow.cells[i] : null;
           return (
             <div key={i} style={{
@@ -332,7 +347,7 @@ const Cycle = ({ role, onChoose }) => {
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap', marginBottom: 6 }}>
                   <span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 700, fontSize: 17, color: '#0d2b22' }}>{s.title}</span>
                 </div>
-                <p style={{ fontSize: 13, lineHeight: 1.55, color: '#3d6b5a', margin: 0 }}>{s.desc}</p>
+                {!activeRow && <p style={{ fontSize: 13, lineHeight: 1.55, color: '#3d6b5a', margin: 0 }}>{s.desc}</p>}
                 {myCell && (
                   <div style={{
                     marginTop: 12, padding: '12px 14px',

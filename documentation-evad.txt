@@ -39,11 +39,10 @@ Site : evad.org — Contact : contact@evad.org
   elle libère le capital et compte comme contribution. (La Vadité
   remplace l'ancien « score REGEN ».)
 
-- Monnaie Vade : LA MONNAIE. Une monnaie locale, frappée sur impact
-  prouvé, qui circule sans extraction et reste sur le territoire. (Sur le
-  site, cette monnaie est encore appelée « graines ».)
+- Les graines : LA MONNAIE. Une monnaie locale, frappée sur impact
+  prouvé, qui circule sans extraction et reste sur le territoire.
 
-- Boucle VADE : LE PARCOURS. Valoriser → Activer → Développer → Élever ;
+- Boucle VADE : LE PARCOURS. Valoriser → Activer → Développer → Essaimer ;
   à chaque tour, un cran plus haut.
 
 - Taux de tenue : Vadité ÷ Vadance. La capacité d'un lieu à transformer
@@ -62,8 +61,8 @@ Site : evad.org — Contact : contact@evad.org
   probantes.
 
 - Bâtisseur d'impact (citoyen) : citoyen, étudiant, entrepreneur, digital
-  nomad. Il passe à l'action, rejoint des quêtes concrètes et gagne du
-  Vade en contrepartie. Il passe de l'éco-anxiété à l'éco-action, à son
+  nomad. Il passe à l'action, rejoint des quêtes concrètes et gagne des
+  graines en contrepartie. Il passe de l'éco-anxiété à l'éco-action, à son
   rythme, reconnu et récompensé, porté par une communauté.
 
 - Semeur d'impact (financeur) : fondation, collectivité, investisseur,
@@ -106,12 +105,11 @@ profils, la valeur circule entre eux.
   mobiliser la communauté. Outils : catalogue de solutions, déclaration
   des ICI.
 - Développer la preuve : mesurer et prouver l'impact, puis sécuriser le
-  financement. Outils : attestation Vadité, monnaie Vade.
-- Élever le commun : faire vérifier par les pairs et l'audit tiers, et
-  faire remonter les retours dans le référentiel. Outils : audit tiers,
-  amendement du commun.
-
-(Note : sur le site, la 4e étape est actuellement nommée « Essaimer ».)
+  financement. Outils : attestation Vadité, graines.
+- Essaimer : faire vérifier par les pairs et l'audit tiers, transmettre
+  les preuves et pratiques et les faire remonter dans le référentiel
+  commun, et repartir un cran plus haut. Outils : audit tiers, amendement
+  du commun.
 
 
 # LE CADRE DE MESURE — LA CHARTE DES ICI
@@ -195,19 +193,19 @@ des vues posées dessus. Les lacunes sont assumées et documentées.
 10. Un commun ouvert, public, réutilisable et amendable.
 
 
-# LA MONNAIE VADE ET LA CIRCULATION DE LA VALEUR
+# LES GRAINES ET LA CIRCULATION DE LA VALEUR
 
-La monnaie Vade est frappée sur impact prouvé et circule en boucle
+Les graines sont frappées sur impact prouvé et circulent en boucle
 fermée. Trois flux, reliés par le Pilote :
 - Euros : capital réel, entré par les Semeurs, qui financent les Pilotes.
-- Vade : monnaie en boucle fermée entre Bâtisseurs et Pilotes, en
+- Graines : monnaie en boucle fermée entre Bâtisseurs et Pilotes, en
   contrepartie de biens et services réels (ateliers, hébergements,
   formations, produits).
 - Vadité : l'attestation vérifiée qui revient au Semeur.
-Point clé : le Vade n'est pas convertible en euros et ne sort pas de
-l'écosystème. La valeur reste sur le territoire et l'exposition
+Point clé : les graines ne sont pas convertibles en euros et ne sortent
+pas de l'écosystème. La valeur reste sur le territoire et l'exposition
 réglementaire reste maîtrisée. Une part alimente la péréquation entre
-lieux. (Sur le site, le Vade est encore appelé « graines ».)
+lieux.
 
 
 # L'ÉCOSYSTÈME D'OUTILS (neuf outils, un seul compte)
@@ -221,7 +219,7 @@ lieux. (Sur le site, le Vade est encore appelé « graines ».)
   le taux de tenue entre les deux.
 - Réseau social : un réseau pensé pour l'action collective (quêtes,
   rencontres).
-- Marketplace (Vade) : la place d'échange en Vade (ateliers, hébergements,
+- Marketplace : la place d'échange en graines (ateliers, hébergements,
   formations, produits), économie circulaire et locale.
 - Gestion de projet : compte unique propulsé par Nextcloud (fichiers,
   agenda, contacts, visio, tâches), chiffré, hébergé en France, conforme
@@ -265,8 +263,8 @@ coordination.
 Sources de revenus (plusieurs recettes, un seul passage) :
 - Le rail à impact : un acteur public paie au résultat prouvé (Vadité)
   via des contrats à impact ou territoriaux.
-- La membrane Vade : achat de Vade en euros pour irriguer le circuit
-  local (petit spread à l'injection, la sortie reste fermée).
+- La membrane des graines : achat de graines en euros pour irriguer le
+  circuit local (petit spread à l'injection, la sortie reste fermée).
 - La preuve vendue à la finance : un flux Vadance/Vadité alimente les
   prêts à impact ; EVAD vend le dérisquage du capital.
 - L'abonnement résilience : tableau de bord et coordination du territoire
@@ -278,7 +276,7 @@ Sources de revenus (plusieurs recettes, un seul passage) :
 
 Modèle antifragile : chaque crise crée la demande (écologique : prouver
 la régénération ; sociale : occupation utile financée par l'emploi ;
-économique : relance locale par le Vade et dérisquage du capital).
+économique : relance locale par les graines et dérisquage du capital).
 
 
 # GOUVERNANCE ET HONNÊTETÉ MÉTHODOLOGIQUE
@@ -335,9 +333,9 @@ Son cadre :
   variation contre une base T0.
 - Vadance : le score d'impact projeté (la promesse), sur 100.
 - Vadité : l'impact réellement prouvé et vérifié (la preuve).
-- Monnaie Vade : la monnaie locale, frappée sur impact prouvé, en boucle
-  fermée (appelée « graines » sur le site).
-- Boucle VADE : Valoriser, Activer, Développer, Élever.
+- Les graines : la monnaie locale, frappée sur impact prouvé, en boucle
+  fermée.
+- Boucle VADE : Valoriser, Activer, Développer, Essaimer.
 - Triptyque : l'affichage des trois capitaux, jamais un score nu.
 - Plancher : le seuil par capital qui déclenche l'alerte de
   non-compensation.
@@ -370,14 +368,14 @@ R : Un Indicateur de Changement d'Impact : l'unité de mesure d'EVAD. Il
 
 Q : C'est quoi la boucle VADE ?
 R : Le parcours partagé par les trois profils : Valoriser, Activer,
-    Développer, Élever. On peut y entrer à l'étape qui correspond à son
+    Développer, Essaimer. On peut y entrer à l'étape qui correspond à son
     moment, et la boucle remonte un cran plus haut à chaque tour.
 
-Q : C'est quoi la monnaie Vade (les graines) ?
-R : Une monnaie locale frappée sur impact prouvé, qui circule en boucle
-    fermée entre Bâtisseurs et Pilotes. Elle n'est pas convertible en
-    euros et ne sort pas de l'écosystème : la valeur reste sur le
-    territoire.
+Q : C'est quoi les graines ?
+R : La monnaie locale d'EVAD, frappée sur impact prouvé, qui circule en
+    boucle fermée entre Bâtisseurs et Pilotes. Elles ne sont pas
+    convertibles en euros et ne sortent pas de l'écosystème : la valeur
+    reste sur le territoire.
 
 Q : Comment EVAD gagne-t-il de l'argent ?
 R : EVAD ne vend pas l'impact, il vend le passage : une commission

@@ -1,0 +1,8 @@
+# Secrets — ne JAMAIS committer (le dépôt est public)
+deva-config.php
+
+# Config locale de l'agent / preview
+.claude/
+
+# Fichiers temporaires de prévisualisation
+_*.html

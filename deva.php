@@ -12,7 +12,15 @@
    ============================================================ */
 
 /* ─── 1. Configuration ───────────────────────────────────── */
-const MISTRAL_API_KEY = "UMY06qVLONgcAvjgqGhd2UgH02iDbVHd";   // ← votre clé (console.mistral.ai)
+/* Clé Mistral : JAMAIS en dur ici (le dépôt est public).
+   Elle est lue depuis la variable d'environnement MISTRAL_API_KEY,
+   sinon depuis deva-config.php (fichier NON versionné, à créer sur le
+   serveur, à côté de ce fichier). Voir deva-config.example.php. */
+$mistralKey = getenv('MISTRAL_API_KEY') ?: '';
+if ($mistralKey === '' && is_readable(__DIR__ . '/deva-config.php')) {
+  $mistralKey = require __DIR__ . '/deva-config.php';
+}
+define('MISTRAL_API_KEY', trim((string) $mistralKey));
 const MISTRAL_MODEL   = 'mistral-small-latest';            // gratuit. 'mistral-large-latest' = + puissant
 const DOC_FILE        = __DIR__ . '/documentation-evad.txt';
 
@@ -107,6 +115,12 @@ if (empty($convo)) {
 $mistralMessages = array_merge([['role' => 'system', 'content' => $system]], $convo);
 
 /* ─── 7. Appel de l'API Mistral ──────────────────────────── */
+if (MISTRAL_API_KEY === '') {
+  http_response_code(500);
+  echo json_encode(['error' => 'Clé Mistral non configurée sur le serveur (variable d\'environnement MISTRAL_API_KEY ou fichier deva-config.php).']);
+  exit;
+}
+
 $payload = json_encode([
   'model'       => MISTRAL_MODEL,
   'messages'    => $mistralMessages,

@@ -113,25 +113,25 @@ const ToolVisual = ({ id }) => {
 
   if (id === 'carte') return (
     <div style={{ ...common, padding: 0 }}>
-      <img src={(window.__resources && window.__resources.map) || "assets/map-evad.jpg"} alt="Carte EVAD, communauté autour de Bordeaux, pins lieux/bâtisseurs/semeurs, panneau de la communauté EVAD" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.map) || "assets/map-evad.jpg"} alt="Carte EVAD, communauté autour de Bordeaux, pins lieux/bâtisseurs/semeurs, panneau de la communauté EVAD" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 
   if (id === 'reseau') return (
     <div style={{ ...common, padding: 0 }}>
-      <img src={(window.__resources && window.__resources.reseau) || "assets/reseau.jpg"} alt="Réseau social EVAD, fils de quêtes et conversations entre membres" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.reseau) || "assets/reseau.jpg"} alt="Réseau social EVAD, fils de quêtes et conversations entre membres" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 
   if (id === 'bdd') return (
     <div style={{ ...common, padding: 0 }}>
-      <img src={(window.__resources && window.__resources.bibliotheque) || "assets/bibliotheque.jpg"} alt="Bibliothèque de solutions, fiches Récupération eau, Phytoépuration, filtres thématiques" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.bibliotheque) || "assets/bibliotheque.jpg"} alt="Bibliothèque de solutions, fiches Récupération eau, Phytoépuration, filtres thématiques" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 
   if (id === 'marketplace') return (
     <div style={{ ...common, padding: 0 }}>
-      <img src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Marketplace EVAD, fiches produits et services en graines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Marketplace EVAD, fiches produits et services en graines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 
@@ -319,7 +319,7 @@ const ToolVisual = ({ id }) => {
 
   if (id === 'modelisation') return (
     <div style={{ ...common, padding: 0 }}>
-      <img src={(window.__resources && window.__resources.modelisation) || "assets/modelisation.jpg"} alt="Modélisation Minecraft Java, village solarpunk en voxel" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.modelisation) || "assets/modelisation.jpg"} alt="Modélisation Minecraft Java, village solarpunk en voxel" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 

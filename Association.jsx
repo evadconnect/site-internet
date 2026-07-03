@@ -79,6 +79,7 @@ const Avatar = ({ name, photo, photoPos, color, tint, size = 36, ring = true }) 
   }}>
     {photo ? (
       <img
+        loading="lazy" decoding="async"
         src={photo}
         alt={name}
         onError={(e) => { e.currentTarget.style.display = 'none'; }}
@@ -435,7 +436,7 @@ const TeamBand = ({ group, last }) => {
             onKeyDown={group.message ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMembersOpen(o => !o); } } : undefined}
             style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignContent: 'start', cursor: group.message ? 'pointer' : 'default' }}>
             {group.faces.map((src, i) => (
-              <img key={i} src={src} alt="" style={{
+              <img loading="lazy" decoding="async" key={i} src={src} alt="" style={{
                 width: 66, height: 66, borderRadius: '50%', objectFit: 'cover',
                 border: '2px solid #fff', boxShadow: '0 2px 10px rgba(13,43,34,.14)',
                 background: group.tint,
@@ -529,6 +530,7 @@ const AssociationSection = ({ teamLayout = 'directory' }) => (
       </div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <img
+          loading="lazy" decoding="async"
           src={window.__resources.logoConnect}
           alt="Logo EVAD Connect"
           style={{ width: '100%', maxWidth: 440, height: 'auto', display: 'block' }}

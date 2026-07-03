@@ -10,7 +10,7 @@ const PILLARS = [
     bg: '#0d2b22',
     accent: '#c8732a',
     visual: () => (
-      <img src={window.__resources.solarpunk} alt="Solarpunk, maison en bois avec panneaux solaires et toit végétalisé" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={window.__resources.solarpunk} alt="Solarpunk, maison en bois avec panneaux solaires et toit végétalisé" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     ),
   },
   {
@@ -22,7 +22,7 @@ const PILLARS = [
     bg: '#0d2b22',
     accent: '#018262',
     visual: () => (
-      <img src={window.__resources.regen} alt="Économie régénérative, atelier collectif de réparation, jardin et ressources partagées" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={window.__resources.regen} alt="Économie régénérative, atelier collectif de réparation, jardin et ressources partagées" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     ),
   },
   {
@@ -34,7 +34,7 @@ const PILLARS = [
     bg: '#0d2b22',
     accent: '#7a6ea8',
     visual: () => (
-      <img src={window.__resources.ecocratie} alt="Écocratie, conseil de toutes les voix autour d'une table ronde dans un jardin" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={window.__resources.ecocratie} alt="Écocratie, conseil de toutes les voix autour d'une table ronde dans un jardin" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     ),
   },
   {

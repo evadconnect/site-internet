@@ -15,7 +15,7 @@ const Roles = ({ onChoose, persona }) => (
            onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = isActive ? '0 16px 40px ' + r.accent + '22' : '0 2px 16px rgba(1,130,98,.06)'; }}>
           {r.image && (
             <div style={{ height: 200, overflow: 'hidden', background: r.tint }}>
-              <img src={r.image} alt={r.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+              <img loading="lazy" decoding="async" src={r.image} alt={r.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
             </div>
           )}
           <div style={{ padding: '32px 28px', display: 'flex', flexDirection: 'column', gap: 14, flex: 1, containerType: 'inline-size' }}>
@@ -408,7 +408,7 @@ const DevaSection = () => (
               background: 'rgba(126,201,176,.12)', flexShrink: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              <img src={window.__resources.deva} alt="Deva" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
+              <img loading="lazy" decoding="async" src={window.__resources.deva} alt="Deva" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 700, fontSize: 17, color: '#e8f7f3' }}>Deva</div>
@@ -474,7 +474,7 @@ const DevaSection = () => (
       </div>
       <div style={{ position: 'relative', textAlign: 'center', padding: 32 }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(126,201,176,.25) 0%, transparent 60%)' }}/>
-        <img src={window.__resources.deva} alt="Deva" style={{ width: '70%', maxWidth: 260, position: 'relative', filter: 'drop-shadow(0 12px 32px rgba(46,102,66,.3))' }}/>
+        <img loading="lazy" decoding="async" src={window.__resources.deva} alt="Deva" style={{ width: '70%', maxWidth: 260, position: 'relative', filter: 'drop-shadow(0 12px 32px rgba(46,102,66,.3))' }}/>
       </div>
     </div>
     <style>{`@media (max-width: 880px) { .deva-grid { grid-template-columns: 1fr !important; } }`}</style>

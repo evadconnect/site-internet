@@ -351,6 +351,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
           </span>
         ) : (
           <img
+            loading="lazy" decoding="async"
             src={window.__resources && window.__resources.deva}
             alt="Deva"
             style={{
@@ -457,7 +458,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               flexShrink: 0,
             }}>
-              <img src={window.__resources && window.__resources.deva} alt="Deva" style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'rotate(-10deg) scaleX(-1)' }}/>
+              <img loading="lazy" decoding="async" src={window.__resources && window.__resources.deva} alt="Deva" style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'rotate(-10deg) scaleX(-1)' }}/>
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontWeight: 700, fontSize: 15, color: '#e8f7f3', lineHeight: 1.2 }}>Deva</div>

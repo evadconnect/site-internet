@@ -18,7 +18,7 @@ const Roles = ({ onChoose, persona }) => (
               <img src={r.image} alt={r.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
             </div>
           )}
-          <div style={{ padding: '32px 28px', display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
+          <div style={{ padding: '32px 28px', display: 'flex', flexDirection: 'column', gap: 14, flex: 1, containerType: 'inline-size' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div role="img" aria-label={r.name} style={{ width: 56, height: 56, borderRadius: 16, background: r.tint, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, flexShrink: 0 }}>{r.emoji}</div>
               <span style={{
@@ -48,9 +48,10 @@ const Roles = ({ onChoose, persona }) => (
                 aria-pressed={isActive}
                 style={{
                   marginTop: 18, width: '100%',
-                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                  padding: '13px 18px', borderRadius: 100, cursor: 'pointer',
-                  fontFamily: "'Satoshi',sans-serif", fontSize: 14, fontWeight: 700,
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                  padding: '13px 12px', borderRadius: 100, cursor: 'pointer',
+                  fontFamily: "'Satoshi',sans-serif", fontSize: 'clamp(10px, 4.4cqi, 14px)', fontWeight: 700,
+                  whiteSpace: 'nowrap',
                   border: isActive ? '1.5px solid ' + r.accent : 'none',
                   background: isActive ? r.tint : r.accent,
                   color: isActive ? r.accent : '#fff',
@@ -61,7 +62,7 @@ const Roles = ({ onChoose, persona }) => (
                 onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = isActive ? 'none' : '0 6px 18px ' + r.accent + '33'; }}
               >
                 {isActive ? (
-                  <><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg> <span>Site personnalisé pour les {r.short.toLowerCase()}</span></>
+                  <><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg> <span>Site personnalisé pour les {r.short.toLowerCase()}</span></>
                 ) : (
                   <span>Personnaliser le site pour les {r.short.toLowerCase()}</span>
                 )}

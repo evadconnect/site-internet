@@ -54,7 +54,7 @@ const PILLARS = [
             { e: '✓', l: 'Preuve', c: '#018262' },
             { e: '🌱', l: 'Graines', c: '#7fb069' },
             { e: '✦', l: 'Niveau', c: '#e6c068' },
-            { e: '📊', l: 'REGEN', c: '#3a6e8c' },
+            { e: '📊', l: 'Vadité', c: '#3a6e8c' },
             { e: '🫂', l: 'Guilde', c: '#b85e38' },
           ].map(t => (
             <div key={t.l} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>

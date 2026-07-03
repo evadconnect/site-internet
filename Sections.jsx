@@ -378,56 +378,6 @@ const Cycle = ({ role, onChoose }) => {
   );
 };
 
-const RegenSection = () => (
-  <Section id="regen" dark eyebrow="Score REGEN" title="Quatre dimensions, une seule trajectoire.">
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }} className="regen-grid">
-      <div>
-        <p style={{ fontSize: 17, lineHeight: 1.6, color: '#cfeee7', opacity: .85, marginBottom: 28 }}>
-          Chaque lieu mesure son impact sur quatre axes. Pas de greenwashing : seules les preuves vérifiées par le Conseil Régénératif font monter le score.
-        </p>
-        <div>
-          {[
-            ['Écologie', 78, '#4aab8f', 'biodiversité, sols, énergie, eau'],
-            ['Social', 64, '#c8732a', 'accueil, inclusion, transmission'],
-            ['Gouvernance', 52, '#7a6ea8', 'transparence, prise de décision'],
-            ['Économie', 71, '#f0c84a', 'résilience, circuits courts, mutualisation'],
-          ].map(([l, v, c, sub]) => (
-            <div key={l} style={{ marginBottom: 22 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
-                <span style={{ fontSize: 14, fontWeight: 600, color: '#e8f7f3' }}>{l} <span style={{ opacity: .55, fontWeight: 400, fontSize: 12 }}>· {sub}</span></span>
-                <span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 22, color: c, fontFeatureSettings: "'tnum' 1" }}>{v}</span>
-              </div>
-              <div style={{ height: 6, background: 'rgba(207,238,231,.1)', borderRadius: 100, overflow: 'hidden' }}>
-                <div className="regen-bar" style={{ width: v + '%', height: '100%', background: c, borderRadius: 100, transition: 'width 1.2s cubic-bezier(.4,0,.2,1)' }}/>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div style={{
-        background: 'linear-gradient(135deg, #016b52 0%, #018262 100%)',
-        border: '1px solid rgba(207,238,231,.15)', borderRadius: 28, padding: 36,
-        boxShadow: '0 24px 60px rgba(0,0,0,.3)', position: 'relative', overflow: 'hidden',
-      }}>
-        <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(126,201,176,.3), transparent 70%)' }}/>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#7ec9b0', marginBottom: 14, position: 'relative' }}>Ferme du Champ Vert</div>
-        <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 96, lineHeight: 1, color: '#e8f7f3', fontFeatureSettings: "'tnum' 1", position: 'relative' }}>
-          78<span style={{ fontSize: 36, opacity: .55, fontWeight: 600 }}>/100</span>
-        </div>
-        <div style={{ fontSize: 13, color: '#cfeee7', opacity: .75, marginTop: 8, position: 'relative' }}>+12 points sur les 6 derniers mois</div>
-        <div style={{ marginTop: 24, padding: '14px 16px', background: 'rgba(13,43,34,.4)', border: '1px solid rgba(126,201,176,.2)', borderRadius: 12, position: 'relative' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: '#7ec9b0', letterSpacing: '.1em' }}>✓ DERNIÈRE PREUVE</span>
-            <span style={{ fontSize: 10, color: '#cfeee7', opacity: .55, marginLeft: 'auto' }}>il y a 3 jours</span>
-          </div>
-          <div style={{ fontSize: 13, color: '#e8f7f3' }}>Inventaire mare : 14 espèces recensées, +3 vs. 2025.</div>
-        </div>
-      </div>
-    </div>
-    <style>{`@media (max-width: 880px) { .regen-grid { grid-template-columns: 1fr !important; } }`}</style>
-  </Section>
-);
-
 const DevaSection = () => (
   <Section id="deva" eyebrow="Enfin, qui vous accompagne ?" title={<>Deva accompagne, <span style={{ fontStyle: 'italic', fontWeight: 600, color: '#018262' }}>vous prenez les décisions.</span></>}>
     <div style={{ display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: 56, alignItems: 'center' }} className="deva-grid">
@@ -564,6 +514,5 @@ const MarketplaceSection = () => {
 
 window.Roles = Roles;
 window.Cycle = Cycle;
-window.RegenSection = RegenSection;
 window.DevaSection = DevaSection;
 window.MarketplaceSection = MarketplaceSection;

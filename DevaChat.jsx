@@ -220,8 +220,8 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
     setMessages(m => [
       ...m,
       { role: 'user', text: `${p.emoji} Je suis ${p.short}` },
-      { role: 'deva', text: `Parfait. ${p.tagline}\n\nJ'ai adapté la page pour vous : votre boucle REGEN et vos outils EVAD sont déjà personnalisés.`, ctas: [
-        { label: 'Voir ma boucle REGEN', section: 'cycle' },
+      { role: 'deva', text: `Parfait. ${p.tagline}\n\nJ'ai adapté la page pour vous : votre spirale VADE et vos outils EVAD sont déjà personnalisés.`, ctas: [
+        { label: 'Voir ma spirale VADE', section: 'cycle' },
         { label: 'Voir les outils EVAD',    section: 'ecosystem' },
       ] },
     ]);
@@ -307,7 +307,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
     persona === 'pilote'    ? 'Comment référencer mon lieu ?' :
     persona === 'batisseur' ? 'Quelles quêtes me correspondent ?' :
                               'Comment financer un projet ?',
-    'Comment fonctionne le score REGEN ?',
+    'Comment fonctionne la Vadité ?',
     'Comment fonctionnent les graines ?',
   ] : [];
 

@@ -86,7 +86,7 @@ const NEWSLETTER_BY_ROLE = {
     eyebrow: 'Pour suivre l\'impact',
     titleA: 'Le rapport saisonnier,',
     titleB: "pour mesurer l'impact.",
-    pitch: "Recevez chaque saison les chiffres du réseau : graines en circulation, quêtes accomplies, preuves validées, scores REGEN. De quoi orienter vos financements en toute connaissance.",
+    pitch: "Recevez chaque saison les chiffres du réseau : graines en circulation, quêtes accomplies, preuves validées, Vadité des lieux. De quoi orienter vos financements en toute connaissance.",
     btn: "🌾 Recevoir le rapport d'impact",
     socialTitle: 'Suivez les projets que vous soutenez,',
     socialItalic: 'partagez avec votre réseau.',
@@ -332,7 +332,7 @@ const Footer = () => (
       ))}
     </div>
 
-    {/* Empreinte numérique du site · esprit score REGEN */}
+    {/* Empreinte numérique du site · esprit Vadité */}
     <div style={{ maxWidth: 1180, margin: '52px auto 0', position: 'relative' }}>
       <div style={{
         background: 'rgba(13,43,34,.35)',

@@ -11,7 +11,7 @@ const TOOLS = [
     roleDesc: {
       pilote:    "Rendez votre lieu visible des bâtisseurs et financeurs de votre biorégion. Une fiche, des photos, vos quêtes ouvertes.",
       batisseur: "Trouvez les lieux durables près de chez vous, filtrez par activité (permaculture, low-tech, hébergement) et engagez-vous.",
-      semeur:    "Cartographiez les projets à soutenir, filtrez par biorégion, score REGEN ou thématique avant d'engager vos fonds.",
+      semeur:    "Cartographiez les projets à soutenir, filtrez par biorégion, Vadité ou thématique avant d'engager vos fonds.",
     },
   },
   {
@@ -74,9 +74,9 @@ const TOOLS = [
     desc: 'Un cockpit pour chaque rôle : graines, quêtes en cours, financements, indicateurs d\'impact. Voir son impact en un coup d\'œil et le partager.',
     apport: 'Piloter à hauteur d\'humain : votre lieu, votre rôle, votre trajectoire.',
     roleDesc: {
-      pilote:    "Pilotez votre lieu en un coup d'œil : quêtes ouvertes, preuves en attente, financements reçus, score REGEN en évolution.",
+      pilote:    "Pilotez votre lieu en un coup d'œil : quêtes ouvertes, preuves en attente, financements reçus, Vadité en évolution.",
       batisseur: "Suivez vos graines, vos quêtes en cours, vos preuves validées et vos contributions à la bibliothèque commune.",
-      semeur:    "Visualisez votre portefeuille d'impact : fonds engagés, preuves reçues, score REGEN agrégé de vos projets soutenus.",
+      semeur:    "Visualisez votre portefeuille d'impact : fonds engagés, preuves reçues, Vadité agrégée de vos projets soutenus.",
     },
   },
   {
@@ -232,10 +232,10 @@ const ToolVisual = ({ id }) => {
           </g>
         </g>
 
-        {/* REGEN gauge */}
+        {/* Vadité gauge */}
         <g transform="translate(332,176)">
           <rect x="0" y="0" width="144" height="178" rx="14" fill="#018262"/>
-          <text x="14" y="22" fontFamily="Satoshi" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="#7ec9b0">SCORE REGEN</text>
+          <text x="14" y="22" fontFamily="Satoshi" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="#7ec9b0">VADITÉ</text>
           <g transform="translate(72,108)">
             <path d="M-50,0 A50,50 0 0,1 50,0" fill="none" stroke="rgba(207,238,231,.18)" strokeWidth="10" strokeLinecap="round"/>
             <path d="M-50,0 A50,50 0 0,1 39,-31" fill="none" stroke="#7ec9b0" strokeWidth="10" strokeLinecap="round"/>

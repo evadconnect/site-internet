@@ -346,7 +346,7 @@ const Footer = () => (
             <span aria-hidden="true">🌍</span> Empreinte de ce site
           </div>
           <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#e8f7f3', margin: 0, opacity: .9 }}>
-            Fidèles au score REGEN, nous mesurons aussi notre propre impact numérique, pour le réduire.
+            Nous mesurons aussi notre propre impact numérique.
           </p>
         </div>
         {[

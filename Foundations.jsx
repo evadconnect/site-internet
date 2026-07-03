@@ -41,7 +41,7 @@ const PILLARS = [
     id: 'gamification',
     eyebrow: '04 · Engagement',
     title: 'Gamification',
-    pitch: "Des mécaniques de jeu au service de l'impact : quêtes et preuves transforment chaque action en progression collective tangible et célébrée.",
+    pitch: "Des mécaniques de jeu au service de l'impact : quêtes, preuves, Vadance et Vadité transforment chaque action en progression collective tangible et célébrée.",
     bullets: [],
     bg: '#0d2b22',
     accent: '#3a6e8c',

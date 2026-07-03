@@ -6,42 +6,71 @@ Ce document est la source de vérité de Deva, le compagnon IA d'EVAD.
 Deva répond uniquement à partir de ce texte. Pour toute question qui
 n'y figure pas, inviter à écrire à contact@evad.org.
 
+Références : présentation d'EVAD (site evad.org) et « Charte des ICI »
+(cadre de référence de la mesure d'impact régénératif, v0.1, juin 2026,
+document ouvert / open source).
+
 
 # QU'EST-CE QU'EVAD ?
 
 EVAD signifie Écosystème Vivant Autonome & Décentralisé.
 C'est un écosystème qui relie trois profils autour d'une économie
-régénérative : les porteurs de lieux durables, les citoyens qui
-passent à l'action, et les financeurs. Le fil conducteur : des quêtes
-concrètes, des preuves d'impact mesurables, et une spirale VADE
-partagée par tous.
+régénérative : les porteurs de lieux durables, les citoyens qui passent
+à l'action, et les financeurs. Le fil conducteur : des quêtes concrètes,
+des preuves d'impact mesurables, et une boucle VADE partagée par tous.
 
 EVAD est porté par l'association EVAD Connect. Le projet est en phase
-bêta : on peut déjà rejoindre l'aventure.
+bêta.
+
+Devise : mesurer pour régénérer. Principe cardinal : dire moins, et le
+prouver.
 
 Site : evad.org — Contact : contact@evad.org
+
+
+# LA FAMILLE VADE (les quatre mots clés)
+
+- Vadance : LA PROMESSE. Le score d'impact projeté d'un lieu ou d'un
+  projet, sur 100. Calculée sur les valeurs projetées (le plan, la
+  modélisation). Elle sert à mobiliser et à engager le capital.
+
+- Vadité : LA PREUVE. L'impact réellement prouvé et vérifié, calculé sur
+  les valeurs réelles et vérifiées. C'est ce que reçoit le financeur ;
+  elle libère le capital et compte comme contribution. (La Vadité
+  remplace l'ancien « score REGEN ».)
+
+- Monnaie Vade : LA MONNAIE. Une monnaie locale, frappée sur impact
+  prouvé, qui circule sans extraction et reste sur le territoire. (Sur le
+  site, cette monnaie est encore appelée « graines ».)
+
+- Boucle VADE : LE PARCOURS. Valoriser → Activer → Développer → Élever ;
+  à chaque tour, un cran plus haut.
+
+- Taux de tenue : Vadité ÷ Vadance. La capacité d'un lieu à transformer
+  ses promesses en preuves. L'indicateur anti-greenwashing par
+  excellence. Exemple : une Vadance de 85 et une Vadité de 55 donnent un
+  taux de tenue d'environ 65 %.
 
 
 # LES TROIS PROFILS
 
 - Pilote d'impact (porteur de lieu) : porteur d'un tiers-lieu, écolieu,
-  ferme, association ou incubateur. Il publie des quêtes, accueille des
-  Bâtisseurs et vérifie les preuves d'impact. Il pilote et finance ses
-  projets avec des outils numériques intégrés, rend ses impacts
-  mesurables et traçables, et transforme ses actions en données
-  probantes pour ancrer son modèle.
+  ferme, association ou incubateur. Il coordonne un lieu, publie des
+  quêtes et certifie les preuves d'impact. Il pilote et finance ses
+  projets avec des outils intégrés, rend ses impacts mesurables et
+  traçables (preuves à l'appui), et transforme ses actions en données
+  probantes.
 
-- Bâtisseur d'impact (citoyen) : membre, particulier, étudiant, digital
-  nomad ou entrepreneur. Il rejoint des quêtes concrètes, contribue sur
-  le terrain et gagne des graines à utiliser dans le réseau. Il passe de
-  l'éco-anxiété à l'éco-action, à son rythme, reconnu et récompensé pour
-  chaque action, porté par une communauté.
+- Bâtisseur d'impact (citoyen) : citoyen, étudiant, entrepreneur, digital
+  nomad. Il passe à l'action, rejoint des quêtes concrètes et gagne du
+  Vade en contrepartie. Il passe de l'éco-anxiété à l'éco-action, à son
+  rythme, reconnu et récompensé, porté par une communauté.
 
-- Semeur d'impact (financeur) : financeur public ou privé, fondation,
-  investisseur ou collectivité. Il finance des projets contre des preuves
-  d'impact vérifiées. Il identifie les initiatives réellement
-  transformatrices et s'assure d'impacts mesurables, durables et
-  transparents ; chaque euro engagé est tracé et mesuré.
+- Semeur d'impact (financeur) : fondation, collectivité, investisseur,
+  financeur public ou privé. Il finance des projets en euros, contre des
+  preuves d'impact vérifiées. Il identifie les initiatives alignées à ses
+  objectifs, s'assure d'impacts mesurables, durables et transparents, et
+  reçoit la Vadité : chaque euro investi est tracé et prouvé.
 
 
 # LES QUATRE PILIERS
@@ -63,100 +92,213 @@ Site : evad.org — Contact : contact@evad.org
   action en progression collective tangible et célébrée.
 
 
-# LA SPIRALE VADE (le parcours d'impact partagé)
+# LA BOUCLE VADE (le parcours et les outils)
 
-VADE est la spirale partagée par les Pilotes, les Bâtisseurs et les
-Semeurs. Quatre étapes, avec une trajectoire qui remonte « un cran plus
-haut » à chaque tour :
-
-- Valoriser : connaître la base (ressources, forces, limites) et poser
-  la promesse d'impact, la Vadance.
-- Activer : puiser dans la bibliothèque de solutions, générer sa fiche
-  et son tableau de bord, s'outiller.
-- Développer : mettre les quêtes en ligne, mobiliser la communauté,
-  sécuriser le financement et documenter chaque preuve.
-- Essaimer : transmettre les preuves et pratiques dans les communs, et
-  repartir un cran plus haut.
-
-On peut entrer dans la spirale à l'étape qui correspond à son moment :
-pas besoin de commencer au début. La même spirale nourrit les trois
+Une même boucle pour avancer, à chaque tour un cran plus haut. On n'est
+pas obligé de commencer au début : on entre par l'étape qui correspond au
+lieu, et chaque étape est outillée. La même boucle nourrit les trois
 profils, la valeur circule entre eux.
 
-(La spirale VADE remplace l'ancienne « boucle REGEN ».)
+- Valoriser l'existant : établir la base de référence (T0) et repérer
+  l'impact déjà présent sur le lieu. Outils : diagnostic T0, bibliothèque
+  d'ICI, IA Deva.
+- Activer les solutions : déclarer les solutions mises en œuvre et
+  mobiliser la communauté. Outils : catalogue de solutions, déclaration
+  des ICI.
+- Développer la preuve : mesurer et prouver l'impact, puis sécuriser le
+  financement. Outils : attestation Vadité, monnaie Vade.
+- Élever le commun : faire vérifier par les pairs et l'audit tiers, et
+  faire remonter les retours dans le référentiel. Outils : audit tiers,
+  amendement du commun.
+
+(Note : sur le site, la 4e étape est actuellement nommée « Essaimer ».)
 
 
-# VADANCE, VADITÉ ET TAUX DE TENUE
+# LE CADRE DE MESURE — LA CHARTE DES ICI
 
-- Vadance : la PROMESSE d'impact d'un lieu. Ce qu'il s'engage à devenir,
-  son objectif, adossé à des indicateurs. C'est le point de départ,
-  avant preuve.
+La Charte des ICI définit comment EVAD mesure l'impact régénératif d'un
+territoire. Elle est le socle commun de la Vadance (la promesse) et de la
+Vadité (la preuve). Elle fixe ce que la mesure affirme, et ce qu'elle
+n'affirme pas. Ce qui se protège, c'est la rigueur de la preuve, pas la
+formule du calcul : le référentiel est libre (open source), l'exécution
+(registre, vérification, attestation) est ce qu'EVAD assure.
 
-- Vadité : ce qui est DÉJÀ PROUVÉ. Le score d'impact réellement vérifié
-  d'un lieu, preuves documentées à l'appui. C'est la promesse tenue et
-  démontrée. (La Vadité remplace l'ancien « score REGEN ».)
+## L'ICI, l'unité élémentaire
+ICI = Indicateur de Changement d'Impact. Un ICI mesure la variation d'une
+grandeur précise et vérifiable entre une base de référence (T0) et un
+état ultérieur (T1), attribuable à l'action menée sur un lieu. L'impact,
+c'est le changement attribuable (la flèche), jamais la valeur absolue
+d'arrivée. Tout le reste (scores, attestations, exports) en découle.
 
-- Taux de tenue : la part de la Vadance déjà transformée en Vadité,
-  c'est-à-dire l'écart entre ce qui est promis et ce qui est prouvé.
-  Exemple illustratif : une Vadance de 85 et une Vadité de 55 donnent un
-  taux de tenue d'environ 65 %. Chaque preuve documentée rapproche la
-  promesse de la réalité.
+Un ICI est entièrement spécifié : unité mesurée (kg CO₂e, m², ETP,
+personnes…), sens (hausse favorable ou non), point 0 (la base) et point
+100 (un changement « excellent »), source de la référence, type de lieu,
+niveau de preuve requis, poids dans son capital, version et statut.
 
-Principe : pas de greenwashing. Seules les preuves vérifiées font monter
-la Vadité.
+Exemples : linéaire de haies replantées (T0 : 0 m → +420 m) ; personnes
+en insertion accompagnées (T0 : 3 → 18/an) ; part des achats au
+territoire (T0 : 22 % → 64 %).
+
+## La comptabilité à triple capital
+Aucune mesure ne publie un score global seul. Trois registres sont
+toujours présentés ensemble (le « triptyque ») :
+- Écologie : biodiversité, climat et carbone, eau et ressources.
+- Social : emploi et insertion, inclusion, lien et bien-être.
+- Économie locale : activité et emploi non délocalisables, valeur
+  retenue (circuits courts), résilience.
+Non-compensation : un capital brillant ne rachète jamais un capital
+sinistré.
+
+## La normalisation (0–100)
+Les ICI ont des unités incomparables. Chacun est ramené sur une échelle
+commune : la valeur observée se projette entre la base (0) et la
+référence (100), plafonnée à 100. La référence est fixée par la méthode,
+jamais par le Pilote (sinon il suffirait de promettre peu), et
+contextualisée par type de lieu. Jamais de somme brute ni d'euros.
+
+## La pondération
+Par défaut, les trois capitaux pèsent à parts égales (un tiers chacun),
+la position la plus neutre. Trois niveaux admis : égalité par défaut ;
+pondération territorialisée (fixée par la gouvernance selon les priorités
+d'un territoire) ; vue par usage (un financeur applique ses propres poids
+sans altérer les trois scores canoniques). Un plancher par capital
+garantit la non-compensation : tout capital sous le seuil est signalé.
+
+## De la promesse à la preuve
+Le même référentiel est calculé deux fois : la Vadance sur les valeurs
+projetées (elle lève le capital), la Vadité sur les valeurs prouvées et
+vérifiées (elle libère le capital).
+Échelle de preuve (la crédibilité ne vient pas du chiffre) :
+Déclaratif (faible, fortement décoté) → Documentaire (preuve à l'appui)
+→ Pairs (vérifié par les pairs) → Tiers de confiance (fort, pleinement
+retenu).
+Taux de tenue = Vadité ÷ Vadance.
+
+## Correspondance avec les référentiels externes
+Les ICI se relient aux référentiels existants par des tables de
+correspondance : ODD (objectifs de développement durable), ESRS
+(standards CSRD), VSME (PME volontaires), indicateurs propres des
+mécènes. La donnée canonique reste l'ICI ; les référentiels externes sont
+des vues posées dessus. Les lacunes sont assumées et documentées.
+
+## Les dix principes fondateurs
+1. Mesurer un changement, pas un état (variation contre une base T0).
+2. Distinguer la promesse (Vadance) de la preuve (Vadité) ; frontière
+   étanche.
+3. Trois capitaux, jamais réduits à un seul.
+4. Ni somme d'unités brutes, ni monétisation (pas de prix sur le vivant).
+5. Pas de compensation entre capitaux.
+6. Une référence extérieure à l'évalué.
+7. Une preuve graduée (la confiance dépend du niveau de vérification).
+8. Transparence et versionnement (barèmes et poids datés et versionnés).
+9. Indépendance du référentiel vis-à-vis de l'intérêt commercial.
+10. Un commun ouvert, public, réutilisable et amendable.
 
 
-# LES GRAINES (la monnaie locale)
+# LA MONNAIE VADE ET LA CIRCULATION DE LA VALEUR
 
-Les graines sont la monnaie locale d'EVAD. Elles circulent entre membres
-et lieux : on en gagne en contribuant (quêtes accomplies, preuves
-documentées) et on les dépense dans le réseau (ateliers, nuits en yourte,
-formations, produits du réseau). La valeur reste ainsi sur le territoire
-au lieu de fuir vers l'extérieur. Les graines sont une brique de
-gamification, distincte de la mesure d'impact (Vadance / Vadité).
-
-
-# L'ÉCOSYSTÈME D'OUTILS (connectés au même compte)
-
-- Carte de l'écosystème : tous les profils géolocalisés (pilotes,
-  bâtisseurs, semeurs) avec leur fiche de présentation. On commence
-  toujours par un lieu réel.
-
-- Réseau social : un réseau pensé pour l'action collective, avec des
-  fils centrés sur les quêtes et les rencontres concrètes entre membres.
-
-- Bibliothèque de solutions : une bibliothèque vivante et ouverte où
-  chaque solution trouvée par un lieu (permaculture, low-tech,
-  gouvernance, autonomie) devient un savoir partagé pour tous.
-
-- Marketplace : la place d'échange en graines. On y propose et on y
-  trouve ateliers, hébergements, formations et produits du réseau, dans
-  une économie circulaire, locale et sans extraction.
-
-- Mesure d'impact : chaque lieu affiche sa Vadance (sa promesse) et sa
-  Vadité (ce qui est déjà prouvé). Le taux de tenue mesure l'écart entre
-  les deux. Mesurer pour rendre crédible : promesse affichée, preuves
-  vérifiées.
-
-- Tableau de bord : un cockpit pour chaque rôle (graines, quêtes en
-  cours, financements, indicateurs d'impact) pour voir son impact en un
-  coup d'œil et le partager.
-
-- Gestion de projet : un compte unique propulsé par Nextcloud (fichiers,
-  agenda, contacts, visio, tâches). Chiffré de bout en bout, hébergé en
-  France, conforme RGPD. Souveraineté numérique : les données restent
-  celles de leur propriétaire, sur une infrastructure libre.
-
-- Modélisation : modéliser un lieu en 3D (voxel) avant de poser la
-  première pierre, pour co-construire les futurs possibles avec la
-  communauté, bloc par bloc.
+La monnaie Vade est frappée sur impact prouvé et circule en boucle
+fermée. Trois flux, reliés par le Pilote :
+- Euros : capital réel, entré par les Semeurs, qui financent les Pilotes.
+- Vade : monnaie en boucle fermée entre Bâtisseurs et Pilotes, en
+  contrepartie de biens et services réels (ateliers, hébergements,
+  formations, produits).
+- Vadité : l'attestation vérifiée qui revient au Semeur.
+Point clé : le Vade n'est pas convertible en euros et ne sort pas de
+l'écosystème. La valeur reste sur le territoire et l'exposition
+réglementaire reste maîtrisée. Une part alimente la péréquation entre
+lieux. (Sur le site, le Vade est encore appelé « graines ».)
 
 
-# DEVA, LE COMPAGNON IA
+# L'ÉCOSYSTÈME D'OUTILS (neuf outils, un seul compte)
 
-Deva est l'esprit régénératif et le compagnon IA de l'écosystème. Il
-suggère des quêtes adaptées à un lieu, repère les preuves manquantes et
-propose des solutions issues de la bibliothèque. Deva accompagne, mais
-ce sont les membres qui prennent les décisions.
+- Carte de l'écosystème : tous les profils géolocalisés, avec leur fiche.
+- Bibliothèque de solutions : savoirs partagés, ouverte ; chaque solution
+  embarque ses ICI prédéfinis.
+- Modélisation 3D : projeter un lieu en voxel avant de poser la première
+  pierre, avec la communauté.
+- Mesure d'impact : Vadance (promesse) et Vadité (preuve) d'un lieu, et
+  le taux de tenue entre les deux.
+- Réseau social : un réseau pensé pour l'action collective (quêtes,
+  rencontres).
+- Marketplace (Vade) : la place d'échange en Vade (ateliers, hébergements,
+  formations, produits), économie circulaire et locale.
+- Gestion de projet : compte unique propulsé par Nextcloud (fichiers,
+  agenda, contacts, visio, tâches), chiffré, hébergé en France, conforme
+  RGPD. Souveraineté numérique.
+- Deva : l'IA compagne (voir ci-dessous).
+- Tableau de bord : un cockpit par rôle pour voir son impact en un coup
+  d'œil et le partager.
+
+Une même saisie, plusieurs exports : le Pilote déclare les solutions
+mises en œuvre (chacune porte ses ICI) ; chaque ICI reçoit sa valeur et
+son niveau de preuve ; la donnée est ensuite restituée en triptyque (3
+capitaux), en attestation Vadité, en correspondances ODD/ESRS/VSME, ou en
+vue mécène / financeur.
+
+
+# DEVA, L'IA AU SERVICE DES INDICATEURS
+
+Deva est une IA frugale et open source, compagne qui facilite la saisie
+et fiabilise la preuve, sans jamais décider à la place de la gouvernance.
+Elle suggère les ICI pertinents pour chaque solution, repère les preuves
+manquantes et le niveau de vérification à atteindre, contrôle la
+cohérence (double-comptage, additionnalité douteuse, valeurs aberrantes)
+et relie aux référentiels ODD, ESRS et VSME.
+
+Frugale (petits modèles, faible empreinte), inspectable (modèles et
+invites publiés), souveraine (hébergée en France, RGPD, données ni
+revendues ni réutilisées hors du commun), et toujours sous contrôle
+humain. Point capital : l'IA propose, la gouvernance et l'audit
+tranchent. L'IA n'atteste jamais.
+
+
+# LE MODÈLE ÉCONOMIQUE
+
+EVAD ne vend pas l'impact : EVAD vend le passage. EVAD est la membrane
+entre l'économie en euros (rare, prudente, qui exige la preuve et la
+sécurité) et le local régénératif (abondant, mais à sec de cash). EVAD
+fait passer l'argent de l'euro vers le local et se rémunère sur ce
+passage, par une commission plafonnée sur la confiance (la Vadité) et la
+coordination.
+
+Sources de revenus (plusieurs recettes, un seul passage) :
+- Le rail à impact : un acteur public paie au résultat prouvé (Vadité)
+  via des contrats à impact ou territoriaux.
+- La membrane Vade : achat de Vade en euros pour irriguer le circuit
+  local (petit spread à l'injection, la sortie reste fermée).
+- La preuve vendue à la finance : un flux Vadance/Vadité alimente les
+  prêts à impact ; EVAD vend le dérisquage du capital.
+- L'abonnement résilience : tableau de bord et coordination du territoire
+  (revenu récurrent, payeur public).
+- Formation et mécénat : budgets formation/emploi, mécénat de
+  compétences.
+- Le standard fédéré (open-core) : d'autres territoires licencient
+  l'exécution ; la méthode reste un commun ouvert.
+
+Modèle antifragile : chaque crise crée la demande (écologique : prouver
+la régénération ; sociale : occupation utile financée par l'emploi ;
+économique : relance locale par le Vade et dérisquage du capital).
+
+
+# GOUVERNANCE ET HONNÊTETÉ MÉTHODOLOGIQUE
+
+Le référentiel est gouverné par une instance distincte du commercial :
+EVAD ne note pas seul ses clients ; au-delà du déclaratif, la
+vérification mobilise les pairs puis l'audit tiers. Tout est daté,
+justifié, versionné, sans modification rétroactive silencieuse : un score
+est toujours rattachable à la version de méthode qui l'a produit.
+L'évolution suit une procédure d'amendement ouverte et traçable.
+
+Limites assumées : les points 100 et les poids sont des jugements de
+valeur, pas des faits ; la charte les rend explicites et gouvernés.
+Vigilances : additionnalité (sans base fiable, aucun changement mesurable),
+double-comptage (deux solutions ne réclament jamais le même changement),
+calibrage (toute allégation se cale sur le niveau de preuve atteint).
+
+Licence : CC BY-SA 4.0 (Creative Commons Attribution – Partage dans les
+mêmes conditions ; choix à confirmer par l'association). Version 0.1,
+juin 2026. Citation : « Charte des ICI, EVAD, v0.1, 2026 ».
 
 
 # L'ASSOCIATION EVAD CONNECT
@@ -172,11 +314,10 @@ Son objet :
 Son cadre :
 - Association loi 1901, à but non lucratif.
 - Reconnue d'intérêt général : les dons sont défiscalisés jusqu'à 66 %.
-- Gouvernance partagée, inspirée de l'écocratie (décisions collectives).
-- Communs ouverts : outils, méthodes et savoirs publiés sous licence
-  Creative Commons.
-- Accessible à toutes et tous : ouverte à toute personne qui veut
-  s'engager.
+- Gouvernance partagée, inspirée de l'écocratie.
+- Communs ouverts : outils, méthodes et savoirs sous licence Creative
+  Commons.
+- Accessible à toutes et tous.
 
 
 # COMMENT REJOINDRE L'AVENTURE
@@ -187,42 +328,63 @@ Son cadre :
   https://www.helloasso.com/associations/evad-connect/formulaires/1
 - Toute autre demande : contact@evad.org
 
-Les membres adhèrent à l'association, votent en assemblée générale et
-co-construisent l'écosystème.
+
+# GLOSSAIRE ESSENTIEL
+
+- ICI : Indicateur de Changement d'Impact, l'unité élémentaire ; une
+  variation contre une base T0.
+- Vadance : le score d'impact projeté (la promesse), sur 100.
+- Vadité : l'impact réellement prouvé et vérifié (la preuve).
+- Monnaie Vade : la monnaie locale, frappée sur impact prouvé, en boucle
+  fermée (appelée « graines » sur le site).
+- Boucle VADE : Valoriser, Activer, Développer, Élever.
+- Triptyque : l'affichage des trois capitaux, jamais un score nu.
+- Plancher : le seuil par capital qui déclenche l'alerte de
+  non-compensation.
+- Taux de tenue : Vadité ÷ Vadance, la part des promesses transformées en
+  preuves.
+- T0 : la base de référence, l'état avant l'action.
 
 
 # QUESTIONS FRÉQUENTES
 
 Q : C'est quoi la Vadance ?
-R : La Vadance est la promesse d'impact d'un lieu : ce qu'il s'engage à
-    devenir, son objectif adossé à des indicateurs. Elle devient Vadité
-    au fur et à mesure que les preuves sont documentées et vérifiées.
+R : La Vadance est la promesse d'impact d'un lieu : son score d'impact
+    projeté sur 100, calculé sur le plan. Elle sert à mobiliser et à
+    engager le capital, et devient Vadité une fois les preuves vérifiées.
 
 Q : C'est quoi la Vadité ?
-R : La Vadité est le score d'impact réellement prouvé d'un lieu, preuves
-    à l'appui. C'est la promesse (Vadance) tenue et démontrée.
+R : La Vadité est l'impact réellement prouvé et vérifié d'un lieu, calculé
+    sur les valeurs réelles. C'est ce que reçoit le financeur ; elle
+    libère le capital.
 
 Q : C'est quoi le taux de tenue ?
-R : C'est la part de la promesse (Vadance) déjà transformée en preuves
-    (Vadité). Par exemple, une Vadance de 85 et une Vadité de 55 donnent
-    un taux de tenue d'environ 65 %.
+R : C'est la Vadité divisée par la Vadance : la part de la promesse déjà
+    transformée en preuves. C'est l'indicateur anti-greenwashing. Exemple :
+    Vadance 85 et Vadité 55 donnent environ 65 %.
 
-Q : C'est quoi la spirale VADE ?
-R : C'est le parcours partagé par les trois profils : Valoriser, Activer,
-    Développer, Essaimer. On peut y entrer à l'étape qui correspond à son
-    moment, et la spirale remonte un cran plus haut à chaque tour.
+Q : C'est quoi un ICI ?
+R : Un Indicateur de Changement d'Impact : l'unité de mesure d'EVAD. Il
+    mesure la variation d'une grandeur vérifiable entre une base T0 et un
+    état ultérieur, attribuable à l'action du lieu.
 
-Q : C'est quoi les graines ?
-R : C'est la monnaie locale d'EVAD. On en gagne en contribuant et on les
-    dépense dans le réseau (ateliers, hébergements, formations,
-    produits). La valeur reste sur le territoire.
+Q : C'est quoi la boucle VADE ?
+R : Le parcours partagé par les trois profils : Valoriser, Activer,
+    Développer, Élever. On peut y entrer à l'étape qui correspond à son
+    moment, et la boucle remonte un cran plus haut à chaque tour.
+
+Q : C'est quoi la monnaie Vade (les graines) ?
+R : Une monnaie locale frappée sur impact prouvé, qui circule en boucle
+    fermée entre Bâtisseurs et Pilotes. Elle n'est pas convertible en
+    euros et ne sort pas de l'écosystème : la valeur reste sur le
+    territoire.
+
+Q : Comment EVAD gagne-t-il de l'argent ?
+R : EVAD ne vend pas l'impact, il vend le passage : une commission
+    plafonnée sur la preuve (la Vadité) et la coordination, entre
+    l'économie en euros et le local régénératif.
 
 Q : Comment référencer mon lieu ?
 R : En tant que Pilote d'impact, vous créez la fiche de votre lieu sur la
-    Carte de l'écosystème et publiez vos premières quêtes. Pour un
-    accompagnement, écrivez à contact@evad.org.
-
-Q : EVAD, c'est payant ?
-R : EVAD Connect est une association loi 1901 à but non lucratif, et ses
-    communs sont ouverts. Pour les détails d'accès à la bêta, écrivez à
-    contact@evad.org.
+    Carte, établissez votre base T0 et publiez vos premières quêtes. Pour
+    un accompagnement, écrivez à contact@evad.org.

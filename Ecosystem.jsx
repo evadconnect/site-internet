@@ -58,12 +58,12 @@ const TOOLS = [
     name: "Mesure d'impact",
     icon: '📊',
     tint: '#e0eef6',
-    desc: 'Le score REGEN sur quatre dimensions : écologie, social, gouvernance, économie. Chaque preuve fait monter le score.',
-    apport: 'Mesurer pour rendre crédible : exigeant, vérifiable.',
+    desc: 'Chaque lieu affiche sa Vadance, sa promesse d\'impact, et sa Vadité, ce qui est déjà prouvé. Le taux de tenue mesure l\'écart entre les deux : chaque preuve documentée rapproche la promesse de la réalité.',
+    apport: 'Mesurer pour rendre crédible : promesse affichée, preuves vérifiées.',
     roleDesc: {
-      pilote:    "Affichez le score REGEN de votre lieu, rendez vos progrès visibles et crédibles auprès des financeurs et des bâtisseurs.",
-      batisseur: "Voyez l'impact réel des lieux où vous allez agir : leur score, leurs preuves récentes, leur trajectoire.",
-      semeur:    "Allouez vos fonds aux lieux qui prouvent leur impact, suivez la progression du REGEN score de votre portefeuille.",
+      pilote:    "Affichez la Vadance de votre lieu et faites-la monter en Vadité : chaque preuve documentée rend vos progrès crédibles auprès des financeurs et des bâtisseurs.",
+      batisseur: "Voyez la Vadité réelle des lieux où vous allez agir : ce qui est déjà prouvé, leur taux de tenue, leur trajectoire.",
+      semeur:    "Financez les lieux qui transforment leur Vadance en Vadité, et suivez le taux de tenue de votre portefeuille.",
     },
   },
   {
@@ -136,26 +136,55 @@ const ToolVisual = ({ id }) => {
   );
 
   if (id === 'mesure') return (
-    <div style={{ ...common, background: 'linear-gradient(135deg, #016b52 0%, #018262 100%)', border: 'none' }}>
-      <div style={{ padding: 36, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#7ec9b0', marginBottom: 14 }}>Ferme du Champ Vert</div>
-        <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 88, lineHeight: 1, color: '#e8f7f3', fontFeatureSettings: "'tnum' 1" }}>
-          78<span style={{ fontSize: 32, opacity: .55, fontWeight: 600 }}>/100</span>
-        </div>
-        <div style={{ fontSize: 12, color: '#cfeee7', opacity: .75, marginTop: 8 }}>+12 points sur les 6 derniers mois</div>
-        <div style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
-          {[['Écologie',78,'#4aab8f'],['Social',64,'#c8732a'],['Gouvernance',52,'#7a6ea8'],['Économie',71,'#f0c84a']].map(([l,v,c]) => (
-            <div key={l}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#cfeee7', marginBottom: 4 }}>
-                <span>{l}</span><span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 700, color: c }}>{v}</span>
-              </div>
-              <div style={{ height: 4, background: 'rgba(207,238,231,.1)', borderRadius: 100 }}>
-                <div style={{ width: v + '%', height: '100%', background: c, borderRadius: 100 }}/>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div style={{ ...common, background: 'radial-gradient(120% 90% at 50% 12%, #17392c 0%, #0b201a 72%)', border: 'none' }}>
+      <svg viewBox="0 0 500 460" width="100%" height="100%" style={{ fontFamily: "'Satoshi',sans-serif" }}>
+        <defs>
+          <linearGradient id="vaditeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#8fd6b8"/>
+            <stop offset="1" stopColor="#4aab8f"/>
+          </linearGradient>
+        </defs>
+
+        {/* badge · taux de tenue */}
+        <g transform="translate(250,42)">
+          <rect x="-120" y="-21" width="240" height="42" rx="21" fill="rgba(126,201,176,.1)" stroke="rgba(126,201,176,.35)"/>
+          <text x="0" y="6" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">📈 Taux de tenue · 65%</text>
+        </g>
+
+        {/* axis + baseline */}
+        {[['100',155],['50',270],['0',385]].map(([l,y]) => (
+          <text key={l} x="62" y={Number(y)+4} textAnchor="end" fontSize="13" fontWeight="600" fill="#6f9184">{l}</text>
+        ))}
+        <line x1="82" y1="384" x2="470" y2="384" stroke="rgba(207,238,231,.28)" strokeWidth="1"/>
+
+        {/* objectif (85) dashed guide line */}
+        <line x1="138" y1="184" x2="470" y2="184" stroke="rgba(126,201,176,.4)" strokeWidth="1.5" strokeDasharray="5 5"/>
+
+        {/* Vadance — objectif (ghost bar, 85) */}
+        <rect x="138" y="184" width="96" height="200" rx="16" fill="rgba(122,201,176,.1)" stroke="#4aab8f" strokeWidth="1.8" strokeDasharray="6 5"/>
+        <text x="186" y="168" textAnchor="middle" fontSize="42" fontWeight="900" fill="#5cbf9c">85</text>
+        <text x="186" y="412" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">Vadance</text>
+        <text x="186" y="432" textAnchor="middle" fontSize="12" fill="#9bbcb0">ton objectif</text>
+
+        {/* Vadité — déjà prouvé (solid bar, 55) */}
+        <rect x="290" y="250" width="98" height="138" rx="18" fill="#5bb894" opacity=".3"/>
+        <rect x="292" y="253" width="94" height="131" rx="14" fill="url(#vaditeGrad)"/>
+        <text x="339" y="238" textAnchor="middle" fontSize="42" fontWeight="900" fill="#eafaf4">55</text>
+        <text x="339" y="412" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">Vadité</text>
+        <text x="339" y="432" textAnchor="middle" fontSize="12" fill="#9bbcb0">déjà prouvé ✓</text>
+
+        {/* +30 à prouver — flèche de Vadité vers l'objectif */}
+        <g transform="translate(410,0)">
+          <line x1="0" y1="253" x2="0" y2="192" stroke="#7ec9b0" strokeWidth="2.6"/>
+          <polygon points="0,182 -8,196 8,196" fill="#7ec9b0"/>
+          <text x="14" y="224" fontSize="18" fontWeight="800" fill="#7ec9b0">+30</text>
+          <text x="14" y="242" fontSize="12" fill="#cfeee7">à prouver</text>
+          <text x="-1" y="167" textAnchor="middle" fontSize="20">🎯</text>
+        </g>
+
+        {/* caption */}
+        <text x="250" y="452" textAnchor="middle" fontSize="15" fontWeight="700" fill="#e8f7f3">Transforme tes promesses en preuves 🌱</text>
+      </svg>
     </div>
   );
 

@@ -1,0 +1,45 @@
+==========================================================
+  DOCUMENTATION EVAD — Base de connaissances de Deva
+==========================================================
+
+  → Collez ici le contenu de votre document de 20 pages.
+  → Texte brut uniquement (pas de PDF, pas d'images).
+  → Vous pouvez l'organiser en sections avec des titres :
+    ça aide Deva à mieux retrouver l'information.
+  → À chaque mise à jour du document, il suffit de remplacer
+    le texte ci-dessous : aucune autre manipulation.
+
+----------------------------------------------------------
+  EXEMPLE DE STRUCTURE (à remplacer par votre contenu)
+----------------------------------------------------------
+
+# PRÉSENTATION D'EVAD
+EVAD (Écosystème Vivant Autonome & Décentralisé) est ...
+
+# LES TROIS PROFILS
+- Pilote d'impact : ...
+- Bâtisseur d'impact : ...
+- Semeur d'impact : ...
+
+# LES QUATRE PILIERS
+- Solarpunk : ...
+- Économie régénérative : ...
+- Écocratie : ...
+- Gamification : ...
+
+# LA BOUCLE REGEN (graines, quêtes, preuves, score)
+...
+
+# L'ASSOCIATION EVAD CONNECT
+...
+
+# QUESTIONS FRÉQUENTES
+Q : Comment référencer mon lieu ?
+R : ...
+
+Q : Comment fonctionnent les graines ?
+R : ...
+
+----------------------------------------------------------
+  (Supprimez cet exemple et collez votre document ci-dessous)
+----------------------------------------------------------

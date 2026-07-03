@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EVAD · Tous nos liens</title>
+<meta name="theme-color" content="#e8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08201a" media="(prefers-color-scheme: dark)">
+<meta name="description" content="EVAD — l'écosystème régénératif. Rejoignez la bêta, découvrez le site, suivez-nous et soutenez l'association.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EVAD · Tous nos liens">
+<meta property="og:description" content="L'écosystème régénératif de demain prend racine aujourd'hui.">
+<meta property="og:image" content="https://evad.org/assets/og-card.jpg">
+
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<style>
+  @font-face{font-family:'Satoshi';src:url('https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2') format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2') format('woff2');font-weight:700;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('https://cdn.fontshare.com/wf/NHPGVFYUXYXE33DZ75OIT4JFGHITX5PE/PSUTMASCDJTVPERDYJZPN23BVUFUCQIF/J64QX5IPOHK56I2KYUNBQ5M2XWZEYKYX.woff2') format('woff2');font-weight:900;font-display:swap}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --forest:#018262; --moss:#016b52; --fern:#4aab8f; --sage:#7ec9b0;
+    --mist:#cfeee7; --cream:#e8f7f3; --ink:#0d2b22; --fg2:#3d6b5a;
+    --amber:#c8732a; --sky:#3a6e8c;
+    --card:#ffffff; --card-bd:rgba(46,102,66,.12);
+  }
+  html{ -webkit-text-size-adjust:100% }
+  body{
+    font-family:'Satoshi',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    min-height:100vh; min-height:100dvh;
+    display:flex; justify-content:center;
+    padding:max(30px,env(safe-area-inset-top)) 20px max(36px,env(safe-area-inset-bottom));
+    -webkit-font-smoothing:antialiased;
+    position:relative; overflow-x:hidden;
+  }
+  /* soft ambient background (light) */
+  .bg{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none}
+  .bg::before,.bg::after{content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:.7}
+  .bg::before{width:480px;height:480px;left:-150px;top:-130px;
+    background:radial-gradient(circle at 50% 50%, #cfeee7 0%, rgba(207,238,231,0) 70%)}
+  .bg::after{width:520px;height:520px;right:-190px;bottom:-150px;
+    background:radial-gradient(circle at 50% 50%, #dcefe7 0%, rgba(220,239,231,0) 72%)}
+
+  main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center}
+
+  /* ─── Header ─── */
+  .logo{width:212px;height:auto;margin-bottom:8px}
+  .logo path{fill:var(--forest)}
+  .tagline{
+    font-family:'Satoshi',system-ui,sans-serif; font-style:normal; font-weight:700;
+    font-size:22px; line-height:1.3; text-align:center; color:var(--ink);
+    max-width:310px; margin-bottom:8px; letter-spacing:-.01em;
+  }
+  .tagline b{color:var(--forest);font-weight:600}
+  .eyebrow{
+    font-size:10.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--forest); opacity:.7; margin-bottom:30px; text-align:center;
+  }
+
+  /* ─── Links ─── */
+  .links{width:100%;display:flex;flex-direction:column;gap:13px}
+
+  .link{
+    display:flex; align-items:center; gap:14px;
+    width:100%; padding:17px 20px; border-radius:18px;
+    background:var(--card); border:1px solid var(--card-bd);
+    color:var(--ink); text-decoration:none;
+    font-size:15.5px; font-weight:700; letter-spacing:.005em;
+    box-shadow:0 2px 16px rgba(1,130,98,.06);
+    transition:transform .18s cubic-bezier(.4,0,.2,1), box-shadow .18s, border-color .18s;
+  }
+  .link .ic{width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--forest)}
+  .link .ic svg{width:100%;height:100%}
+  .link .txt{flex:1;min-width:0}
+  .link .sub{display:block;font-size:11.5px;font-weight:500;color:var(--fg2);opacity:.85;margin-top:2px;letter-spacing:0}
+  .link .arr{flex-shrink:0;color:var(--forest);opacity:.5;transition:transform .18s,opacity .18s}
+  .link:active{transform:scale(.985)}
+  @media (hover:hover){
+    .link:hover{box-shadow:0 14px 36px rgba(1,130,98,.14);border-color:rgba(1,130,98,.28);transform:translateY(-2px)}
+    .link:hover .arr{transform:translateX(3px);opacity:.85}
+  }
+
+  /* Primary (beta) */
+  .link.primary{
+    background:linear-gradient(135deg,var(--forest),var(--moss));
+    border:none; color:#fff; font-weight:800; font-size:16.5px;
+    padding:19px 22px; box-shadow:0 12px 28px rgba(1,130,98,.30);
+  }
+  .link.primary .ic,.link.primary .arr{color:#fff;opacity:1}
+  .link.primary .sub{color:#cfeee7;opacity:.95;font-weight:600}
+  @media (hover:hover){ .link.primary:hover{box-shadow:0 18px 38px rgba(1,130,98,.42);transform:translateY(-2px)} }
+
+  /* Section label */
+  .sect{
+    width:100%; display:flex; align-items:center; gap:12px;
+    margin:22px 2px 3px; font-size:10.5px; font-weight:700;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--forest); opacity:.7;
+  }
+  .sect::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(1,130,98,.25),transparent)}
+
+  /* accent dot on "agir" links */
+  .link .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 4px rgba(1,130,98,.06)}
+
+  /* ─── Socials ─── */
+  .socials{display:flex;gap:11px;justify-content:center;width:100%;margin-top:4px}
+  .soc{
+    width:50px;height:50px;border-radius:15px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--card);border:1px solid var(--card-bd);color:var(--forest);
+    box-shadow:0 2px 16px rgba(1,130,98,.06);
+    transition:transform .18s cubic-bezier(.4,0,.2,1),box-shadow .18s,border-color .18s,color .18s;
+  }
+  .soc svg{width:20px;height:20px}
+  .soc:active{transform:scale(.94)}
+  @media (hover:hover){.soc:hover{box-shadow:0 12px 28px rgba(1,130,98,.16);border-color:rgba(1,130,98,.3);color:var(--moss);transform:translateY(-2px)}}
+
+  /* ─── Share + vCard ─── */
+  .row2{display:flex;gap:11px;width:100%;margin-top:14px}
+  .mini{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 14px;border-radius:14px;background:var(--card);border:1px solid var(--card-bd);
+    color:var(--ink);font-family:'Satoshi',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;
+    box-shadow:0 2px 12px rgba(1,130,98,.05);transition:transform .16s,box-shadow .16s,border-color .16s}
+  .mini svg{width:18px;height:18px;color:var(--forest);flex-shrink:0}
+  .mini:active{transform:scale(.97)}
+  @media (hover:hover){.mini:hover{box-shadow:0 12px 26px rgba(1,130,98,.14);border-color:rgba(1,130,98,.28);transform:translateY(-2px)}}
+
+  /* ─── Footer ─── */
+  footer{margin-top:34px;text-align:center}
+  .foot-site{font-size:13px;color:var(--forest);text-decoration:none;font-weight:700;opacity:.85;transition:opacity .15s}
+  .foot-site:hover{opacity:1}
+  .foot-meta{margin-top:10px;font-size:10.5px;color:var(--fg2);opacity:.6;letter-spacing:.04em}
+
+  /* entrance — base state is always VISIBLE; only a gentle slide is animated */
+  @media (prefers-reduced-motion:no-preference){
+    main>*, .links .link{animation:rise .55s cubic-bezier(.2,.7,.2,1) backwards}
+    main>*:nth-child(1){animation-delay:.02s}
+    main>*:nth-child(2){animation-delay:.06s}
+    main>*:nth-child(3){animation-delay:.10s}
+    .link:nth-child(1){animation-delay:.12s}
+    .link:nth-child(2){animation-delay:.16s}
+    .link:nth-child(3){animation-delay:.20s}
+    .link:nth-child(5){animation-delay:.24s}
+    .link:nth-child(6){animation-delay:.28s}
+    .link:nth-child(7){animation-delay:.31s}
+    .link:nth-child(8){animation-delay:.34s}
+    .socials{animation-delay:.38s}
+    @keyframes rise{from{transform:translateY(15px)}to{transform:none}}
+  }
+
+  /* ─── Modal bêta ─── */
+  .ov{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;
+    background:rgba(13,43,34,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);padding:0}
+  .ov.open{display:flex}
+  .sheet{
+    width:100%;max-width:480px;max-height:92vh;max-height:92dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    background:#fbfdfc;border-radius:26px 26px 0 0;padding:0 22px max(26px,env(safe-area-inset-bottom));
+    box-shadow:0 -16px 50px rgba(13,43,34,.3);
+  }
+  @media(min-width:560px){.ov{align-items:center}.sheet{border-radius:26px;max-height:88vh}}
+  @media (prefers-reduced-motion:no-preference){ .ov.open .sheet{animation:sheetUp .34s cubic-bezier(.2,.7,.2,1)} @keyframes sheetUp{from{transform:translateY(40px)}to{transform:none}} }
+  .sheet-top{position:sticky;top:0;background:#fbfdfc;padding:18px 0 12px;display:flex;align-items:center;justify-content:space-between;z-index:2}
+  .sheet-grip{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:38px;height:4px;border-radius:99px;background:rgba(46,102,66,.2)}
+  .sheet-title{font-family:'Satoshi',sans-serif;font-weight:800;font-size:18px;color:var(--forest)}
+  .x{width:34px;height:34px;border-radius:50%;border:none;background:rgba(46,102,66,.08);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s}
+  .x:hover{background:rgba(46,102,66,.16)}
+  .sheet-intro{font-size:13.5px;line-height:1.55;color:var(--fg2);margin:2px 0 18px}
+  .sheet-intro b{color:var(--forest);font-weight:700}
+
+  .role{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;
+    padding:16px;border-radius:18px;background:#fff;border:1px solid var(--card-bd);
+    box-shadow:0 2px 12px rgba(1,130,98,.05);cursor:pointer;margin-bottom:12px;
+    transition:transform .16s,box-shadow .16s,border-color .16s}
+  .role:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(1,130,98,.12)}
+  .role-em{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+  .role-ey{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+  .role-nm{font-family:'Satoshi',sans-serif;font-weight:800;font-size:17px;color:var(--ink);line-height:1.15}
+  .role-ds{font-size:12.5px;line-height:1.45;color:var(--fg2);margin:5px 0 9px}
+  .role-pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:99px}
+
+  .field{width:100%;padding:14px 16px;margin-bottom:10px;border-radius:12px;border:1px solid var(--card-bd);
+    font-family:'Satoshi',sans-serif;font-size:15px;color:var(--ink);background:#fff;outline:none;
+    transition:border-color .15s,box-shadow .15s;-webkit-appearance:none}
+  .field::placeholder{color:#9bb4ab}
+  .chk{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.45;color:var(--fg2);cursor:pointer;margin:4px 0 2px}
+  .chk input{width:16px;height:16px;margin-top:1px;flex-shrink:0;cursor:pointer}
+  .submit{width:100%;padding:15px;margin-top:8px;border:none;border-radius:12px;color:#fff;
+    font-family:'Satoshi',sans-serif;font-size:15px;font-weight:800;cursor:pointer;
+    box-shadow:0 8px 20px rgba(1,130,98,.32);transition:transform .15s,box-shadow .15s,opacity .15s}
+  .submit:hover{transform:translateY(-1px)}
+  .submit:disabled{opacity:.7;cursor:wait}
+  .recap{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;margin-bottom:16px}
+  .recap-ch{background:none;border:none;font-weight:700;font-size:12px;cursor:pointer;flex-shrink:0;font-family:'Satoshi',sans-serif}
+  .err{font-size:12.5px;line-height:1.4;color:#b4451f;background:rgba(180,69,31,.08);border:1px solid rgba(180,69,31,.25);border-radius:10px;padding:10px 12px;margin-top:4px}
+  .ok-wrap{text-align:center;padding:20px 8px 10px}
+  .ok-em{font-size:40px}
+  .ok-t{font-family:'Satoshi',sans-serif;font-weight:800;font-size:19px;color:var(--ink);margin:10px 0 6px}
+  .ok-d{font-size:13.5px;line-height:1.55;color:var(--fg2)}
+  .login{margin-top:14px;font-size:12px;color:var(--fg2);text-align:center}
+
+  /* ─── Mode sombre automatique (réglage du téléphone) ─── */
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e8f7f3; --fg2:#9fc3b6;
+      --cream:#0a241c;
+      --card:rgba(232,247,243,.05); --card-bd:rgba(207,238,231,.14);
+    }
+    body{background:#08201a}
+    .logo path{fill:#e8f7f3}
+    .bg::before{background:radial-gradient(circle at 50% 50%, #0a5a45 0%, rgba(10,90,69,0) 70%);opacity:.5}
+    .bg::after{background:radial-gradient(circle at 50% 50%, #0a4a3a 0%, rgba(10,74,58,0) 72%);opacity:.5}
+    .eyebrow,.sect{color:var(--sage);opacity:.85}
+    .sect::after{background:linear-gradient(90deg,rgba(126,201,176,.3),transparent)}
+    .tagline b{color:var(--sage)}
+    .link{box-shadow:none}
+    .link .ic,.link .arr{color:var(--sage)}
+    .soc,.mini svg{color:var(--sage)}
+    .mini{box-shadow:none}
+    .foot-site{color:var(--sage)}
+    /* le bouton bêta (primary) et les modales restent inchangés */
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<main>
+  <svg class="logo" viewBox="0 0 640 296" aria-label="EVAD" role="img">
+    <path d="M 519.25 97.74 L 519.25 66.85 Q 519.25 66.01 520.09 66.01 L 537.22 65.96 Q 537.68 65.96 537.69 66.41 C 538.13 92.42 537.74 118.47 537.74 144.48 Q 537.74 158.95 536.60 164.40 C 528.65 202.47 479.76 216.24 450.14 193.23 C 415.31 166.17 428.84 109.29 471.53 99.68 Q 477.04 98.43 486.54 98.48 Q 502.61 98.55 518.51 98.48 A 0.74 0.74 0.0 0 0 519.25 97.74 Z M 483.58 116.06 C 463.68 116.48 448.88 133.42 449.58 152.68 C 450.33 173.23 467.82 190.16 489.05 186.94 C 507.04 184.20 518.93 168.81 519.11 150.74 Q 519.29 133.40 519.25 116.27 A 0.54 0.53 90.0 0 0 518.72 115.73 Q 501.14 115.68 483.58 116.06 Z"></path>
+    <path d="M 316.21 169.01 C 306.50 143.39 315.70 111.68 342.32 100.13 C 372.06 87.21 408.91 102.89 416.19 135.73 Q 417.44 141.36 417.48 154.50 Q 417.54 177.75 417.48 200.98 A 0.53 0.53 0.0 0 1 416.95 201.51 Q 395.53 201.47 373.96 201.52 Q 360.19 201.55 354.03 200.41 Q 326.17 195.28 316.21 169.01 Z M 337.65 126.65 C 321.87 144.79 330.12 173.11 352.57 180.98 Q 357.59 182.74 367.64 183.01 Q 383.61 183.46 399.39 183.19 A 0.87 0.87 0.0 0 0 400.24 182.32 Q 400.26 169.57 400.25 156.71 Q 400.23 143.70 398.64 138.57 C 390.61 112.64 355.32 106.33 337.65 126.65 Z"></path>
+    <path d="M 113.27 160.15 C 121.33 189.45 157.75 197.32 174.60 170.36 A 0.74 0.71 15.4 0 1 175.22 170.02 L 193.08 169.96 A 0.46 0.46 0.0 0 1 193.51 170.58 C 181.30 202.50 141.86 214.85 114.24 192.94 C 99.24 181.05 91.53 162.10 94.54 143.05 C 97.62 123.56 111.97 105.29 131.67 100.02 Q 137.32 98.51 147.48 98.35 Q 170.74 98.01 193.99 98.62 A 1.91 1.90 -57.0 0 0 194.92 98.42 Q 195.93 97.91 196.50 98.63 Q 196.84 99.06 196.77 99.93 C 196.45 104.08 196.64 108.70 196.21 112.33 C 193.10 138.77 172.64 159.25 145.57 159.41 Q 129.66 159.51 113.76 159.51 Q 113.09 159.51 113.27 160.15 Z M 177.67 115.72 C 164.72 116.16 150.00 113.64 137.92 116.75 Q 117.82 121.93 112.91 143.86 A 0.74 0.74 0.0 0 0 113.63 144.76 Q 126.56 144.72 139.67 144.76 Q 149.25 144.79 154.19 143.45 Q 173.77 138.15 178.22 116.38 A 0.55 0.55 0.0 0 0 177.67 115.72 Z"></path>
+    <path d="M 206.48 98.31 C 220.39 98.43 231.28 108.14 235.57 120.92 C 242.56 141.76 250.76 162.22 258.10 182.58 A 2.13 2.13 0.0 0 0 262.11 182.57 Q 272.30 153.94 282.65 125.24 C 288.36 109.41 294.96 99.52 312.85 98.30 A 0.65 0.64 8.8 0 1 313.50 99.18 Q 295.54 144.64 277.57 190.07 C 276.28 193.35 274.66 196.86 272.30 199.31 C 264.28 207.65 250.95 205.43 245.10 195.91 Q 243.06 192.58 240.59 186.31 Q 223.43 142.71 206.04 98.95 A 0.47 0.47 0.0 0 1 206.48 98.31 Z"></path>
+  </svg>
+
+  <p class="eyebrow" style="margin-bottom:16px">Écosystème Vivant Autonome &amp; Décentralisé</p>
+  <p class="tagline" style="margin-bottom:30px">Imaginons un avenir durable et <b>réalisons-le ensemble.</b></p>
+
+  <nav class="links" aria-label="Liens EVAD">
+
+    <div class="sect" style="margin-top:0">Découvrir EVAD</div>
+
+    <a class="link primary" id="betaBtn" href="https://evad.org/" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 7c0-2.8-2-5-5-5-1 3 1 5 5 5zM12 9c0-2.5 2-4.5 4.5-4.5C17 7 15 9 12 9z"/></svg></span>
+      <span class="txt">Rejoindre la bêta<span class="sub">Ouverture en octobre 2026 · accès prioritaire</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="link" href="https://evad.org/" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.8 2.5 4.2 6 4.2 9.5s-1.4 7-4.2 9.5C9.2 19 7.8 15.5 7.8 12S9.2 5 12 2.5z"/></svg></span>
+      <span class="txt">Visiter notre site<span class="sub">evad.org</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="link" id="nlBtn" href="https://evad.org/#suivre">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5h18v13H3z"/><path d="M3 7l9 6 9-6"/><circle cx="19" cy="5" r="2.6" fill="currentColor" stroke="none"/></svg></span>
+      <span class="txt">S'inscrire à la newsletter<span class="sub">Actualités de saison · 1 mail / saison</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    
+    <a class="link" href="mailto:contact@evad.org">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6 9-6"/></svg></span>
+      <span class="txt">Nous écrire<span class="sub">contact@evad.org</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    
+
+    <div class="sect">Participer à l'aventure</div>
+
+    <a class="link" href="https://www.helloasso.com/associations/evad-connect/formulaires/1" target="_blank" rel="noopener">
+      <span class="ic" style="font-size:20px">💚</span>
+      <span class="txt">Faire un don défiscalisé<span class="sub">Reçu fiscal · 66 % déductible</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="link" href="https://www.helloasso.com/associations/evad-connect/adhesions/devenir-membre-2026" target="_blank" rel="noopener">
+      <span class="ic" style="font-size:20px">🌱</span>
+      <span class="txt">Devenir membre<span class="sub">Rejoindre l'association · 2026</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    
+    <a class="link" href="mailto:contact@evad.org?subject=Devenir%20m%C3%A9c%C3%A8ne%20d'EVAD" >
+      <span class="ic" style="font-size:20px">🏛️</span>
+      <span class="txt">Soutenir en mécène<span class="sub">Entreprises & fondations</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    
+
+    <a class="link" href="https://compte.evad.org/apps/forms/s/MFdHsmKzPo9PSK3KjWo4czWn" target="_blank" rel="noopener">
+      <span class="ic" style="font-size:20px">🤝</span>
+      <span class="txt">Coopérer avec nous<span class="sub">Partenariats & collectifs</span></span>
+      <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <div class="sect">Nous suivre</div>
+  </nav>
+
+  <div class="socials">
+    <a class="soc" href="https://www.linkedin.com/company/88460539/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+    </a>
+    <a class="soc" href="https://www.instagram.com/evad_org" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="soc" href="https://www.youtube.com/@EVAD_org" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+    </a>
+    <a class="soc" href="https://www.tiktok.com/@evad_org" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06A6.34 6.34 0 0 0 5.43 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.47-.12z"/></svg>
+    </a>
+  </div>
+
+  <div class="row2">
+    <button class="mini" id="shareBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span id="shareLbl">Partager</span>
+    </button>
+    <button class="mini" id="vcardBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      <span>Ajouter aux contacts</span>
+    </button>
+  </div>
+
+  <footer>
+    <a class="foot-site" href="https://evad.org/" target="_blank" rel="noopener">evad.org</a>
+    <div class="foot-meta">Association d'intérêt général · Licence Creative Commons</div>
+  </footer>
+</main>
+
+<!-- ─── Modal d'inscription bêta ─── -->
+<div class="ov" id="betaOv" role="dialog" aria-modal="true" aria-label="S'inscrire à la bêta">
+  <div class="sheet" id="betaSheet">
+    <div class="sheet-grip"></div>
+    <div class="sheet-top">
+      <span class="sheet-title" id="sheetTitle">S'inscrire à la bêta</span>
+      <button class="x" id="betaClose" aria-label="Fermer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="betaBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Backend (mêmes valeurs que evad.org — clé anon publique)
+  var SUPABASE_URL  = 'https://lmhhrccmgebztioesmik.supabase.co';
+  var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtaGhyY2NtZ2VienRpb2VzbWlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzMjIyOTgsImV4cCI6MjA4MDg5ODI5OH0.epfoBIsZJHLqj96dYE7AvImK_EgjMW9PFtvLk4VwlDc';
+  var TABLE = 'inscription_beta';
+
+  var ROLES = {
+    pilote:    { emoji:'🏡', ey:'Porteurs de lieu', name:"Pilote d'impact",    desc:"Porteur·se d'un tiers-lieu, écolieu, ferme, association, incubateur…", pill:'Coordonner un lieu durable et visible', accent:'#018262', tint:'#dcefe7', structure:true, structurePh:'Structure (lieu, association…)' },
+    batisseur: { emoji:'🌿', ey:'Citoyens',         name:"Bâtisseur d'impact", desc:'Membre, particulier, étudiant, digital nomad, entrepreneur…',          pill:"Passer à l'action avec des avantages concrets", accent:'#c8732a', tint:'#fdf3e7', structure:false },
+    semeur:    { emoji:'🌾', ey:'Financeurs',        name:"Semeur d'impact",    desc:'Financeur public/privé, investisseur, fondation, collectivité…',       pill:'Soutenir des projets durables certifiés', accent:'#3a6e8c', tint:'#e8f4f9', structure:true, structurePh:'Structure (fondation, collectivité…)' },
+  };
+
+  var ov = document.getElementById('betaOv');
+  var body = document.getElementById('betaBody');
+  var titleEl = document.getElementById('sheetTitle');
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  function open(){ renderSelect(); ov.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ ov.classList.remove('open'); document.body.style.overflow=''; }
+
+  function renderSelect(){
+    titleEl.textContent = "S'inscrire à la bêta";
+    var h = '<p class="sheet-intro">Notre prototype ouvre en <b>octobre 2026</b>. Inscrivez-vous pour le tester en avant-première, être convié·e à notre <b>événement de lancement</b> et nous aider à le faire grandir.</p>';
+    Object.keys(ROLES).forEach(function(id){
+      var r = ROLES[id];
+      h += '<button class="role" data-role="'+id+'">'
+        +    '<span class="role-em" style="background:'+r.tint+'">'+r.emoji+'</span>'
+        +    '<span style="flex:1;min-width:0">'
+        +      '<span class="role-ey" style="color:'+r.accent+'">'+esc(r.ey)+'</span>'
+        +      '<div class="role-nm">'+esc(r.name)+'</div>'
+        +      '<div class="role-ds">'+esc(r.desc)+'</div>'
+        +      '<span class="role-pill" style="background:'+r.tint+';color:'+r.accent+'">'+esc(r.pill)+'</span>'
+        +    '</span>'
+        +  '</button>';
+    });
+    h += '<div class="login">Déjà membre ? <button type="button" id="toLogin" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:'+ROLES.pilote.accent+';font-weight:700">Se connecter</button></div>';
+    body.innerHTML = h;
+    document.getElementById('toLogin').addEventListener('click', renderLogin);
+    [].forEach.call(body.querySelectorAll('.role'), function(b){
+      b.addEventListener('click', function(){ renderForm(b.getAttribute('data-role')); });
+    });
+  }
+
+  function renderLogin(){
+    titleEl.textContent = 'Se connecter';
+    var ac = ROLES.pilote.accent;
+    body.innerHTML =
+        '<h3 style="font-family:Satoshi,sans-serif;font-weight:800;font-size:22px;color:#0d2b22;margin:4px 0 18px;letter-spacing:-.01em">Bon retour parmi nous.</h3>'
+      + '<form id="loginForm" autocomplete="on">'
+      +   '<input class="field" name="email" type="email" placeholder="Adresse email" autocomplete="email" required>'
+      +   '<input class="field" name="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required>'
+      +   '<div id="loginNote"></div>'
+      +   '<button class="submit" type="submit" style="background:'+ac+'">Se connecter</button>'
+      + '</form>'
+      + '<div class="login">Pas encore de compte ? <button type="button" id="toSignup" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:'+ac+';font-weight:700">S\'inscrire à la bêta</button></div>';
+    document.getElementById('toSignup').addEventListener('click', renderSelect);
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('loginNote').innerHTML = '<div class="err" style="color:#016b52;background:rgba(1,130,98,.08);border-color:rgba(1,130,98,.25)">La connexion ouvrira avec la bêta, en octobre 2026. Inscrivez-vous pour être prévenu·e en avant-première.</div>';
+    });
+  }
+
+  function renderForm(id){
+    titleEl.textContent = "S'inscrire à la bêta";
+    var r = ROLES[id];
+    var h = '<div class="recap" style="background:'+r.accent+'12;border:1px solid '+r.accent+'33">'
+      +  '<span class="role-em" style="width:40px;height:40px;border-radius:11px;font-size:20px;background:'+r.tint+'">'+r.emoji+'</span>'
+      +  '<span style="flex:1;min-width:0"><div style="font-weight:800;font-size:14px;color:#0d2b22">'+esc(r.name)+'</div>'
+      +  '<div style="font-size:11.5px;color:#3d6b5a;margin-top:2px">'+esc(r.ey)+'</div></span>'
+      +  '<button class="recap-ch" id="chg" style="color:'+r.accent+'">Changer</button>'
+      + '</div>';
+    h += '<form id="betaForm" autocomplete="on">'
+      +  '<input class="field" name="prenom" placeholder="Prénom" autocomplete="given-name" required>'
+      +  '<input class="field" name="nom" placeholder="Nom" autocomplete="family-name" required>'
+      +  (r.structure ? '<input class="field" name="structure" placeholder="'+esc(r.structurePh)+'" autocomplete="organization" required>' : '')
+      +  '<input class="field" name="ville" placeholder="Ville" autocomplete="address-level2" required>'
+      +  '<input class="field" name="email" type="email" placeholder="Adresse email" autocomplete="email" required>'
+      +  '<label class="chk"><input type="checkbox" name="consent" required style="accent-color:'+r.accent+'"><span>J\'accepte qu\'EVAD conserve ces informations pour me recontacter au sujet de la bêta. Vos données ne sont jamais revendues.</span></label>'
+      +  '<label class="chk"><input type="checkbox" name="newsletter" checked style="accent-color:'+r.accent+'"><span>Je souhaite aussi recevoir la <b style="color:'+r.accent+'">newsletter</b> d\'EVAD. Désinscription en un clic à tout moment.</span></label>'
+      +  '<div id="betaErr"></div>'
+      +  '<button class="submit" type="submit" style="background:'+r.accent+'">'+r.emoji+' S\'inscrire à la bêta →</button>'
+      + '</form>';
+    body.innerHTML = h;
+    document.getElementById('chg').addEventListener('click', renderSelect);
+    document.getElementById('betaForm').addEventListener('submit', function(e){ submit(e, id); });
+  }
+
+  function submit(e, id){
+    e.preventDefault();
+    var r = ROLES[id];
+    var f = e.currentTarget;
+    var btn = f.querySelector('.submit');
+    var errBox = document.getElementById('betaErr');
+    errBox.innerHTML = '';
+    var data = {
+      role: id, role_label: r.name,
+      prenom: (f.prenom.value||'').trim(),
+      nom: (f.nom.value||'').trim(),
+      structure: (f.structure ? (f.structure.value||'').trim() : '') || null,
+      ville: (f.ville.value||'').trim(),
+      email: (f.email.value||'').trim(),
+      consent: f.consent.checked,
+    };
+    var wantsNL = f.newsletter && f.newsletter.checked;
+    btn.disabled = true; btn.textContent = 'Enregistrement…';
+
+    fetch(SUPABASE_URL + '/rest/v1/' + TABLE, {
+      method:'POST',
+      headers:{ 'apikey':SUPABASE_ANON, 'Authorization':'Bearer '+SUPABASE_ANON, 'Content-Type':'application/json', 'Prefer':'return=minimal' },
+      body: JSON.stringify(data),
+    }).then(function(res){
+      if(!res.ok) throw new Error('http '+res.status);
+      if (wantsNL && data.email) {
+        // best-effort (peut être bloqué par CORS si ce domaine n'est pas autorisé sur la fonction)
+        fetch(SUPABASE_URL + '/functions/v1/brevo-subscribe', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer '+SUPABASE_ANON, 'apikey':SUPABASE_ANON },
+          body: JSON.stringify({ email:data.email, prenom:data.prenom, nom:data.nom, ville:data.ville, role:id, consent:true }),
+        }).catch(function(){});
+      }
+      renderOk(r);
+    }).catch(function(){
+      btn.disabled = false; btn.innerHTML = r.emoji + " S'inscrire à la bêta →";
+      errBox.innerHTML = '<div class="err">Impossible d\'enregistrer votre inscription pour le moment. Merci de réessayer dans un instant.</div>';
+    });
+  }
+
+  function renderOk(r){
+    body.innerHTML = '<div class="ok-wrap"><div class="ok-em">🌱</div>'
+      + '<div class="ok-t">Merci pour votre inscription !</div>'
+      + '<div class="ok-d">Votre demande d\'accès <b style="color:'+r.accent+'">'+esc(r.name)+'</b> est bien enregistrée. Nous vous contacterons dès l\'ouverture de la bêta, en octobre 2026, et vous serez convié·e à notre événement de lancement.</div>'
+      + '<button class="submit" id="okClose" style="background:'+r.accent+';max-width:200px;margin:22px auto 0">Fermer</button></div>';
+    document.getElementById('okClose').addEventListener('click', close);
+  }
+
+  function openNewsletter(){ renderNewsletter(); ov.classList.add('open'); document.body.style.overflow='hidden'; }
+  function renderNewsletter(){
+    titleEl.textContent = 'Newsletter';
+    var ac = ROLES.pilote.accent;
+    body.innerHTML =
+        '<h3 style="font-family:Satoshi,sans-serif;font-weight:800;font-size:21px;color:#0d2b22;margin:4px 0 8px;letter-spacing:-.01em">Recevez la lettre de saison</h3>'
+      + '<p class="sheet-intro" style="margin-bottom:16px">Ce qui pousse dans l\'écosystème EVAD : nouveaux lieux, quêtes en cours, ce qu\'on apprend. Lent, soigné, sans spam.</p>'
+      + '<form id="nlForm" autocomplete="on">'
+      +   '<input class="field" name="prenom" placeholder="Prénom" autocomplete="given-name">'
+      +   '<input class="field" name="email" type="email" placeholder="Adresse email" autocomplete="email" required>'
+      +   '<label class="chk"><input type="checkbox" name="consent" required style="accent-color:'+ac+'"><span>J\'accepte de recevoir la newsletter d\'EVAD. Désinscription en un clic à tout moment.</span></label>'
+      +   '<div id="nlErr"></div>'
+      +   '<button class="submit" type="submit" style="background:'+ac+'">S\'inscrire à la newsletter</button>'
+      + '</form>';
+    document.getElementById('nlForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var f = e.currentTarget;
+      var btn = f.querySelector('.submit');
+      var errBox = document.getElementById('nlErr');
+      errBox.innerHTML = '';
+      var mail = (f.email.value||'').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){ errBox.innerHTML = '<div class="err">Merci d\'indiquer un email valide.</div>'; return; }
+      if(!f.consent.checked){ errBox.innerHTML = '<div class="err">Merci de cocher la case de consentement.</div>'; return; }
+      btn.disabled = true; btn.textContent = 'Inscription…';
+      fetch(SUPABASE_URL + '/functions/v1/brevo-subscribe', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer '+SUPABASE_ANON, 'apikey':SUPABASE_ANON },
+        body: JSON.stringify({ email:mail, prenom:(f.prenom.value||'').trim(), consent:true }),
+      }).then(function(res){
+        if(!res.ok) throw new Error('http '+res.status);
+        body.innerHTML = '<div class="ok-wrap"><div class="ok-em">🌱</div>'
+          + '<div class="ok-t">Merci, c\'est noté !</div>'
+          + '<div class="ok-d">Vous recevrez bientôt notre prochaine lettre de saison.</div>'
+          + '<button class="submit" id="nlClose" style="background:'+ac+';max-width:200px;margin:22px auto 0">Fermer</button></div>';
+        document.getElementById('nlClose').addEventListener('click', close);
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = "S'inscrire à la newsletter";
+        errBox.innerHTML = '<div class="err">Une erreur est survenue. Réessayez dans un instant.</div>';
+      });
+    });
+  }
+
+  document.getElementById('betaBtn').addEventListener('click', function(e){ e.preventDefault(); open(); });
+  document.getElementById('nlBtn').addEventListener('click', function(e){ e.preventDefault(); openNewsletter(); });
+  document.getElementById('betaClose').addEventListener('click', close);
+  ov.addEventListener('click', function(e){ if(e.target === ov) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && ov.classList.contains('open')) close(); });
+
+  // ─── Partager ───
+  var shareBtn = document.getElementById('shareBtn');
+  var shareLbl = document.getElementById('shareLbl');
+  shareBtn.addEventListener('click', function(){
+    var url = 'https://lien.evad.org';
+    var data = { title: 'EVAD', text: "Découvrez EVAD — l'écosystème régénératif.", url: url };
+    if (navigator.share) {
+      navigator.share(data).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function(){
+        shareLbl.textContent = 'Lien copié !';
+        setTimeout(function(){ shareLbl.textContent = 'Partager'; }, 1800);
+      });
+    } else {
+      window.prompt('Copiez ce lien :', url);
+    }
+  });
+
+  // ─── Ajouter aux contacts (vCard) ───
+  document.getElementById('vcardBtn').addEventListener('click', function(){
+    var vcard = [
+      'BEGIN:VCARD','VERSION:3.0','N:;EVAD;;;','FN:EVAD',
+      'ORG:EVAD — Écosystème Vivant Autonome & Décentralisé',
+      'EMAIL;TYPE=INTERNET:contact@evad.org',
+      'URL:https://evad.org',
+      'NOTE:Imaginons un avenir durable et réalisons-le ensemble.',
+      'END:VCARD'
+    ].join('\r\n');
+    var blob = new Blob([vcard], { type: 'text/vcard' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'EVAD.vcf';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 1000);
+  });
+})();
+</script>
+</body>
+</html>

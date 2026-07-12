@@ -288,6 +288,7 @@ const Footer = () => (
           ['Les solutions', '#ecosystem'],
           ['Les piliers', '#foundations'],
           ['La spirale VADE', '#cycle'],
+          ['Vadance & Vadité', '#vadite'],
           ['Deva', '#deva'],
         ] },
         { t: "L'association", l: [
@@ -399,6 +400,12 @@ const Footer = () => (
         <span style={{ opacity: .5 }}>·</span>
         <span>Licence Creative Commons</span>
         <span style={{ opacity: .5 }}>·</span>
+        <a href="mentions-legales.html" style={{ color: '#cfeee7', textDecoration: 'none', fontWeight: 600 }}
+           onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#7ec9b0'; }}
+           onMouseLeave={e => { e.currentTarget.style.opacity = ''; e.currentTarget.style.color = '#cfeee7'; }}>
+          Mentions légales &amp; RGPD
+        </a>
+        <span style={{ opacity: .5 }}>·</span>
         <a href="#prologue" style={{ color: '#7ec9b0', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 5 }}
            onMouseEnter={e => { e.currentTarget.style.opacity = '1'; }}
            onMouseLeave={e => { e.currentTarget.style.opacity = ''; }}>
@@ -413,6 +420,46 @@ const Footer = () => (
     `}</style>
   </footer>
 );
+
+// ─────────────────── Bandeau cookies (strictement nécessaires) ───────────────────
+const CookieNotice = () => {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    try { if (localStorage.getItem('evad.cookies.ack') !== '1') setShow(true); } catch { setShow(true); }
+  }, []);
+  const dismiss = () => {
+    try { localStorage.setItem('evad.cookies.ack', '1'); } catch {}
+    setShow(false);
+  };
+  if (!show) return null;
+  return (
+    <div role="region" aria-label="Information cookies" style={{
+      position: 'fixed', left: 16, right: 16, bottom: 16, zIndex: 60,
+      maxWidth: 720, margin: '0 auto',
+      background: '#0d2b22', color: '#e8f7f3',
+      border: '1px solid rgba(126,201,176,.22)', borderRadius: 18,
+      boxShadow: '0 20px 50px rgba(13,43,34,.35)',
+      padding: '18px 20px',
+      display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap',
+    }}>
+      <span aria-hidden="true" style={{ fontSize: 22, flexShrink: 0 }}>🍪</span>
+      <p style={{ flex: '1 1 300px', margin: 0, fontSize: 13.5, lineHeight: 1.55, color: '#cfeee7' }}>
+        Ce site n'utilise que des <b style={{ color: '#e8f7f3' }}>cookies strictement nécessaires</b> à son
+        fonctionnement. Aucun traceur publicitaire ni statistique&nbsp;: rien à accepter ou refuser.{' '}
+        <a href="mentions-legales.html#cookies" style={{ color: '#7ec9b0', fontWeight: 600, textDecoration: 'underline' }}>En savoir plus</a>
+      </p>
+      <button type="button" onClick={dismiss} style={{
+        flexShrink: 0, padding: '11px 22px', borderRadius: 100,
+        background: '#7ec9b0', color: '#0d2b22', border: 'none', cursor: 'pointer',
+        fontFamily: "'Satoshi',sans-serif", fontSize: 13.5, fontWeight: 700,
+      }}
+        onMouseEnter={e => { e.currentTarget.style.background = '#a8e6cf'; }}
+        onMouseLeave={e => { e.currentTarget.style.background = '#7ec9b0'; }}>
+        J'ai compris
+      </button>
+    </div>
+  );
+};
 
 // ─────────────────── App ───────────────────
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -465,11 +512,14 @@ const App = () => {
       <div data-fade><EcosystemSection role={persona} onChoose={choosePersona}/></div>
       <div data-fade><FoundationsSection/></div>
       <div data-fade><Cycle role={persona} onChoose={choosePersona}/></div>
+      <div data-fade><VaditeSection/></div>
+      <div data-fade><ExampleSection/></div>
       <div data-fade><DevaSection/></div>
       <div data-fade><AssociationSection teamLayout={tweaks.teamLayout}/></div>
       <CTASection role={persona}/>
       <Footer/>
       <BackToTop/>
+      <CookieNotice/>
       <DevaChat
         role={role}
         setRole={(r) => { setRole(r); setTweak('heroRole', r); }}

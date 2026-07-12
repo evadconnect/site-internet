@@ -25,8 +25,8 @@ const TEAM_GROUPS = [
     tint: '#e0eef6',
     members: [
       { name: 'Alexandra Cofano', role: 'Partenariats',         photo: window.__resources.teamAlexandra, linkedin: 'https://www.linkedin.com/in/alexandra-cofano-3784107/', email: 'alexandra.cofano@evad.org', message: "Je tisse les liens entre EVAD et celles et ceux qui partagent nos valeurs et conviction. C'est grâce à la confiance et l’audace collective que naissent les plus belles réussites." },
-      { name: 'Pierre Gaignet',  role: 'Réseau & maintenance', photo: window.__resources.teamPierre,    linkedin: 'https://www.linkedin.com/in/pierre-gaignet/', message: "Je m'assure que les outils tournent et que le réseau tienne. La sobriété technique, c'est aussi de l'écologie." },
-      { name: 'Ismail Belqi',    role: 'IA & data',            photo: window.__resources.teamIsmail,    linkedin: 'https://www.linkedin.com/in/ismail-belqi-1662b5156/', message: "Je mets l'IA et la donnée au service du vivant, pas l'inverse : frugales, utiles, au plus près du terrain." },
+      { name: 'Pierre Gaignet',  role: 'Réseau & Support IT', photo: window.__resources.teamPierre,    linkedin: 'https://www.linkedin.com/in/pierre-gaignet/', message: "Je m'assure que les outils tournent et que le réseau tienne. La sobriété technique, c'est aussi de l'écologie." },
+      { name: 'Ismail Belqi',    role: 'IA & Data',            photo: window.__resources.teamIsmail,    linkedin: 'https://www.linkedin.com/in/ismail-belqi-1662b5156/', message: "Je mets l'IA et la donnée au service du vivant, pas l'inverse : frugales, utiles, au plus près du terrain." },
       { name: 'Jonas Chaurial',  role: 'Communication',        photo: window.__resources.teamJonas,     linkedin: 'https://www.linkedin.com/in/jonas-chaurial/', message: "Je raconte EVAD pour donner envie d'agir. Les belles histoires sont celles qu'on écrit à plusieurs." },
     ],
   },
@@ -38,7 +38,7 @@ const TEAM_GROUPS = [
     accent: '#7a6ea8',
     tint: '#e5e0f0',
     members: [
-      { name: 'Bénédicte Fumey', role: 'Économie régénérative', photo: window.__resources.teamBenedicte, linkedin: 'https://www.linkedin.com/in/benedictefumey/', message: "J'apporte la rigueur de l'économie régénérative pour que l'impact ne soit jamais un slogan, mais une mesure." },
+      { name: 'Bénédicte Fumey', role: 'Économie régénérative', photo: window.__resources.teamBenedicte, linkedin: 'https://www.linkedin.com/in/benedictefumey/', email: 'benedicte.fumey@evad.org', message: "J'apporte la rigueur de l'économie régénérative pour que l'impact ne soit jamais un slogan, mais une mesure." },
       { name: 'Charles Judes',   role: 'Perma-comptabilité',   photo: window.__resources.teamCharles,   linkedin: 'https://www.linkedin.com/in/charles-judes/', message: "La perma-comptabilité, c'est compter ce qui compte vraiment : le vivant, et pas seulement l'argent." },
     ],
     link: { href: 'https://compte.evad.org/apps/forms/s/3YxDgfMCdPGf8gPyN7bmdM4w', label: 'Rejoindre le Conseil', primary: true, external: true },

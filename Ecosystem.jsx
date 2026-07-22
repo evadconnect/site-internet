@@ -58,7 +58,7 @@ const TOOLS = [
     name: "Mesure d'impact",
     icon: '📊',
     tint: '#e0eef6',
-    desc: 'Chaque lieu affiche sa Vadance, sa promesse d\'impact, et sa Vadité, ce qui est déjà prouvé. L'indice de confiance mesure l\'écart entre les deux : chaque preuve documentée rapproche la promesse de la réalité.',
+    desc: 'Chaque lieu affiche sa Vadance, sa promesse d\'impact, et sa Vadité, ce qui est déjà prouvé. L\'indice de confiance mesure l\'écart entre les deux : chaque preuve documentée rapproche la promesse de la réalité.',
     apport: 'Mesurer pour rendre crédible : promesse affichée, preuves vérifiées.',
     roleDesc: {
       pilote:    "Affichez la Vadance de votre lieu et faites-la monter en Vadité : chaque preuve documentée rend vos progrès crédibles auprès des financeurs et des bâtisseurs.",

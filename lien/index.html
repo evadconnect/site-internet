@@ -247,7 +247,7 @@
 
     <a class="link primary" id="betaBtn" href="https://evad.org/" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 7c0-2.8-2-5-5-5-1 3 1 5 5 5zM12 9c0-2.5 2-4.5 4.5-4.5C17 7 15 9 12 9z"/></svg></span>
-      <span class="txt">Rejoindre la bêta<span class="sub">Ouverture en octobre 2026 · accès prioritaire</span></span>
+      <span class="txt">Rejoindre la bêta<span class="sub">Ouverture en fin d'année · accès prioritaire</span></span>
       <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
@@ -371,7 +371,7 @@
 
   function renderSelect(){
     titleEl.textContent = "S'inscrire à la bêta";
-    var h = '<p class="sheet-intro">Notre prototype ouvre en <b>octobre 2026</b>. Inscrivez-vous pour le tester en avant-première, être convié·e à notre <b>événement de lancement</b> et nous aider à le faire grandir.</p>';
+    var h = '<p class="sheet-intro">Notre prototype ouvre en <b>fin d'année</b>. Inscrivez-vous pour le tester en avant-première, être convié·e à notre <b>événement de lancement</b> et nous aider à le faire grandir.</p>';
     Object.keys(ROLES).forEach(function(id){
       var r = ROLES[id];
       h += '<button class="role" data-role="'+id+'">'
@@ -407,7 +407,7 @@
     document.getElementById('toSignup').addEventListener('click', renderSelect);
     document.getElementById('loginForm').addEventListener('submit', function(e){
       e.preventDefault();
-      document.getElementById('loginNote').innerHTML = '<div class="err" style="color:#016b52;background:rgba(1,130,98,.08);border-color:rgba(1,130,98,.25)">La connexion ouvrira avec la bêta, en octobre 2026. Inscrivez-vous pour être prévenu·e en avant-première.</div>';
+      document.getElementById('loginNote').innerHTML = '<div class="err" style="color:#016b52;background:rgba(1,130,98,.08);border-color:rgba(1,130,98,.25)">La connexion ouvrira avec la bêta, en fin d'année. Inscrivez-vous pour être prévenu·e en avant-première.</div>';
     });
   }
 
@@ -479,7 +479,7 @@
   function renderOk(r){
     body.innerHTML = '<div class="ok-wrap"><div class="ok-em">🌱</div>'
       + '<div class="ok-t">Merci pour votre inscription !</div>'
-      + '<div class="ok-d">Votre demande d\'accès <b style="color:'+r.accent+'">'+esc(r.name)+'</b> est bien enregistrée. Nous vous contacterons dès l\'ouverture de la bêta, en octobre 2026, et vous serez convié·e à notre événement de lancement.</div>'
+      + '<div class="ok-d">Votre demande d\'accès <b style="color:'+r.accent+'">'+esc(r.name)+'</b> est bien enregistrée. Nous vous contacterons dès l\'ouverture de la bêta, en fin d'année, et vous serez convié·e à notre événement de lancement.</div>'
       + '<button class="submit" id="okClose" style="background:'+r.accent+';max-width:200px;margin:22px auto 0">Fermer</button></div>';
     document.getElementById('okClose').addEventListener('click', close);
   }

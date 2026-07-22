@@ -366,7 +366,7 @@ const SignupContent = ({ role, setRole, r, onLogin }) => {
             <span style={{ fontSize: 22, lineHeight: 1 }}>🌱</span>
             <div>
               <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 700, fontSize: 14, color: '#0d2b22', marginBottom: 3 }}>Merci pour votre inscription !</div>
-              <div style={{ fontSize: 12.5, color: '#3d6b5a', lineHeight: 1.45 }}>Votre demande d'accès <b style={{ color: r.accent }}>{r.name}</b> est bien enregistrée. Nous vous contacterons dès l'ouverture de la bêta, en octobre 2026, et vous serez convié·e à notre <b style={{ color: r.accent }}>événement de lancement</b>.</div>
+              <div style={{ fontSize: 12.5, color: '#3d6b5a', lineHeight: 1.45 }}>Votre demande d'accès <b style={{ color: r.accent }}>{r.name}</b> est bien enregistrée. Nous vous contacterons dès l'ouverture de la bêta, en fin d'année, et vous serez convié·e à notre <b style={{ color: r.accent }}>événement de lancement</b>.</div>
             </div>
           </div>
         ) : (
@@ -440,7 +440,7 @@ const SignupContent = ({ role, setRole, r, onLogin }) => {
   return (
   <>
     <div style={{ fontSize: 18, fontWeight: 900, letterSpacing: '.04em', color: '#018262', marginBottom: 8 }}>S'inscrire à la bêta</div>
-    <p style={{ fontSize: 13, lineHeight: 1.5, color: '#3d6b5a', margin: '0 0 16px' }}>Notre prototype ouvre en <b style={{ color: '#018262' }}>octobre 2026 à Bordeaux</b>. Inscrivez-vous pour le tester en avant-première, être convié·e à notre <b style={{ color: '#018262' }}>événement de lancement</b> et nous aider à le faire grandir avec vos retours.</p>
+    <p style={{ fontSize: 13, lineHeight: 1.5, color: '#3d6b5a', margin: '0 0 16px' }}>Notre prototype ouvre en <b style={{ color: '#018262' }}>fin d'année à Bordeaux</b>. Inscrivez-vous pour le tester en avant-première, être convié·e à notre <b style={{ color: '#018262' }}>événement de lancement</b> et nous aider à le faire grandir avec vos retours.</p>
     {Object.entries(ROLES).map(([id, x]) => {
       const isSel = role === id;
       return (

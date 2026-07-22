@@ -136,55 +136,57 @@ const ToolVisual = ({ id }) => {
   );
 
   if (id === 'mesure') return (
-    <div style={{ ...common, background: 'radial-gradient(120% 90% at 50% 12%, #17392c 0%, #0b201a 72%)', border: 'none' }}>
-      <svg viewBox="0 0 500 460" width="100%" height="100%" style={{ fontFamily: "'Satoshi',sans-serif" }}>
-        <defs>
-          <linearGradient id="vaditeGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#8fd6b8"/>
-            <stop offset="1" stopColor="#4aab8f"/>
-          </linearGradient>
-        </defs>
+    <div style={{ ...common, background: 'radial-gradient(120% 90% at 50% 12%, #17392c 0%, #0b201a 72%)', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28 }}>
+      <div style={{ width: '100%', maxWidth: 360, fontFamily: "'Satoshi',sans-serif" }}>
 
-        {/* badge · indice de confiance */}
-        <g transform="translate(250,42)">
-          <rect x="-120" y="-21" width="240" height="42" rx="21" fill="rgba(126,201,176,.1)" stroke="rgba(126,201,176,.35)"/>
-          <text x="0" y="6" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">📈 Indice de confiance · 65%</text>
-        </g>
+        {/* pill · indice de confiance */}
+        <div style={{ textAlign: 'center', fontSize: 15, color: '#e8f7f3', background: 'rgba(126,201,176,.1)', border: '1px solid rgba(126,201,176,.2)', borderRadius: 100, padding: '7px 16px', width: 'fit-content', margin: '0 auto 22px' }}>
+          📈 <b style={{ color: '#a8e6cf' }}>Indice de Confiance · 65%</b>
+        </div>
 
-        {/* axis + baseline */}
-        {[['100',155],['50',270],['0',385]].map(([l,y]) => (
-          <text key={l} x="62" y={Number(y)+4} textAnchor="end" fontSize="13" fontWeight="600" fill="#6f9184">{l}</text>
-        ))}
-        <line x1="82" y1="384" x2="470" y2="384" stroke="rgba(207,238,231,.28)" strokeWidth="1"/>
+        {/* plot */}
+        <div style={{ position: 'relative', height: 200, paddingLeft: 34 }}>
+          {/* axis */}
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 28, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', fontSize: 11, color: '#7ec9b0', opacity: .6, textAlign: 'right' }}>
+            <span>100</span><span>50</span><span>0</span>
+          </div>
+          {/* grid */}
+          <div style={{ position: 'absolute', left: 34, right: 8, top: 0, bottom: 0, background: 'linear-gradient(rgba(130,184,148,.18),rgba(130,184,148,.18)) top/100% 1px no-repeat, linear-gradient(rgba(130,184,148,.14),rgba(130,184,148,.14)) center/100% 1px no-repeat, linear-gradient(rgba(130,184,148,.14),rgba(130,184,148,.14)) bottom/100% 1px no-repeat' }}/>
+          {/* cols */}
+          <div style={{ position: 'absolute', left: 42, right: 16, top: 0, bottom: 0, display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end' }}>
+            {/* Vadance — ce que tu promets (ghost bar, 85) */}
+            <div style={{ position: 'relative', width: '44%', maxWidth: 120, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center' }}>
+              <div style={{ fontSize: 26, fontWeight: 900, color: '#a8e6cf', lineHeight: 1, marginBottom: 4 }}>85</div>
+              <div style={{ width: '100%', height: '85%', borderRadius: '12px 12px 3px 3px', border: '2px dashed rgba(168,230,207,.5)', background: 'rgba(168,230,207,.06)' }}/>
+            </div>
+            {/* Vadité — déjà prouvé (solid bar, 55) */}
+            <div style={{ position: 'relative', width: '44%', maxWidth: 120, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center' }}>
+              <div style={{ fontSize: 26, fontWeight: 900, color: '#e8f7f3', lineHeight: 1, marginBottom: 4 }}>55</div>
+              <div style={{ width: '100%', height: '55%', borderRadius: '12px 12px 3px 3px', background: 'linear-gradient(180deg,#8ce0b0,#4aab8f)', boxShadow: '0 0 22px rgba(126,201,176,.45)' }}/>
+              <div style={{ position: 'absolute', right: -8, top: '6%', transform: 'translateX(100%)', fontSize: 11, color: '#7ec9b0', lineHeight: 1.15, textAlign: 'left', whiteSpace: 'nowrap' }}>
+                🚩<b style={{ display: 'block', fontSize: 18, color: '#a8e6cf' }}>+30</b><span>à prouver</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* objectif (85) dashed guide line */}
-        <line x1="138" y1="184" x2="470" y2="184" stroke="rgba(126,201,176,.4)" strokeWidth="1.5" strokeDasharray="5 5"/>
+        {/* legend */}
+        <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: 10, paddingLeft: 34 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <span style={{ fontWeight: 800, fontSize: 15, color: '#e8f7f3' }}>Vadance</span>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase', color: '#7ec9b0', opacity: .8, marginTop: 2 }}>ce que tu promets</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <span style={{ fontWeight: 800, fontSize: 15, color: '#a8e6cf' }}>Vadité</span>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase', color: '#7ec9b0', opacity: .8, marginTop: 2 }}>déjà prouvé ✓</span>
+          </div>
+        </div>
 
-        {/* Vadance — objectif (ghost bar, 85) */}
-        <rect x="138" y="184" width="96" height="200" rx="16" fill="rgba(122,201,176,.1)" stroke="#4aab8f" strokeWidth="1.8" strokeDasharray="6 5"/>
-        <text x="186" y="168" textAnchor="middle" fontSize="42" fontWeight="900" fill="#5cbf9c">85</text>
-        <text x="186" y="412" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">Vadance</text>
-        <text x="186" y="432" textAnchor="middle" fontSize="12" fill="#9bbcb0">ton objectif</text>
-
-        {/* Vadité — déjà prouvé (solid bar, 55) */}
-        <rect x="290" y="250" width="98" height="138" rx="18" fill="#5bb894" opacity=".3"/>
-        <rect x="292" y="253" width="94" height="131" rx="14" fill="url(#vaditeGrad)"/>
-        <text x="339" y="238" textAnchor="middle" fontSize="42" fontWeight="900" fill="#eafaf4">55</text>
-        <text x="339" y="412" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">Vadité</text>
-        <text x="339" y="432" textAnchor="middle" fontSize="12" fill="#9bbcb0">déjà prouvé ✓</text>
-
-        {/* +30 à prouver — flèche de Vadité vers l'objectif */}
-        <g transform="translate(410,0)">
-          <line x1="0" y1="253" x2="0" y2="192" stroke="#7ec9b0" strokeWidth="2.6"/>
-          <polygon points="0,182 -8,196 8,196" fill="#7ec9b0"/>
-          <text x="14" y="224" fontSize="18" fontWeight="800" fill="#7ec9b0">+30</text>
-          <text x="14" y="242" fontSize="12" fill="#cfeee7">à prouver</text>
-          <text x="-1" y="167" textAnchor="middle" fontSize="20">🎯</text>
-        </g>
-
-        {/* caption */}
-        <text x="250" y="452" textAnchor="middle" fontSize="15" fontWeight="700" fill="#e8f7f3">Transforme tes promesses en preuves 🌱</text>
-      </svg>
+        {/* cta */}
+        <div style={{ textAlign: 'center', marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(130,184,148,.14)', fontSize: 15, fontWeight: 700, color: '#e8f7f3' }}>
+          Transforme tes promesses en preuves 🌱
+        </div>
+      </div>
     </div>
   );
 

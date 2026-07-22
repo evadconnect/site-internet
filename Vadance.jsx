@@ -71,29 +71,51 @@ const VaditeSection = () => (
           L'<b style={{ color: '#e8f7f3' }}>indice de confiance</b> (Vadité ÷ Vadance) mesure la capacité d'un lieu à transformer ses promesses en preuves : notre indicateur anti-greenwashing.
         </p>
       </div>
-      {/* Petite équation visuelle */}
+      {/* Schéma Vadance vs Vadité → indice de confiance */}
       <div style={{
         background: 'rgba(126,201,176,.07)', border: '1px solid rgba(126,201,176,.2)',
-        borderRadius: 20, padding: '24px 26px',
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14,
+        borderRadius: 20, padding: '20px 22px', fontFamily: "'Satoshi',sans-serif",
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 26 }} aria-hidden="true">🌱</div>
-            <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 800, fontSize: 15, color: '#a8e6cf', marginTop: 4 }}>Vadité</div>
-            <div style={{ fontSize: 11, color: '#cfeee7', opacity: .65 }}>prouvé</div>
+        {/* pilule · indice de confiance */}
+        <div style={{ textAlign: 'center', fontSize: 14, color: '#e8f7f3', background: 'rgba(126,201,176,.1)', border: '1px solid rgba(126,201,176,.2)', borderRadius: 100, padding: '6px 14px', width: 'fit-content', margin: '0 auto 18px' }}>
+          📈 <b style={{ color: '#a8e6cf' }}>Indice de Confiance · 65%</b>
+        </div>
+        {/* graphique */}
+        <div style={{ position: 'relative', height: 170, paddingLeft: 30 }}>
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 24, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', fontSize: 10, color: '#7ec9b0', opacity: .6, textAlign: 'right' }}>
+            <span>100</span><span>50</span><span>0</span>
           </div>
-          <div style={{ width: 40, height: 2, background: 'rgba(168,230,207,.5)', borderRadius: 2 }}/>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 26 }} aria-hidden="true">💭</div>
-            <div style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 800, fontSize: 15, color: '#e8f7f3', marginTop: 4 }}>Vadance</div>
-            <div style={{ fontSize: 11, color: '#cfeee7', opacity: .65 }}>promis</div>
+          <div style={{ position: 'absolute', left: 30, right: 6, top: 0, bottom: 0, background: 'linear-gradient(rgba(130,184,148,.18),rgba(130,184,148,.18)) top/100% 1px no-repeat, linear-gradient(rgba(130,184,148,.14),rgba(130,184,148,.14)) center/100% 1px no-repeat, linear-gradient(rgba(130,184,148,.14),rgba(130,184,148,.14)) bottom/100% 1px no-repeat' }}/>
+          <div style={{ position: 'absolute', left: 36, right: 30, top: 0, bottom: 0, display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end' }}>
+            {/* Vadance — ce que tu promets (85) */}
+            <div style={{ position: 'relative', width: '42%', maxWidth: 88, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center' }}>
+              <div style={{ fontSize: 22, fontWeight: 900, color: '#a8e6cf', lineHeight: 1, marginBottom: 3 }}>85</div>
+              <div style={{ width: '100%', height: '85%', borderRadius: '10px 10px 3px 3px', border: '2px dashed rgba(168,230,207,.5)', background: 'rgba(168,230,207,.06)' }}/>
+            </div>
+            {/* Vadité — déjà prouvé (55) */}
+            <div style={{ position: 'relative', width: '42%', maxWidth: 88, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center' }}>
+              <div style={{ fontSize: 22, fontWeight: 900, color: '#e8f7f3', lineHeight: 1, marginBottom: 3 }}>55</div>
+              <div style={{ width: '100%', height: '55%', borderRadius: '10px 10px 3px 3px', background: 'linear-gradient(180deg,#8ce0b0,#4aab8f)', boxShadow: '0 0 18px rgba(126,201,176,.4)' }}/>
+              <div style={{ position: 'absolute', right: -6, top: '4%', transform: 'translateX(100%)', fontSize: 10, color: '#7ec9b0', lineHeight: 1.15, textAlign: 'left', whiteSpace: 'nowrap' }}>
+                🚩<b style={{ display: 'block', fontSize: 16, color: '#a8e6cf' }}>+30</b><span>à prouver</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ width: '100%', height: 1, background: 'rgba(126,201,176,.18)' }}/>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span style={{ fontSize: 13, fontWeight: 600, color: '#cfeee7' }}>=</span>
-          <span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 17, color: '#e8f7f3' }}>Indice de confiance</span>
+        {/* légende */}
+        <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: 8, paddingLeft: 30, paddingRight: 24 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <span style={{ fontWeight: 800, fontSize: 14, color: '#e8f7f3' }}>Vadance</span>
+            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase', color: '#7ec9b0', opacity: .8, marginTop: 2 }}>ce que tu promets</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <span style={{ fontWeight: 800, fontSize: 14, color: '#a8e6cf' }}>Vadité</span>
+            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase', color: '#7ec9b0', opacity: .8, marginTop: 2 }}>déjà prouvé ✓</span>
+          </div>
+        </div>
+        {/* cta */}
+        <div style={{ textAlign: 'center', marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(130,184,148,.14)', fontSize: 13.5, fontWeight: 700, color: '#e8f7f3' }}>
+          Transforme tes promesses en preuves 🌱
         </div>
       </div>
     </div>

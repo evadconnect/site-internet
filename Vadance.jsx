@@ -68,7 +68,7 @@ const VaditeSection = () => (
           La <b style={{ color: '#a8e6cf' }}>Vadance</b> projette ce qu'un lieu s'engage à faire advenir. La <b style={{ color: '#a8e6cf' }}>Vadité</b> prouve ce qui a réellement eu lieu, vérifié.
         </p>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: '#cfeee7', margin: 0, opacity: .9 }}>
-          Le <b style={{ color: '#e8f7f3' }}>taux de tenue</b> (Vadité ÷ Vadance) mesure la capacité d'un lieu à transformer ses promesses en preuves : notre indicateur anti-greenwashing.
+          L'<b style={{ color: '#e8f7f3' }}>indice de confiance</b> (Vadité ÷ Vadance) mesure la capacité d'un lieu à transformer ses promesses en preuves : notre indicateur anti-greenwashing.
         </p>
       </div>
       {/* Petite équation visuelle */}
@@ -93,7 +93,7 @@ const VaditeSection = () => (
         <div style={{ width: '100%', height: 1, background: 'rgba(126,201,176,.18)' }}/>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span style={{ fontSize: 13, fontWeight: 600, color: '#cfeee7' }}>=</span>
-          <span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 17, color: '#e8f7f3' }}>Taux de tenue</span>
+          <span style={{ fontFamily: "'Satoshi',sans-serif", fontWeight: 900, fontSize: 17, color: '#e8f7f3' }}>Indice de confiance</span>
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@ const EXAMPLE_STEPS = [
     L: 'E', name: 'Essaimer', color: '#7a6ea8', tint: '#ece9f6',
     body: <>La preuve est vérifiée par les pairs, puis par un audit. Le passeport du lieu est publié. Le semeur reçoit sa <b style={{ color: '#0d2b22' }}>Vadité</b>, et un dividende d'impact.</>,
     tools: [{ e: '📈', l: 'Tableau de bord' }],
-    badge: { label: 'Taux de tenue', value: '93', unit: '%', note: 'la promesse est tenue' },
+    badge: { label: 'Indice de confiance', value: '93', unit: '%', note: 'la promesse est tenue' },
   },
 ];
 

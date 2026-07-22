@@ -45,10 +45,10 @@ Site : evad.org — Contact : contact@evad.org
 - Boucle VADE : LE PARCOURS. Valoriser → Activer → Développer → Essaimer ;
   à chaque tour, un cran plus haut.
 
-- Taux de tenue : Vadité ÷ Vadance. La capacité d'un lieu à transformer
+- Indice de confiance : Vadité ÷ Vadance. La capacité d'un lieu à transformer
   ses promesses en preuves. L'indicateur anti-greenwashing par
   excellence. Exemple : une Vadance de 85 et une Vadité de 55 donnent un
-  taux de tenue d'environ 65 %.
+  indice de confiance d'environ 65 %.
 
 
 # LES TROIS PROFILS
@@ -170,7 +170,7 @@ vérifiées (elle libère le capital).
 Déclaratif (faible, fortement décoté) → Documentaire (preuve à l'appui)
 → Pairs (vérifié par les pairs) → Tiers de confiance (fort, pleinement
 retenu).
-Taux de tenue = Vadité ÷ Vadance.
+Indice de confiance = Vadité ÷ Vadance.
 
 ## Correspondance avec les référentiels externes
 Les ICI se relient aux référentiels existants par des tables de
@@ -216,7 +216,7 @@ lieux.
 - Modélisation 3D : projeter un lieu en voxel avant de poser la première
   pierre, avec la communauté.
 - Mesure d'impact : Vadance (promesse) et Vadité (preuve) d'un lieu, et
-  le taux de tenue entre les deux.
+  l'indice de confiance entre les deux.
 - Réseau social : un réseau pensé pour l'action collective (quêtes,
   rencontres).
 - Marketplace : la place d'échange en graines (ateliers, hébergements,
@@ -339,7 +339,7 @@ Son cadre :
 - Triptyque : l'affichage des trois capitaux, jamais un score nu.
 - Plancher : le seuil par capital qui déclenche l'alerte de
   non-compensation.
-- Taux de tenue : Vadité ÷ Vadance, la part des promesses transformées en
+- Indice de confiance : Vadité ÷ Vadance, la part des promesses transformées en
   preuves.
 - T0 : la base de référence, l'état avant l'action.
 
@@ -356,7 +356,7 @@ R : La Vadité est l'impact réellement prouvé et vérifié d'un lieu, calculé
     sur les valeurs réelles. C'est ce que reçoit le financeur ; elle
     libère le capital.
 
-Q : C'est quoi le taux de tenue ?
+Q : C'est quoi l'indice de confiance ?
 R : C'est la Vadité divisée par la Vadance : la part de la promesse déjà
     transformée en preuves. C'est l'indicateur anti-greenwashing. Exemple :
     Vadance 85 et Vadité 55 donnent environ 65 %.

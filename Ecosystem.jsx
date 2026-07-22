@@ -58,12 +58,12 @@ const TOOLS = [
     name: "Mesure d'impact",
     icon: '📊',
     tint: '#e0eef6',
-    desc: 'Chaque lieu affiche sa Vadance, sa promesse d\'impact, et sa Vadité, ce qui est déjà prouvé. Le taux de tenue mesure l\'écart entre les deux : chaque preuve documentée rapproche la promesse de la réalité.',
+    desc: 'Chaque lieu affiche sa Vadance, sa promesse d\'impact, et sa Vadité, ce qui est déjà prouvé. L'indice de confiance mesure l\'écart entre les deux : chaque preuve documentée rapproche la promesse de la réalité.',
     apport: 'Mesurer pour rendre crédible : promesse affichée, preuves vérifiées.',
     roleDesc: {
       pilote:    "Affichez la Vadance de votre lieu et faites-la monter en Vadité : chaque preuve documentée rend vos progrès crédibles auprès des financeurs et des bâtisseurs.",
-      batisseur: "Voyez la Vadité réelle des lieux où vous allez agir : ce qui est déjà prouvé, leur taux de tenue, leur trajectoire.",
-      semeur:    "Financez les lieux qui transforment leur Vadance en Vadité, et suivez le taux de tenue de votre portefeuille.",
+      batisseur: "Voyez la Vadité réelle des lieux où vous allez agir : ce qui est déjà prouvé, leur indice de confiance, leur trajectoire.",
+      semeur:    "Financez les lieux qui transforment leur Vadance en Vadité, et suivez l'indice de confiance de votre portefeuille.",
     },
   },
   {
@@ -145,10 +145,10 @@ const ToolVisual = ({ id }) => {
           </linearGradient>
         </defs>
 
-        {/* badge · taux de tenue */}
+        {/* badge · indice de confiance */}
         <g transform="translate(250,42)">
           <rect x="-120" y="-21" width="240" height="42" rx="21" fill="rgba(126,201,176,.1)" stroke="rgba(126,201,176,.35)"/>
-          <text x="0" y="6" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">📈 Taux de tenue · 65%</text>
+          <text x="0" y="6" textAnchor="middle" fontSize="16" fontWeight="700" fill="#e8f7f3">📈 Indice de confiance · 65%</text>
         </g>
 
         {/* axis + baseline */}

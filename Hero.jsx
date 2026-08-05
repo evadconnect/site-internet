@@ -83,7 +83,7 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
       background: 'radial-gradient(ellipse at 80% 0%, rgba(74,171,143,.18) 0%, transparent 50%), #e8f7f3',
       overflow: 'hidden',
     }}>
-      <NavBar accent={accent} onLogin={() => setMode('login')} persona={persona} onChoose={onChoose}/>
+      <NavBar accent={accent} onLogin={() => { window.location.href = 'https://app.evad.org/?login=1'; }} persona={persona} onChoose={onChoose}/>
       <div style={{ maxWidth: 1180, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: 64, alignItems: 'center' }} className="hero-grid">
         <div>
           <div style={{ marginBottom: 28, display: 'flex', flexDirection: 'column', alignItems: 'center' }} className="hero-logo-block">
@@ -321,7 +321,7 @@ const HeroVisual = ({ role, setRole, mode, setMode }) => {
         {mode === 'login' ? (
           <LoginForm onBack={() => setMode('signup')}/>
         ) : (
-          <SignupContent role={role} setRole={setRole} r={r} onLogin={() => setMode('login')}/>
+          <SignupContent role={role} setRole={setRole} r={r} onLogin={() => { window.location.href = 'https://app.evad.org/?login=1'; }}/>
         )}
       </div>
     </div>

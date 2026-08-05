@@ -513,7 +513,6 @@ const App = () => {
       <div data-fade><FoundationsSection/></div>
       <div data-fade><Cycle role={persona} onChoose={choosePersona}/></div>
       <div data-fade><VaditeSection/></div>
-      <div data-fade><ExampleSection/></div>
       <div data-fade><DevaSection/></div>
       <div data-fade><AssociationSection teamLayout={tweaks.teamLayout}/></div>
       <CTASection role={persona}/>

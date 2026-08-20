@@ -42,11 +42,11 @@ const TOOLS = [
   },
   {
     id: 'marketplace',
-    name: 'Marketplace',
-    icon: '🛖',
+    name: 'Accès',
+    icon: '🔑',
     tint: '#fce8d8',
-    desc: "Une unité de contribution interne, les contributions, qui circule entre membres et lieux : vous en gagnez en agissant, vous les échangez contre des ateliers, nuits en yourte, formations ou produits du réseau. La valeur reste sur le territoire au lieu de fuir vers l'extérieur.",
-    apport: 'Une économie circulaire en contributions, locale, sans extraction.',
+    desc: "Un espace où votre engagement ouvre des accès. En contribuant sur le terrain, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés par les lieux du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
+    apport: 'Ouvrir des portes plutôt qu\'acheter : la valeur reste au commun, sur le territoire.',
     roleDesc: {
       pilote:    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.",
       batisseur: "Gagnez des contributions en accomplissant des quêtes, échangez-les contre des ateliers, nuits en yourte ou formations dans le réseau.",
@@ -131,7 +131,7 @@ const ToolVisual = ({ id }) => {
 
   if (id === 'marketplace') return (
     <div style={{ ...common, padding: 0 }}>
-      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Marketplace EVAD, fiches produits et services en contributions" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Accès EVAD : grille de cartes de ressources partagées par les lieux du réseau (ateliers, formations, nuits en écolieu, savoir-faire), ambiance solarpunk et non commerciale" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 

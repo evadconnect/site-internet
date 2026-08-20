@@ -404,8 +404,8 @@ const SignupContent = ({ role, setRole, r, onLogin }) => {
           }} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <input type="text" name="prenom" placeholder="Prénom" autoComplete="given-name" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
             <input type="text" name="nom" placeholder="Nom" autoComplete="family-name" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
-            {(role === 'pilote' || role === 'semeur') && (
-              <input type="text" name="structure" placeholder={role === 'pilote' ? 'Structure (lieu, association…)' : 'Structure (fondation, collectivité…)'} autoComplete="organization" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
+            {(role === 'pilote' || role === 'semeur' || role === 'batisseur') && (
+              <input type="text" name="structure" placeholder={role === 'pilote' ? 'Structure (lieu, association…)' : role === 'semeur' ? 'Structure (fondation, collectivité…)' : 'Structure (entreprise, asso… facultatif)'} autoComplete="organization" required={role !== 'batisseur'} style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
             )}
             <input type="text" name="ville" placeholder="Ville" autoComplete="address-level2" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
             <input type="email" name="email" placeholder="Adresse email" autoComplete="email" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>

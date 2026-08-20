@@ -117,7 +117,7 @@ const ROLE_ROWS = [
     cells: [
       "Identifier vos compétences, vos envies, ce que vous voulez apporter aux lieux qui vous entourent. Votre profil devient votre promesse de contribution.",
       "Explorer la bibliothèque, découvrir les solutions et les cartes compétences, vous former aux pratiques régénératives éprouvées.",
-      "Entreprendre les missions des lieux, contribuer sur le terrain, créditer vos Graines, documenter vos réalisations.",
+      "Entreprendre les missions des lieux, contribuer sur le terrain, créditer vos contributions, documenter vos réalisations.",
       "Vos contributions vérifiées construisent votre parcours. Transmettre, devenir référent, porter les pratiques vers d'autres lieux, et reprendre la spirale un cran plus haut.",
     ],
   },
@@ -489,7 +489,7 @@ const MarketplaceSection = () => {
   ];
   const bcols = { new: '#4aab8f', promo: '#c8732a', premium: 'linear-gradient(135deg,#7a6ea8,#3a6e8c)' };
   return (
-    <Section id="marketplace" eyebrow="Marketplace" title="Une économie en graines, pas en euros." sub="Les contributions deviennent des graines. Les graines deviennent des ateliers, des nuits en yourte, des formations. Une circulation locale, sans extraction.">
+    <Section id="marketplace" eyebrow="Marketplace" title="Une économie de contributions, pas d'euros." sub="Vos actes deviennent des contributions. Vos contributions deviennent des ateliers, des nuits en yourte, des formations. Une circulation locale, sans extraction.">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
         {items.map(m => (
           <div key={m.t} style={{ background: '#fff', border: '1px solid rgba(46,102,66,.1)', borderRadius: 28, overflow: 'hidden', boxShadow: '0 2px 16px rgba(1,130,98,.08)' }}>

@@ -2,7 +2,7 @@
 
 const ROLE_PROFILES = {
   pilote:    { emoji: '🏡', label: "Porteur de lieu", impactName: "Pilote d'impact",    short: 'Porteur de lieu', accent: '#018262', tagline: "Vous portez un lieu (tiers-lieu, écolieu, ferme, association…) et cherchez à le faire rayonner.", section: 'roles', nextCue: 'Découvrez votre profil et les outils EVAD →' },
-  batisseur: { emoji: '🌿', label: "Citoyen",         impactName: "Bâtisseur d'impact", short: 'Citoyen',          accent: '#c8732a', tagline: "Vous voulez agir sur des quêtes concrètes et gagner des graines à utiliser dans le réseau.",                section: 'roles', nextCue: 'Voyez les quêtes qui vous attendent →' },
+  batisseur: { emoji: '🌿', label: "Citoyen",         impactName: "Bâtisseur d'impact", short: 'Citoyen',          accent: '#c8732a', tagline: "Vous voulez agir sur des quêtes concrètes et gagner des contributions à utiliser dans le réseau.",                section: 'roles', nextCue: 'Voyez les quêtes qui vous attendent →' },
   semeur:    { emoji: '🌾', label: "Financeur",       impactName: "Semeur d'impact",    short: 'Financeur',        accent: '#3a6e8c', tagline: "Vous soutenez des projets durables (fondation, financeur, collectivité, investisseur).",         section: 'roles', nextCue: 'Découvrez comment financer contre des preuves →' },
 };
 
@@ -274,7 +274,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
         .map(a => ({ persona, page: curPage(), question: a.q, answer: a.a.trim() })));
       setMessages(m => [
         ...m,
-        { role: 'deva', text: "🌿 Merci, vos graines sont plantées. Chaque retour nourrit la prochaine version d'EVAD. Vous pouvez continuer la conversation ou refermer la fenêtre." },
+        { role: 'deva', text: "🌿 Merci, votre retour compte. Chaque contribution nourrit la prochaine version d'EVAD. Vous pouvez continuer la conversation ou refermer la fenêtre." },
       ]);
       setStage('chat');
       setFeedbackStep(0);
@@ -308,7 +308,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
     persona === 'batisseur' ? 'Quelles quêtes me correspondent ?' :
                               'Comment financer un projet ?',
     'Comment fonctionne la Vadité ?',
-    'Comment fonctionnent les graines ?',
+    'Comment fonctionnent les contributions ?',
   ] : [];
 
   const resetPersona = () => {

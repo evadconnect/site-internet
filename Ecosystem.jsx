@@ -45,12 +45,12 @@ const TOOLS = [
     name: 'Marketplace',
     icon: '🛖',
     tint: '#fce8d8',
-    desc: 'Une monnaie locale, les graines, qui circule entre membres et lieux : vous en gagnez en contribuant, vous les dépensez en ateliers, nuits en yourte, formations ou produits du réseau. La valeur reste sur le territoire au lieu de fuir vers l\'extérieur.',
-    apport: 'Une économie circulaire en graines, locale, sans extraction.',
+    desc: "Une unité de contribution interne, les contributions, qui circule entre membres et lieux : vous en gagnez en agissant, vous les échangez contre des ateliers, nuits en yourte, formations ou produits du réseau. La valeur reste sur le territoire au lieu de fuir vers l'extérieur.",
+    apport: 'Une économie circulaire en contributions, locale, sans extraction.',
     roleDesc: {
-      pilote:    "Proposez vos ateliers, hébergements et formations contre des graines. Une nouvelle source de revenus, ancrée localement.",
-      batisseur: "Gagnez des graines en accomplissant des quêtes, dépensez-les en ateliers, nuits en yourte ou formations dans le réseau.",
-      semeur:    "Soutenez la circulation locale en abondant les pots de graines : votre euro reste sur le territoire au lieu de fuir.",
+      pilote:    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.",
+      batisseur: "Gagnez des contributions en accomplissant des quêtes, échangez-les contre des ateliers, nuits en yourte ou formations dans le réseau.",
+      semeur:    "Soutenez la circulation locale en abondant les pots de contributions : votre euro reste sur le territoire au lieu de fuir.",
     },
   },
   {
@@ -71,11 +71,11 @@ const TOOLS = [
     name: 'Tableau de bord',
     icon: '📈',
     tint: '#f4e8d8',
-    desc: 'Un cockpit pour chaque rôle : graines, quêtes en cours, financements, indicateurs d\'impact. Voir son impact en un coup d\'œil et le partager.',
+    desc: "Un cockpit pour chaque rôle : contributions, quêtes en cours, financements, indicateurs d'impact. Voir son impact en un coup d'œil et le partager.",
     apport: 'Piloter à hauteur d\'humain : votre lieu, votre rôle, votre trajectoire.',
     roleDesc: {
       pilote:    "Pilotez votre lieu en un coup d'œil : quêtes ouvertes, preuves en attente, financements reçus, Vadité en évolution.",
-      batisseur: "Suivez vos graines, vos quêtes en cours, vos preuves validées et vos contributions à la bibliothèque commune.",
+      batisseur: "Suivez vos contributions, vos quêtes en cours, vos preuves validées et vos apports à la bibliothèque commune.",
       semeur:    "Visualisez votre portefeuille d'impact : fonds engagés, preuves reçues, Vadité agrégée de vos projets soutenus.",
     },
   },
@@ -131,7 +131,7 @@ const ToolVisual = ({ id }) => {
 
   if (id === 'marketplace') return (
     <div style={{ ...common, padding: 0 }}>
-      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Marketplace EVAD, fiches produits et services en graines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Marketplace EVAD, fiches produits et services en contributions" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 
@@ -199,7 +199,7 @@ const ToolVisual = ({ id }) => {
 
         {/* KPI row */}
         {[
-          ['#018262', '🌱', '128',  'graines',          28],
+          ['#018262', '🌱', '128',  'contributions',    28],
           ['#c8732a', '⚡', '4',    'quêtes en cours',   144],
           ['#3a6e8c', '✓', '12',   'preuves validées',  260],
           ['#7a6ea8', '📚', '6',    'contributions BDD', 376],
@@ -215,8 +215,8 @@ const ToolVisual = ({ id }) => {
         {/* chart card */}
         <g transform="translate(28,176)">
           <rect x="0" y="0" width="288" height="178" rx="14" fill="#fff" stroke="rgba(46,102,66,.12)"/>
-          <text x="14" y="22" fontFamily="Satoshi" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="#3d6b5a">GRAINES · 6 DERNIERS MOIS</text>
-          <text x="14" y="44" fontFamily="Satoshi" fontWeight="900" fontSize="22" fill="#018262">+128 <tspan fontSize="11" fill="#3d6b5a" fontWeight="600">graines</tspan></text>
+          <text x="14" y="22" fontFamily="Satoshi" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="#3d6b5a">CONTRIBUTIONS · 6 DERNIERS MOIS</text>
+          <text x="14" y="44" fontFamily="Satoshi" fontWeight="900" fontSize="22" fill="#018262">+128 <tspan fontSize="11" fill="#3d6b5a" fontWeight="600">contributions</tspan></text>
           {/* sparkline area */}
           <g transform="translate(14,60)">
             <path d="M0,90 L0,70 L40,72 L80,56 L120,60 L160,40 L200,30 L240,16 L260,10 L260,90 Z" fill="rgba(1,130,98,.12)"/>
@@ -336,7 +336,7 @@ const ROLE_PRIORITIES = {
 
 const ROLE_META = {
   pilote:    { emoji: '🏡', short: 'Pilote',    color: '#018262', tint: '#dcefe7', focus: 'piloter votre lieu',     accent: 'Visualisez votre territoire, mesurez votre impact, suivez vos quêtes.' },
-  batisseur: { emoji: '🌿', short: 'Bâtisseur', color: '#c8732a', tint: '#fce8d8', focus: 'agir sur le terrain',    accent: 'Trouvez vos quêtes, échangez vos graines, apprenez du commun.' },
+  batisseur: { emoji: '🌿', short: 'Bâtisseur', color: '#c8732a', tint: '#fce8d8', focus: 'agir sur le terrain',    accent: 'Trouvez vos quêtes, échangez vos contributions, apprenez du commun.' },
   semeur:    { emoji: '🌾', short: 'Semeur',    color: '#3a6e8c', tint: '#e0eef6', focus: 'financer avec preuves',   accent: 'Mesurez les impacts, cartographiez les projets, suivez votre portefeuille.' },
 };
 

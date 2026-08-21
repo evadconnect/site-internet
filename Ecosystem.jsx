@@ -46,7 +46,7 @@ const TOOLS = [
     icon: '🤝',
     tint: '#fce8d8',
     desc: "Un espace où votre engagement est reconnu. En contribuant sur le terrain, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés par les lieux du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
-    apport: 'Ouvrir des portes plutôt qu\'acheter : la valeur reste au commun, sur le territoire.',
+    apport: 'On ne paie pas, on reconnaît : ce que vous apportez au commun vous ouvre le réseau.',
     roleDesc: {
       pilote:    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.",
       batisseur: "Gagnez des contributions en accomplissant des quêtes, échangez-les contre des ateliers, nuits en yourte ou formations dans le réseau.",
@@ -130,8 +130,41 @@ const ToolVisual = ({ id }) => {
   );
 
   if (id === 'marketplace') return (
-    <div style={{ ...common, padding: 0 }}>
-      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Reconnaissance EVAD : grille de cartes de ressources partagées par les lieux du réseau (ateliers, formations, nuits en écolieu, savoir-faire), ambiance solarpunk et non commerciale" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+    <div style={{ ...common, background: 'linear-gradient(160deg, #fdf8f0 0%, #f2ede1 100%)', display: 'flex', flexDirection: 'column', padding: 22 }}>
+      {/* header + filtres sobres */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: '#0d2b22', marginRight: 'auto' }}>Ressources du réseau</div>
+        {['Par type', 'À proximité'].map(f => (
+          <span key={f} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, fontWeight: 600, color: '#3d6b5a', background: '#fff', border: '1px solid rgba(46,102,66,.14)', borderRadius: 100, padding: '6px 11px' }}>
+            {f}
+            <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        ))}
+      </div>
+      {/* grille de cartes de ressources */}
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'repeat(3, 1fr)', gap: 12 }}>
+        {[
+          { e: '🛠️', t: 'Atelier réparation', lieu: "L'Atelier du Val",       c: '#018262', tint: '#dcefe7' },
+          { e: '⛺',  t: 'Nuit en écolieu',    lieu: 'Ferme des Colibris',     c: '#c8732a', tint: '#fce8d8' },
+          { e: '🧰', t: 'Outils partagés',    lieu: 'La Commune Verte',       c: '#3a6e8c', tint: '#e0eef6' },
+          { e: '📚', t: 'Formation',          lieu: 'Le Champ des Possibles', c: '#7a6ea8', tint: '#ece8f5' },
+          { e: '🍞', t: 'Four à pain',        lieu: 'Le Fournil Partagé',     c: '#b06a2e', tint: '#f6e7d6' },
+          { e: '🪴', t: 'Serre & semences',   lieu: 'Les Serres du Coteau',   c: '#4aab8f', tint: '#dcf0e9' },
+        ].map((r, i) => (
+          <div key={i} style={{ background: '#fff', borderRadius: 18, border: '1px solid rgba(46,102,66,.1)', boxShadow: '0 2px 10px rgba(1,130,98,.05)', padding: 12, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+              <div style={{ width: 34, height: 34, borderRadius: 10, background: r.tint, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{r.e}</div>
+              <div style={{ minWidth: 0 }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: '#0d2b22', lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.t}</div>
+                <div style={{ fontSize: 10, color: '#3d6b5a', opacity: .8, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.lieu}</div>
+              </div>
+            </div>
+            <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'flex-end' }}>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: r.c, background: r.tint, borderRadius: 100, padding: '4px 11px' }}>Découvrir</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 

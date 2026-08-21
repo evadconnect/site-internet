@@ -42,10 +42,10 @@ const TOOLS = [
   },
   {
     id: 'marketplace',
-    name: 'Accès',
-    icon: '🔑',
+    name: 'Reconnaissance',
+    icon: '🤝',
     tint: '#fce8d8',
-    desc: "Un espace où votre engagement ouvre des accès. En contribuant sur le terrain, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés par les lieux du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
+    desc: "Un espace où votre engagement est reconnu. En contribuant sur le terrain, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés par les lieux du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
     apport: 'Ouvrir des portes plutôt qu\'acheter : la valeur reste au commun, sur le territoire.',
     roleDesc: {
       pilote:    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.",
@@ -131,7 +131,7 @@ const ToolVisual = ({ id }) => {
 
   if (id === 'marketplace') return (
     <div style={{ ...common, padding: 0 }}>
-      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Accès EVAD : grille de cartes de ressources partagées par les lieux du réseau (ateliers, formations, nuits en écolieu, savoir-faire), ambiance solarpunk et non commerciale" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      <img loading="lazy" decoding="async" src={(window.__resources && window.__resources.marketplace) || "assets/marketplace.jpg"} alt="Reconnaissance EVAD : grille de cartes de ressources partagées par les lieux du réseau (ateliers, formations, nuits en écolieu, savoir-faire), ambiance solarpunk et non commerciale" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
     </div>
   );
 

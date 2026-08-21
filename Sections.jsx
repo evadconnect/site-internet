@@ -489,7 +489,7 @@ const MarketplaceSection = () => {
   ];
   const bcols = { new: '#4aab8f', promo: '#c8732a', premium: 'linear-gradient(135deg,#7a6ea8,#3a6e8c)' };
   return (
-    <Section id="marketplace" eyebrow="Reconnaissance" title="Votre engagement est reconnu." sub="Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. Ateliers, formations, nuits en écolieu, savoir-faire partagés par les lieux du réseau. La valeur reste sur le territoire.">
+    <Section id="marketplace" eyebrow="Reconnaissance" title="Votre engagement est reconnu." sub="Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. Ateliers, formations, nuits en écolieu, savoir-faire partagés du réseau. La valeur reste sur le territoire.">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
         {items.map(m => (
           <div key={m.t} style={{ background: '#fff', border: '1px solid rgba(46,102,66,.1)', borderRadius: 28, overflow: 'hidden', boxShadow: '0 2px 16px rgba(1,130,98,.08)' }}>

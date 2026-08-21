@@ -45,7 +45,7 @@ const TOOLS = [
     name: 'Reconnaissance',
     icon: '🤝',
     tint: '#fce8d8',
-    desc: "Un espace où votre engagement est reconnu. En contribuant sur le terrain, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés par les lieux du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
+    desc: "Un écosystème où votre engagement est reconnu. En contribuant, vous débloquez des ateliers, des formations, des nuits en écolieu et des savoir-faire partagés du réseau. Ici, on n'achète rien : on ouvre des portes grâce à ce que l'on a apporté au commun. La valeur reste sur le territoire.",
     apport: 'On ne paie pas, on reconnaît : ce que vous apportez au commun vous ouvre le réseau.',
     roleDesc: {
       pilote:    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.",

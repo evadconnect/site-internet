@@ -411,7 +411,7 @@ const SignupContent = ({ role, setRole, r, onLogin }) => {
             <input type="email" name="email" placeholder="Adresse email" autoComplete="email" required style={inputStyle} onFocus={focusIn} onBlur={focusOut}/>
             <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 12, lineHeight: 1.45, color: '#3d6b5a', cursor: 'pointer', marginTop: 2 }}>
               <input type="checkbox" name="consent" required style={{ width: 16, height: 16, marginTop: 1, accentColor: r.accent, flexShrink: 0, cursor: 'pointer' }}/>
-              <span>J'accepte qu'EVAD conserve ces informations pour me recontacter au sujet de la bêta. Vos données ne sont jamais revendues. <a href="mailto:contact@evad.org" style={{ color: r.accent, fontWeight: 600 }}>En savoir plus</a>.</span>
+              <span>J'accepte qu'EVAD conserve ces informations pour me recontacter au sujet de la bêta. Vos données ne sont jamais revendues. <a href="mentions-legales.html#rgpd" target="_blank" rel="noopener" style={{ color: r.accent, fontWeight: 600 }}>En savoir plus</a>.</span>
             </label>
             {error && (
               <div style={{ fontSize: 12.5, lineHeight: 1.4, color: '#b4451f', background: 'rgba(180,69,31,.08)', border: '1px solid rgba(180,69,31,.25)', borderRadius: 10, padding: '10px 12px' }}>{error}</div>

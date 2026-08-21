@@ -178,7 +178,7 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
       ];
     }
     return [
-      { role: 'deva', text: "Bonjour ! Je suis Deva, l'esprit régénératif d'EVAD. Explorez le site librement, je reste là pour répondre à vos questions." },
+      { role: 'deva', text: "Bonjour ! Je suis Deva, l'assistant IA d'EVAD (l'esprit régénératif de l'écosystème). Explorez le site librement, je reste là pour répondre à vos questions." },
     ];
   });
 

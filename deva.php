@@ -68,6 +68,7 @@ $hits[] = $now;
 $input    = json_decode(file_get_contents('php://input'), true);
 $messages = $input['messages'] ?? [];
 $persona  = $input['persona']  ?? null;
+$lang     = (($input['lang'] ?? 'fr') === 'en') ? 'en' : 'fr';
 if (!is_array($messages) || count($messages) === 0) {
   http_response_code(400); echo json_encode(['error' => 'Aucun message reçu']); exit;
 }
@@ -76,23 +77,44 @@ if (!is_array($messages) || count($messages) === 0) {
 $doc = is_readable(DOC_FILE) ? file_get_contents(DOC_FILE) : '';
 
 /* ─── 5. Prompt système ──────────────────────────────────── */
-$profils = [
-  'pilote'    => "Pilote d'impact (porteur d'un lieu durable)",
-  'batisseur' => "Bâtisseur d'impact (citoyen qui agit via des quêtes)",
-  'semeur'    => "Semeur d'impact (financeur)",
-];
-$personaNote = isset($profils[$persona])
-  ? "Le visiteur est : {$profils[$persona]}. Adapte tes réponses à ce profil. " : '';
+if ($lang === 'en') {
+  $profils = [
+    'pilote'    => "Impact Pilot (steward of a sustainable place)",
+    'batisseur' => "Impact Builder (citizen who acts through quests)",
+    'semeur'    => "Impact Sower (funder)",
+  ];
+  $personaNote = isset($profils[$persona])
+    ? "The visitor is: {$profils[$persona]}. Adapt your answers to this profile. " : '';
 
-$system =
-    "Tu es Deva, le compagnon IA de l'écosystème EVAD (Écosystème Vivant Autonome & Décentralisé). "
-  . "Réponds en français, au vouvoiement, avec chaleur et concision (2 à 4 phrases maximum). "
-  . "N'utilise pas d'emojis, sauf 🌿 de manière occasionnelle. "
-  . $personaNote
-  . "Appuie-toi UNIQUEMENT sur la documentation ci-dessous pour répondre. "
-  . "Si l'information ne s'y trouve pas, dis-le honnêtement et invite à écrire à contact@evad.org. "
-  . "N'invente jamais de chiffres ni de faits.\n\n"
-  . "=== DOCUMENTATION EVAD ===\n" . $doc . "\n=== FIN DE LA DOCUMENTATION ===";
+  // La documentation est en français ; l'IA la comprend et répond en anglais.
+  $system =
+      "You are Deva, the AI companion of the EVAD ecosystem (Living, Autonomous & Decentralized Ecosystem). "
+    . "Reply in English, warmly and concisely (2 to 4 sentences maximum). "
+    . "Do not use emojis, except an occasional 🌿. "
+    . $personaNote
+    . "Rely ONLY on the documentation below to answer (it is written in French — read it and answer in English). "
+    . "If the information is not there, say so honestly and invite the visitor to write to contact@evad.org. "
+    . "Never invent figures or facts.\n\n"
+    . "=== DOCUMENTATION EVAD ===\n" . $doc . "\n=== FIN DE LA DOCUMENTATION ===";
+} else {
+  $profils = [
+    'pilote'    => "Pilote d'impact (porteur d'un lieu durable)",
+    'batisseur' => "Bâtisseur d'impact (citoyen qui agit via des quêtes)",
+    'semeur'    => "Semeur d'impact (financeur)",
+  ];
+  $personaNote = isset($profils[$persona])
+    ? "Le visiteur est : {$profils[$persona]}. Adapte tes réponses à ce profil. " : '';
+
+  $system =
+      "Tu es Deva, le compagnon IA de l'écosystème EVAD (Écosystème Vivant Autonome & Décentralisé). "
+    . "Réponds en français, au vouvoiement, avec chaleur et concision (2 à 4 phrases maximum). "
+    . "N'utilise pas d'emojis, sauf 🌿 de manière occasionnelle. "
+    . $personaNote
+    . "Appuie-toi UNIQUEMENT sur la documentation ci-dessous pour répondre. "
+    . "Si l'information ne s'y trouve pas, dis-le honnêtement et invite à écrire à contact@evad.org. "
+    . "N'invente jamais de chiffres ni de faits.\n\n"
+    . "=== DOCUMENTATION EVAD ===\n" . $doc . "\n=== FIN DE LA DOCUMENTATION ===";
+}
 
 /* ─── 6. Conversation ────────────────────────────────────── */
 $convo = [];

@@ -64,13 +64,17 @@ const DEVA_ENDPOINT = 'https://evad.org/deva.php';
 
 // Prompt système utilisé UNIQUEMENT par le repli d'aperçu.
 // En production, c'est deva.php qui construit le prompt + injecte la documentation.
-function buildSystemPrompt(persona) {
+function buildSystemPrompt(persona, lang) {
+  if (lang === 'en') {
+    return `You are Deva, the regenerative spirit and AI companion of the EVAD ecosystem (Living, Autonomous & Decentralized Ecosystem). EVAD connects three roles: Impact Pilots (stewards of sustainable places), Impact Builders (citizens who act through quests) and Impact Sowers (funders). The movement rests on four pillars: Solarpunk (vision), Regenerative economy (compass), Ecocracy (governance) and Gamification (engagement through quests, proofs, Vadance and Vadité). EVAD is run by the nonprofit EVAD Connect. ${persona ? `The visitor is an ${ROLE_PROFILES[persona].impactName}. Adapt your answers to this profile.` : ''} Reply in English, warmly and concisely (2-4 sentences max). No emojis except an occasional 🌿. If the question goes beyond EVAD, gently redirect.`;
+  }
   return `Tu es Deva, l'esprit régénératif et compagnon IA de l'écosystème EVAD (Écosystème Vivant Autonome & Décentralisé). EVAD relie trois rôles : Pilotes d'impact (porteurs de lieux durables), Bâtisseurs d'impact (citoyens qui agissent via des quêtes) et Semeurs d'impact (financeurs). Le mouvement s'appuie sur quatre piliers : Solarpunk (vision), Économie régénérative (boussole), Écocratie (gouvernance) et Gamification (engagement avec quêtes, preuves, Vadance et Vadité). EVAD est porté par l'association EVAD Connect. ${persona ? `Le visiteur est ${ROLE_PROFILES[persona].label}. Adapte tes réponses à ce profil.` : ''} Réponds en français, avec chaleur et concision (2-4 phrases max), au vouvoiement. Pas d'emojis sauf 🌿 occasionnel. Si la question dépasse EVAD, redirige gentiment.`;
 }
 
 // Appelle d'abord le backend réel (production) ; en cas d'absence (aperçu),
 // repli transparent sur le pont de prototype window.claude.complete.
 async function devaComplete(history, persona) {
+  const lang = (typeof window !== 'undefined' && window.EVAD_LANG === 'en') ? 'en' : 'fr';
   // 1) Backend Mistral sur evad.org
   try {
     const res = await fetch(DEVA_ENDPOINT, {
@@ -78,6 +82,7 @@ async function devaComplete(history, persona) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         persona: persona || null,
+        lang,
         messages: history.map(m => ({ role: m.role, text: m.text })),
       }),
     });
@@ -95,7 +100,7 @@ async function devaComplete(history, persona) {
       .join('\n');
     const reply = await window.claude.complete({
       messages: [
-        { role: 'user', content: buildSystemPrompt(persona) + '\n\n--- Conversation ---\n' + conv + '\nDeva:' },
+        { role: 'user', content: buildSystemPrompt(persona, lang) + '\n\n--- Conversation ---\n' + conv + '\nDeva:' },
       ],
     });
     return String(reply).trim();

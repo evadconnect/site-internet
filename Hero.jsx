@@ -136,6 +136,43 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
 
 const NAV_LINKS = [['#ecosystem', 'Solutions'], ['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Spirale'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
 
+// Sélecteur de langue FR / EN. La bascule mémorise le choix (localStorage)
+// et recharge la page ; la traduction est faite au runtime par i18n.js.
+// data-no-i18n empêche le moteur de traduire les libellés « FR » / « EN ».
+const LangSwitch = ({ overDark, compact }) => {
+  const cur = (typeof window !== 'undefined' && window.EVAD_LANG) || 'fr';
+  const activeColor = overDark ? '#0d2b22' : '#fff';
+  const idleColor = overDark ? '#f5fbf8' : '#0d2b22';
+  const mk = (code, label) => (
+    <button
+      type="button"
+      key={code}
+      onClick={() => { if (window.EVAD_setLang) window.EVAD_setLang(code); }}
+      aria-label={code === 'fr' ? 'Français' : 'English'}
+      aria-pressed={cur === code}
+      style={{
+        border: 'none', cursor: 'pointer', padding: compact ? '8px 14px' : '5px 9px',
+        borderRadius: 8, fontFamily: "'Satoshi',sans-serif", fontSize: compact ? 14 : 12,
+        fontWeight: 700, lineHeight: 1, transition: 'background .15s, color .15s',
+        background: cur === code ? '#018262' : 'transparent',
+        color: cur === code ? activeColor : idleColor,
+      }}>
+      {label}
+    </button>
+  );
+  return (
+    <div data-no-i18n="1" role="group" aria-label="Langue / Language" style={{
+      display: 'inline-flex', alignItems: 'center', gap: 2, padding: 2, borderRadius: 10,
+      background: overDark ? 'rgba(232,247,243,.16)' : 'rgba(1,130,98,.08)',
+      border: '1px solid ' + (overDark ? 'rgba(232,247,243,.3)' : 'rgba(1,130,98,.18)'),
+      backdropFilter: overDark ? 'blur(6px)' : 'none', WebkitBackdropFilter: overDark ? 'blur(6px)' : 'none',
+    }}>
+      {mk('fr', 'FR')}
+      {mk('en', 'EN')}
+    </div>
+  );
+};
+
 const NavBar = ({ accent, onLogin, persona, onChoose }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const [overDark, setOverDark] = React.useState(false);
@@ -182,6 +219,7 @@ const NavBar = ({ accent, onLogin, persona, onChoose }) => {
         ))}
       </div>
       <div style={{ marginLeft: 'auto', display: 'flex', gap: 10, alignItems: 'center' }}>
+        <LangSwitch overDark={overDark}/>
         {pr && (
           <div className="nav-persona" style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,

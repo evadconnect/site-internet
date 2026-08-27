@@ -41,8 +41,16 @@
     window.EVAD_setLang(window.EVAD_LANG === 'en' ? 'fr' : 'en');
   };
 
-  // Titre de l'onglet en anglais.
-  var TITLE_EN = 'EVAD · The regenerative ecosystem connecting places, citizens and funders';
+  // Titre de l'onglet en anglais, par page (clé = dernier segment de l'URL).
+  var TITLES_EN = {
+    '': 'EVAD · The regenerative ecosystem connecting places, citizens and funders',
+    'index.html': 'EVAD · The regenerative ecosystem connecting places, citizens and funders',
+    'mentions-legales.html': 'EVAD · Legal notice & data protection (GDPR)'
+  };
+  function titleForPage() {
+    var seg = (location.pathname || '').split('/').pop();
+    return TITLES_EN[seg];
+  }
 
   // ─────────────── Dictionnaire : contenu visible ───────────────
   var TEXTS = {
@@ -434,6 +442,76 @@
     "Une dernière idée folle pour faire grandir EVAD ?": "One last wild idea to grow EVAD?",
     "🌿 Merci, votre retour compte. Chaque contribution nourrit la prochaine version d'EVAD. Vous pouvez continuer la conversation ou refermer la fenêtre.": "🌿 Thank you, your feedback matters. Every contribution feeds the next version of EVAD. You can keep chatting or close the window.",
 
+    // ─────────── Vues personnalisées par profil ───────────
+    // Bouton bascule (section Profils)
+    "Site personnalisé pour les": "Personalized site for",
+    "Revenir à la vue générale": "Back to the general view",
+
+    // Badge + accroches personnalisées (section Solutions)
+    "Pour vous,": "For you,",
+    "Pilote": "Pilot",
+    "Bâtisseur": "Builder",
+    "Semeur": "Sower",
+    "Visualisez votre territoire, mesurez votre impact, suivez vos quêtes.": "Visualize your territory, measure your impact, track your quests.",
+    "Trouvez vos quêtes, échangez vos contributions, apprenez du commun.": "Find your quests, exchange your contributions, learn from the commons.",
+    "Mesurez les impacts, cartographiez les projets, suivez votre portefeuille.": "Measure impacts, map the projects, track your portfolio.",
+
+    // « Apport à l'écosystème » par outil (le premier est déjà plus haut)
+    "Les liens humains comme infrastructure : sans relations, pas de durabilité.": "Human bonds as infrastructure: without relationships, no sustainability.",
+    "La mémoire commune : ce qui marche quelque part peut servir partout.": "The shared memory: what works somewhere can serve everywhere.",
+    "On ne paie pas, on reconnaît : ce que vous apportez au commun vous ouvre le réseau.": "You don't pay, you're recognized: what you give to the commons opens the network to you.",
+    "Mesurer pour rendre crédible : promesse affichée, preuves vérifiées.": "Measure to build credibility: promise stated, proof verified.",
+    "Piloter à hauteur d'humain : votre lieu, votre rôle, votre trajectoire.": "Steering on a human scale: your place, your role, your path.",
+    "Souveraineté numérique : vos données restent les vôtres, sur une infrastructure libre.": "Digital sovereignty: your data stays yours, on free and open infrastructure.",
+    "Projeter avant d'agir : un jeu sérieux pour rêver le lieu ensemble.": "Envision before acting: a serious game to dream the place together.",
+
+    // Descriptions par outil ET par profil (roleDesc)
+    "Rendez votre lieu visible des bâtisseurs et financeurs de votre biorégion. Une fiche, des photos, vos quêtes ouvertes.": "Make your place visible to the builders and funders of your bioregion. A profile, photos, your open quests.",
+    "Trouvez les lieux durables près de chez vous, filtrez par activité (permaculture, low-tech, hébergement) et engagez-vous.": "Find the sustainable places near you, filter by activity (permaculture, low-tech, lodging) and get involved.",
+    "Cartographiez les projets à soutenir, filtrez par biorégion, Vadité ou thématique avant d'engager vos fonds.": "Map the projects to support, filter by bioregion, Vadité or theme before committing your funds.",
+    "Animez votre communauté locale : publiez vos quêtes, partagez l'avancée des chantiers, fédérez vos bâtisseurs réguliers.": "Energize your local community: post your quests, share project progress, rally your regular builders.",
+    "Discutez avec les porteurs de lieu, posez vos questions avant de partir, retrouvez d'autres bâtisseurs de votre coin.": "Chat with place stewards, ask your questions before setting off, find other builders in your area.",
+    "Suivez l'actualité concrète des projets que vous financez : avancées, photos, témoignages des bâtisseurs.": "Follow the concrete news of the projects you fund: progress, photos, builders' testimonials.",
+    "Puisez dans les fiches techniques éprouvées (permaculture, low-tech, gouvernance) et documentez vos propres réussites pour les autres lieux.": "Draw on proven technical sheets (permaculture, low-tech, governance) and document your own successes for other places.",
+    "Apprenez gratuitement les techniques régénératives, fiche par fiche, et formez-vous avant ou pendant vos quêtes.": "Learn regenerative techniques for free, sheet by sheet, and train yourself before or during your quests.",
+    "Identifiez les solutions à fort impact qui méritent d'être financées et essaimées sur d'autres territoires.": "Identify the high-impact solutions worth funding and spreading to other territories.",
+    "Proposez vos ateliers, hébergements et formations contre des contributions. Une nouvelle ressource, ancrée localement.": "Offer your workshops, lodging and trainings in exchange for contributions. A new resource, locally rooted.",
+    "Gagnez des contributions en accomplissant des quêtes, échangez-les contre des ateliers, nuits en yourte ou formations dans le réseau.": "Earn contributions by completing quests, exchange them for workshops, yurt nights or trainings across the network.",
+    "Soutenez la circulation locale en abondant les pots de contributions : votre euro reste sur le territoire au lieu de fuir.": "Support local circulation by topping up the contribution pots: your euro stays on the territory instead of leaking away.",
+    "Affichez la Vadance de votre lieu et faites-la monter en Vadité : chaque preuve documentée rend vos progrès crédibles auprès des financeurs et des bâtisseurs.": "Show your place's Vadance and raise it toward Vadité: every documented proof makes your progress credible to funders and builders.",
+    "Voyez la Vadité réelle des lieux où vous allez agir : ce qui est déjà prouvé, leur indice de confiance, leur trajectoire.": "See the real Vadité of the places where you'll act: what's already proven, their trust index, their trajectory.",
+    "Financez les lieux qui transforment leur Vadance en Vadité, et suivez l'indice de confiance de votre portefeuille.": "Fund the places that turn their Vadance into Vadité, and track your portfolio's trust index.",
+    "Pilotez votre lieu en un coup d'œil : quêtes ouvertes, preuves en attente, financements reçus, Vadité en évolution.": "Steer your place at a glance: open quests, pending proofs, funding received, Vadité on the move.",
+    "Suivez vos contributions, vos quêtes en cours, vos preuves validées et vos apports à la bibliothèque commune.": "Track your contributions, your ongoing quests, your validated proofs and your inputs to the shared library.",
+    "Visualisez votre portefeuille d'impact : fonds engagés, preuves reçues, Vadité agrégée de vos projets soutenus.": "Visualize your impact portfolio: funds committed, proofs received, aggregated Vadité of the projects you back.",
+    "Gérez tout votre lieu sur un compte souverain : agenda, contacts bâtisseurs, fichiers chantier, visios, tâches d'équipe.": "Run your whole place on a sovereign account: calendar, builder contacts, project files, video calls, team tasks.",
+    "Stockez vos preuves, photos et notes de chantier sur un compte chiffré et libre, en France.": "Store your proofs, photos and field notes on an encrypted, free and open account, in France.",
+    "Centralisez vos dossiers de financement, conventions et reportings sur une infrastructure souveraine et conforme RGPD.": "Centralize your funding files, agreements and reports on a sovereign, GDPR-compliant infrastructure.",
+    "Maquettez votre lieu en voxel avec votre communauté avant les travaux : teste d'aménagements, validation collective, économie d'erreurs.": "Prototype your place in voxels with your community before construction: layout tests, collective validation, fewer costly mistakes.",
+    "Plongez dans les futurs possibles, contribuez aux maquettes des lieux que vous rejoindrez, apprenez le design solarpunk.": "Dive into possible futures, contribute to the models of the places you'll join, learn solarpunk design.",
+    "Visualisez en 3D les projets avant d'investir : comprenez l'ambition, le contexte et l'usage prévu d'un lieu avant de financer.": "Visualize projects in 3D before investing: grasp the ambition, context and intended use of a place before funding.",
+
+    // Spirale VADE personnalisée (section Spirale)
+    "vécue en": "lived as an",
+    "Voici les quatre étapes telles que vous,": "Here are the four steps as you,",
+    ", les traversez. La même spirale nourrit aussi les autres profils, la valeur circule.": ", go through them. The same spiral also feeds the other profiles; value flows.",
+    "Vue adaptée à votre profil": "View adapted to your",
+    ". La spirale reste la même, vos actions changent.": ". The spiral stays the same, your actions change.",
+    "Vous êtes libre d'y entrer à n'importe quelle étape": "You're free to enter it at any step",
+    ", selon là où vous en êtes.": ", depending on where you stand.",
+    "Diagnostiquer les ressources, les forces et les limites de votre lieu. Ce socle pose votre Vadance : la promesse d'impact que votre lieu s'engage à tenir.": "Diagnose the resources, strengths and limits of your place. This foundation sets your Vadance: the impact promise your place commits to keeping.",
+    "Puiser dans la bibliothèque commune (low-tech, permaculture, gouvernance), générer la fiche de votre lieu et son tableau de bord. Votre promesse s'outille.": "Draw on the shared library (low-tech, permaculture, governance), generate your place's profile and dashboard. Your promise gets equipped.",
+    "Publier vos quêtes, mobiliser les Bâtisseurs, sécuriser les financements des Semeurs, documenter chaque preuve sur le terrain.": "Post your quests, mobilize the Builders, secure funding from the Sowers, document every proof in the field.",
+    "Votre Vadance devient Vadité : un score vérifié, lisible par les financeurs. Vos apprentissages rejoignent les communs et votre lieu repart un cran plus haut.": "Your Vadance becomes Vadité: a verified score, legible to funders. Your learnings join the commons and your place sets off one notch higher.",
+    "Identifier vos compétences, vos envies, ce que vous voulez apporter aux lieux qui vous entourent. Votre profil devient votre promesse de contribution.": "Identify your skills, your wishes, what you want to bring to the places around you. Your profile becomes your contribution promise.",
+    "Explorer la bibliothèque, découvrir les solutions et les cartes compétences, vous former aux pratiques régénératives éprouvées.": "Explore the library, discover the solutions and skill cards, and train yourself in proven regenerative practices.",
+    "Entreprendre les missions des lieux, contribuer sur le terrain, créditer vos contributions, documenter vos réalisations.": "Take on the places' missions, contribute in the field, credit your contributions, document your achievements.",
+    "Vos contributions vérifiées construisent votre parcours. Transmettre, devenir référent, porter les pratiques vers d'autres lieux, et reprendre la spirale un cran plus haut.": "Your verified contributions build your journey. Pass it on, become a reference, carry practices to other places, and pick the spiral back up one notch higher.",
+    "Lire la Vadance des lieux : une promesse d'impact structurée, comparable, adossée à des indicateurs, pas une plaquette.": "Read the places' Vadance: a structured, comparable impact promise backed by indicators, not a brochure.",
+    "Flécher votre financement vers des solutions et des quêtes précises, avec une visibilité directe sur ce que votre apport déclenche.": "Direct your funding toward specific solutions and quests, with direct visibility into what your contribution triggers.",
+    "Suivre en continu les résultats mesurés sur le terrain : chaque preuve documentée alimente le tableau de bord de votre portefeuille de lieux.": "Continuously track the results measured in the field: every documented proof feeds the dashboard of your portfolio of places.",
+    "La Vadité consolide ce qui a été tenu. Comparer promesse et réalisation, capitaliser les enseignements, réinvestir un cran plus haut.": "Vadité consolidates what has been delivered. Compare promise and outcome, capitalize on the lessons, reinvest one notch higher.",
+
     // ── Bloc caché (badges de confiance) ──
     "✓ Association d'intérêt général": "✓ Public-interest nonprofit",
     "✓ Licence Creative Commons": "✓ Creative Commons license",
@@ -442,7 +520,136 @@
     // ── Étiquette de profil dans la nav ──
     "Vue porteurs de lieu": "Place stewards view",
     "Vue citoyens": "Citizens view",
-    "Vue financeurs": "Funders view"
+    "Vue financeurs": "Funders view",
+
+    // ═════════ Page « Mentions légales » (mentions-legales.html) ═════════
+    "Retour à l'accueil": "Back to home",
+    "Retour à l'accueil →": "Back to home →",
+    "Informations légales": "Legal information",
+    "Mentions légales &": "Legal notice &",
+    "protection des données": "data protection",
+    "Éditeur, hébergement et politique de traitement des données personnelles (RGPD) applicables au site EVAD.": "Publisher, hosting and personal-data processing policy (GDPR) applicable to the EVAD site.",
+    "1 · Éditeur": "1 · Publisher",
+    "2 · Hébergeur": "2 · Host",
+    "3 · Propriété intellectuelle": "3 · Intellectual property",
+    "4 · Responsabilité": "4 · Liability",
+    "5 · Données personnelles (RGPD)": "5 · Personal data (GDPR)",
+    "6 · Cookies": "6 · Cookies",
+    "7 · Vos droits": "7 · Your rights",
+    "8 · Contact": "8 · Contact",
+    "Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN) et au Règlement général sur la protection des données (RGPD, UE 2016/679), les informations ci-dessous précisent l'identité de l'éditeur du site, de son hébergeur et les conditions de traitement de vos données personnelles.": "In accordance with French Act No. 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN) and the General Data Protection Regulation (GDPR, EU 2016/679), the information below sets out the identity of the site's publisher and host and the conditions under which your personal data is processed.",
+    "Éditeur du site": "Site publisher",
+    "Le présent site est édité par :": "This site is published by:",
+    "Dénomination": "Name",
+    "Forme juridique": "Legal form",
+    "Association loi 1901 à but non lucratif, reconnue d'intérêt général": "French 1901 non-profit association, recognized as serving the public interest",
+    "Objet": "Purpose",
+    "Écosystème régénératif reliant lieux durables, citoyens et financeurs": "Regenerative ecosystem connecting sustainable places, citizens and funders",
+    "Siège social": "Registered office",
+    "(en cours de déménagement à Bordeaux)": "(currently relocating to Bordeaux)",
+    "N° RNA": "RNA No.",
+    "N° SIRET": "SIRET No.",
+    "Code APE": "APE code",
+    "Directeur de la publication": "Publication director",
+    "Hébergement": "Hosting",
+    "Le site est hébergé par :": "The site is hosted by:",
+    "Hébergeur": "Host",
+    "Adresse": "Address",
+    "61 Lordou Vironos Street, 6023 Larnaca, Chypre": "61 Lordou Vironos Street, 6023 Larnaca, Cyprus",
+    "Localisation des serveurs": "Server location",
+    "Union européenne": "European Union",
+    "Site": "Website",
+    "Propriété intellectuelle": "Intellectual property",
+    "Sauf mention contraire, la méthode de mesure d'impact d'EVAD (Charte des ICI, spirale VADE, référentiel Vadance / Vadité) est publiée comme un": "Unless stated otherwise, EVAD's impact-measurement method (ICI Charter, VADE spiral, Vadance / Vadité framework) is published as a",
+    "commun : publique, inspectable et amendable": "commons: public, inspectable and amendable",
+    ", sous licence Creative Commons. La marque « EVAD », le logo, la mascotte Deva et les éléments graphiques distinctifs restent la propriété de l'association EVAD Connect.": ", under a Creative Commons license. The \"EVAD\" trademark, the logo, the Deva mascot and the distinctive graphic elements remain the property of the EVAD Connect association.",
+    "Toute reproduction ou réutilisation doit respecter les conditions de la licence applicable et créditer la source. Pour tout autre usage, contactez-nous à": "Any reproduction or reuse must comply with the applicable license terms and credit the source. For any other use, contact us at",
+    "Responsabilité": "Liability",
+    "EVAD s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Les exemples chiffrés à visée pédagogique (notamment l'exemple fictif « La Fabrique des Coteaux ») sont illustratifs et ne constituent pas des données réelles. EVAD ne saurait être tenue responsable des erreurs, d'une absence de disponibilité des informations ou de la présence de virus sur son site.": "EVAD strives to ensure the accuracy of the information published on this site. The educational figures shown (in particular the fictional example \"La Fabrique des Coteaux\") are illustrative and do not constitute real data. EVAD cannot be held liable for errors, unavailability of information, or the presence of viruses on its site.",
+    "Données personnelles (RGPD)": "Personal data (GDPR)",
+    "EVAD Connect, en qualité de": "EVAD Connect, acting as",
+    "responsable de traitement": "data controller",
+    ", collecte et traite des données personnelles dans le respect du RGPD et de la loi « Informatique et Libertés ».": ", collects and processes personal data in compliance with the GDPR and the French Data Protection Act.",
+    "Données collectées": "Data collected",
+    "Formulaires de contact & d'adhésion :": "Contact & membership forms:",
+    "nom, prénom, adresse e-mail, message.": "surname, first name, email address, message.",
+    "Inscription à la bêta :": "Beta sign-up:",
+    "prénom, nom, ville, adresse e-mail, structure (facultatif) et profil choisi.": "first name, surname, city, email address, organization (optional) and chosen profile.",
+    "Assistant Deva :": "Deva assistant:",
+    "le contenu des messages que vous adressez au chat, le temps d'y répondre.": "the content of the messages you send to the chat, for the time needed to answer them.",
+    "Dons & adhésions :": "Donations & memberships:",
+    "traités via HelloAsso, qui agit comme sous-traitant/prestataire de paiement.": "processed via HelloAsso, acting as a processor/payment provider.",
+    "Navigation :": "Browsing:",
+    "données techniques strictement nécessaires au fonctionnement du site.": "technical data strictly necessary for the site to function.",
+    "Finalités": "Purposes",
+    "Répondre à vos demandes de contact.": "Respond to your contact requests.",
+    "Gérer les adhésions, dons et la vie associative.": "Manage memberships, donations and the life of the association.",
+    "Vous informer sur l'activité d'EVAD si vous y avez consenti.": "Inform you about EVAD's activity if you have consented.",
+    "Assurer la sécurité et le bon fonctionnement du site.": "Ensure the security and proper functioning of the site.",
+    "Bases légales": "Legal bases",
+    "Consentement": "Consent",
+    "(newsletter, cookies non essentiels).": "(newsletter, non-essential cookies).",
+    "Exécution d'un contrat ou de mesures précontractuelles": "Performance of a contract or pre-contractual measures",
+    "(adhésion, don).": "(membership, donation).",
+    "Intérêt légitime": "Legitimate interest",
+    "(sécurité du site, réponse aux demandes).": "(site security, responding to requests).",
+    "Durée de conservation": "Retention period",
+    "Les données sont conservées pour la durée strictement nécessaire aux finalités poursuivies, puis archivées ou supprimées : demandes de contact (jusqu'à 3 ans après le dernier échange), données d'adhérents et de donateurs (durée légale comptable et associative applicable).": "Data is kept for the period strictly necessary for the purposes pursued, then archived or deleted: contact requests (up to 3 years after the last exchange), member and donor data (applicable legal accounting and association retention periods).",
+    "Destinataires & sous-traitants": "Recipients & processors",
+    "Vos données ne sont ni vendues ni cédées. Elles peuvent être traitées par les prestataires suivants, agissant pour le compte d'EVAD dans le cadre d'engagements de confidentialité et de conformité au RGPD :": "Your data is neither sold nor transferred. It may be processed by the following providers, acting on EVAD's behalf under confidentiality and GDPR-compliance commitments:",
+    "Hébergeur du site": "Site host",
+    "(voir la rubrique « Hébergement »).": "(see the \"Hosting\" section).",
+    ": stockage des inscriptions à la bêta. Données hébergées dans l'Union européenne (Irlande et Allemagne).": ": storage of beta sign-ups. Data hosted in the European Union (Ireland and Germany).",
+    "(société française) : traitement des messages envoyés à l'assistant Deva, afin de générer une réponse. Aucun message n'est utilisé à d'autres fins.": "(French company): processing of the messages sent to the Deva assistant in order to generate a reply. No message is used for any other purpose.",
+    ": gestion des dons et adhésions (prestataire de paiement).": ": management of donations and memberships (payment provider).",
+    "Le cas échéant, un service d'emailing établi dans l'Union européenne pour vous recontacter au sujet de la bêta, si vous y avez consenti.": "Where applicable, an emailing service established in the European Union to contact you about the beta, if you have consented.",
+    "Transferts hors Union européenne": "Transfers outside the European Union",
+    "Les données personnelles collectées via ce site sont hébergées et traitées": "The personal data collected via this site is hosted and processed",
+    "dans l'Union européenne": "within the European Union",
+    ". Aucun transfert de vos données personnelles n'est réalisé en dehors de l'UE.": ". No transfer of your personal data is carried out outside the EU.",
+    "Assistant conversationnel Deva (intelligence artificielle)": "Deva conversational assistant (artificial intelligence)",
+    "Deva est un": "Deva is an",
+    "assistant IA": "AI assistant",
+    "; vous êtes informé·e que vous dialoguez avec un système d'intelligence artificielle, et non avec une personne. Il s'appuie sur le modèle de Mistral AI (France) et répond à partir d'une documentation publique sur EVAD. N'y saisissez pas d'informations sensibles ; ses réponses peuvent comporter des imprécisions et ne constituent pas un conseil professionnel.": "; you are informed that you are talking with an artificial-intelligence system, not a person. It relies on Mistral AI's model (France) and answers from public documentation about EVAD. Do not enter sensitive information; its answers may contain inaccuracies and do not constitute professional advice.",
+    "Cookies": "Cookies",
+    "Ce site utilise": "This site uses",
+    "uniquement des cookies et technologies strictement nécessaires": "only strictly necessary cookies and technologies",
+    "à son fonctionnement et à sa sécurité. Conformément à la réglementation, ces cookies essentiels ne requièrent pas votre consentement préalable.": "for its operation and security. In accordance with regulations, these essential cookies do not require your prior consent.",
+    "Aucun cookie publicitaire, statistique ou de traçage tiers": "No advertising, analytics or third-party tracking cookie",
+    "n'est déposé. Vous pouvez configurer votre navigateur pour refuser les cookies ; certaines fonctionnalités pourraient alors être limitées.": "is placed. You can configure your browser to refuse cookies; some features may then be limited.",
+    "Mesure d'audience": "Audience measurement",
+    "La fréquentation du site est mesurée avec": "Site traffic is measured with",
+    ", une solution": ", a solution",
+    "auto-hébergée sur notre propre serveur (Union européenne)": "self-hosted on our own server (European Union)",
+    ": aucune donnée n'est transmise à un tiers. Cette mesure fonctionne": ": no data is transmitted to a third party. This measurement works",
+    "sans cookie": "without cookies",
+    ", avec": ", with",
+    "anonymisation de votre adresse IP": "anonymization of your IP address",
+    ", et respecte le signal « Do Not Track » de votre navigateur. Configurée ainsi, elle ne requiert pas votre consentement (conformément aux recommandations de la CNIL) et ne permet pas de vous identifier.": ", and respects your browser's \"Do Not Track\" signal. Configured this way, it does not require your consent (in line with the CNIL's recommendations) and cannot identify you.",
+    "Vos droits": "Your rights",
+    "Conformément au RGPD, vous disposez des droits suivants sur vos données :": "In accordance with the GDPR, you have the following rights over your data:",
+    "Droit d'": "Right of ",
+    "accès": "access",
+    "et de": "and",
+    "rectification": "rectification",
+    "Droit à l'": "Right to ",
+    "effacement": "erasure",
+    "(« droit à l'oubli »).": "(\"right to be forgotten\").",
+    "Droit à la": "Right to",
+    "limitation": "restriction",
+    "et à l'": "and ",
+    "opposition": "objection",
+    "au traitement.": "to processing.",
+    "portabilité": "portability",
+    "de vos données.": "of your data.",
+    "Droit de": "Right to",
+    "retirer votre consentement": "withdraw your consent",
+    "à tout moment.": "at any time.",
+    "Pour exercer ces droits, écrivez à": "To exercise these rights, write to",
+    "(une preuve d'identité pourra être demandée). Vous disposez également du droit d'introduire une réclamation auprès de la": "(proof of identity may be requested). You also have the right to lodge a complaint with the",
+    "(Commission nationale de l'informatique et des libertés).": "(the French data protection authority).",
+    "Pour toute question relative aux présentes mentions légales ou au traitement de vos données personnelles :": "For any question regarding this legal notice or the processing of your personal data:",
+    "Dernière mise à jour : août 2026.": "Last updated: August 2026."
   };
 
   // ─────────────── Dictionnaire : attributs ───────────────
@@ -496,6 +703,7 @@
     "Suggérer une amélioration": "Suggest an improvement",
     "Conversation avec Deva": "Conversation with Deva",
     "Ouvrir le menu de langue": "Open the language menu",
+    "Sommaire": "Contents",
     // LinkedIn / Email des membres
     "LinkedIn de Romain Marie Froment": "Romain Marie Froment's LinkedIn",
     "Email de Romain Marie Froment": "Email Romain Marie Froment",
@@ -597,7 +805,7 @@
 
   function init() {
     if (window.EVAD_LANG !== 'en') return;
-    try { document.title = TITLE_EN; } catch (e) {}
+    try { var tt = titleForPage(); if (tt) document.title = tt; } catch (e) {}
     translateAll();
     // Passes différées : React monte de façon asynchrone (Babel in-browser).
     setTimeout(translateAll, 150);

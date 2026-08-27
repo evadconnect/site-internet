@@ -12,6 +12,8 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="colors_and_type.css">
+<!-- i18n : couche de traduction FR/EN (runtime, sans build) — voir i18n.js -->
+<script src="i18n.js?v=20260827d"></script>
 <style>
   html, body { margin: 0; padding: 0; background: #e8f7f3; }
   body { font-family: 'Satoshi', sans-serif; color: #0d2b22; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
@@ -73,8 +75,16 @@
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
       Retour à l'accueil
     </a>
-    <img src="assets/logo-evad.svg" alt="EVAD" height="24" style="display: block;">
+    <div style="display: inline-flex; align-items: center; gap: 12px;">
+      <!-- Sélecteur de langue FR / EN (voir i18n.js). data-no-i18n : ne pas traduire les libellés. -->
+      <div class="lang-switch" data-no-i18n="1" role="group" aria-label="Langue / Language" style="display: inline-flex; align-items: center; gap: 2px; padding: 2px; border-radius: 10px; background: rgba(1,130,98,.08); border: 1px solid rgba(1,130,98,.18);">
+        <button type="button" data-lang="fr" onclick="window.EVAD_setLang&&window.EVAD_setLang('fr')" aria-label="Français" style="border: none; cursor: pointer; padding: 5px 9px; border-radius: 8px; font-family: 'Satoshi', sans-serif; font-size: 12px; font-weight: 700; line-height: 1; background: transparent; color: #0d2b22;">FR</button>
+        <button type="button" data-lang="en" onclick="window.EVAD_setLang&&window.EVAD_setLang('en')" aria-label="English" style="border: none; cursor: pointer; padding: 5px 9px; border-radius: 8px; font-family: 'Satoshi', sans-serif; font-size: 12px; font-weight: 700; line-height: 1; background: transparent; color: #0d2b22;">EN</button>
+      </div>
+      <img src="assets/logo-evad.svg" alt="EVAD" height="24" style="display: block;">
+    </div>
   </div>
+  <script>(function(){try{var l=(window.EVAD_LANG)||'fr';document.querySelectorAll('.lang-switch [data-lang]').forEach(function(b){if(b.getAttribute('data-lang')===l){b.style.background='#018262';b.style.color='#fff';}});}catch(e){}})();</script>
 </header>
 
 <!-- En-tête -->

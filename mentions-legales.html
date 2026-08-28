@@ -21,6 +21,14 @@
   a { color: #018262; }
   a:hover { color: #016b52; }
 
+  /* Sélecteur de langue (menu déroulant natif <details>) */
+  .lang-dd { position: relative; }
+  .lang-dd > summary { list-style: none; }
+  .lang-dd > summary::-webkit-details-marker { display: none; }
+  .lang-dd > summary::marker { content: ''; }
+  .lang-dd[open] .lang-caret { transform: rotate(180deg); }
+  .lang-caret { transition: transform .18s ease; }
+
   :focus-visible { outline: 3px solid #4aab8f; outline-offset: 2px; border-radius: 6px; }
   [style*="0d2b22"] :focus-visible { outline-color: #a8e6cf; }
 
@@ -76,15 +84,37 @@
       Retour à l'accueil
     </a>
     <div style="display: inline-flex; align-items: center; gap: 12px;">
-      <!-- Sélecteur de langue FR / EN (voir i18n.js). data-no-i18n : ne pas traduire les libellés. -->
-      <div class="lang-switch" data-no-i18n="1" role="group" aria-label="Langue / Language" style="display: inline-flex; align-items: center; gap: 2px; padding: 2px; border-radius: 10px; background: rgba(1,130,98,.08); border: 1px solid rgba(1,130,98,.18);">
-        <button type="button" data-lang="fr" onclick="window.EVAD_setLang&&window.EVAD_setLang('fr')" aria-label="Français" style="border: none; cursor: pointer; padding: 5px 9px; border-radius: 8px; font-family: 'Satoshi', sans-serif; font-size: 12px; font-weight: 700; line-height: 1; background: transparent; color: #0d2b22;">FR</button>
-        <button type="button" data-lang="en" onclick="window.EVAD_setLang&&window.EVAD_setLang('en')" aria-label="English" style="border: none; cursor: pointer; padding: 5px 9px; border-radius: 8px; font-family: 'Satoshi', sans-serif; font-size: 12px; font-weight: 700; line-height: 1; background: transparent; color: #0d2b22;">EN</button>
-      </div>
+      <!-- Sélecteur de langue (menu déroulant, voir i18n.js). data-no-i18n : ne pas traduire les libellés. -->
+      <details class="lang-dd" data-no-i18n="1">
+        <summary aria-label="Langue / Language" style="list-style: none; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 10px; cursor: pointer; background: rgba(1,130,98,.06); border: 1px solid rgba(1,130,98,.2); color: #0d2b22; font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 700; line-height: 1;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
+          <span class="lang-cur">Français</span>
+          <svg class="lang-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <ul role="listbox" aria-label="Langue / Language" style="position: absolute; top: calc(100% + 6px); right: 0; min-width: 152px; list-style: none; margin: 0; padding: 6px; background: #fff; border: 1px solid rgba(46,102,66,.14); border-radius: 12px; box-shadow: 0 14px 34px rgba(13,43,34,.18); z-index: 60;">
+          <li data-lang="fr" role="option" onclick="window.EVAD_setLang&&window.EVAD_setLang('fr')" style="display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 600; color: #0d2b22;">Français</li>
+          <li data-lang="en" role="option" onclick="window.EVAD_setLang&&window.EVAD_setLang('en')" style="display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 600; color: #0d2b22;">English</li>
+        </ul>
+      </details>
       <img src="assets/logo-evad.svg" alt="EVAD" height="24" style="display: block;">
     </div>
   </div>
-  <script>(function(){try{var l=(window.EVAD_LANG)||'fr';document.querySelectorAll('.lang-switch [data-lang]').forEach(function(b){if(b.getAttribute('data-lang')===l){b.style.background='#018262';b.style.color='#fff';}});}catch(e){}})();</script>
+  <script>(function(){
+    try{
+      var l=(window.EVAD_LANG)||'fr';
+      var names={fr:'Français',en:'English'};
+      var dd=document.querySelector('.lang-dd');
+      if(!dd) return;
+      var cur=dd.querySelector('.lang-cur'); if(cur) cur.textContent=names[l]||names.fr;
+      dd.querySelectorAll('li[data-lang]').forEach(function(li){
+        if(li.getAttribute('data-lang')===l){ li.style.color='#018262'; li.style.background='rgba(1,130,98,.08)'; li.innerHTML=li.textContent+' <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#018262" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><polyline points="20 6 9 17 4 12"/></svg>'; }
+        li.addEventListener('mouseenter',function(){ this.style.background = this.getAttribute('data-lang')===l ? 'rgba(1,130,98,.12)' : 'rgba(1,130,98,.05)'; });
+        li.addEventListener('mouseleave',function(){ this.style.background = this.getAttribute('data-lang')===l ? 'rgba(1,130,98,.08)' : 'transparent'; });
+      });
+      // Fermer au clic extérieur
+      document.addEventListener('mousedown',function(e){ if(dd.open && !dd.contains(e.target)) dd.open=false; });
+    }catch(e){}
+  })();</script>
 </header>
 
 <!-- En-tête -->

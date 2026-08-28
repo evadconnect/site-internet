@@ -136,39 +136,74 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
 
 const NAV_LINKS = [['#ecosystem', 'Solutions'], ['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Spirale'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
 
-// Sélecteur de langue FR / EN. La bascule mémorise le choix (localStorage)
-// et recharge la page ; la traduction est faite au runtime par i18n.js.
-// data-no-i18n empêche le moteur de traduire les libellés « FR » / « EN ».
-const LangSwitch = ({ overDark, compact }) => {
+// Sélecteur de langue (menu déroulant). Le choix est mémorisé (localStorage)
+// et la page rechargée ; la traduction est faite au runtime par i18n.js.
+// data-no-i18n empêche le moteur de traduire les libellés « Français » / « English ».
+const LANG_OPTIONS = [{ code: 'fr', label: 'Français' }, { code: 'en', label: 'English' }];
+const LangSwitch = ({ overDark }) => {
   const cur = (typeof window !== 'undefined' && window.EVAD_LANG) || 'fr';
-  const activeColor = overDark ? '#0d2b22' : '#fff';
-  const idleColor = overDark ? '#f5fbf8' : '#0d2b22';
-  const mk = (code, label) => (
-    <button
-      type="button"
-      key={code}
-      onClick={() => { if (window.EVAD_setLang) window.EVAD_setLang(code); }}
-      aria-label={code === 'fr' ? 'Français' : 'English'}
-      aria-pressed={cur === code}
-      style={{
-        border: 'none', cursor: 'pointer', padding: compact ? '8px 14px' : '5px 9px',
-        borderRadius: 8, fontFamily: "'Satoshi',sans-serif", fontSize: compact ? 14 : 12,
-        fontWeight: 700, lineHeight: 1, transition: 'background .15s, color .15s',
-        background: cur === code ? '#018262' : 'transparent',
-        color: cur === code ? activeColor : idleColor,
-      }}>
-      {label}
-    </button>
-  );
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!open) return;
+    const onDoc = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', onDoc);
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onKey); };
+  }, [open]);
+  const curLabel = (LANG_OPTIONS.find(l => l.code === cur) || LANG_OPTIONS[0]).label;
+  const textColor = overDark ? '#f5fbf8' : '#0d2b22';
   return (
-    <div data-no-i18n="1" role="group" aria-label="Langue / Language" style={{
-      display: 'inline-flex', alignItems: 'center', gap: 2, padding: 2, borderRadius: 10,
-      background: overDark ? 'rgba(232,247,243,.16)' : 'rgba(1,130,98,.08)',
-      border: '1px solid ' + (overDark ? 'rgba(232,247,243,.3)' : 'rgba(1,130,98,.18)'),
-      backdropFilter: overDark ? 'blur(6px)' : 'none', WebkitBackdropFilter: overDark ? 'blur(6px)' : 'none',
-    }}>
-      {mk('fr', 'FR')}
-      {mk('en', 'EN')}
+    <div data-no-i18n="1" ref={ref} style={{ position: 'relative' }}>
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label="Langue / Language"
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: 7,
+          padding: '7px 10px', borderRadius: 10, cursor: 'pointer',
+          background: overDark ? 'rgba(232,247,243,.16)' : 'rgba(1,130,98,.06)',
+          border: '1px solid ' + (overDark ? 'rgba(232,247,243,.32)' : 'rgba(1,130,98,.2)'),
+          backdropFilter: overDark ? 'blur(6px)' : 'none', WebkitBackdropFilter: overDark ? 'blur(6px)' : 'none',
+          color: textColor, fontFamily: "'Satoshi',sans-serif", fontSize: 13, fontWeight: 700, lineHeight: 1,
+        }}>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
+        <span>{curLabel}</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .18s' }}><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      {open && (
+        <ul role="listbox" aria-label="Langue / Language" style={{
+          position: 'absolute', top: 'calc(100% + 6px)', right: 0, minWidth: 152,
+          listStyle: 'none', margin: 0, padding: 6,
+          background: '#fff', border: '1px solid rgba(46,102,66,.14)', borderRadius: 12,
+          boxShadow: '0 14px 34px rgba(13,43,34,.18)', zIndex: 60,
+        }}>
+          {LANG_OPTIONS.map(l => {
+            const isCur = cur === l.code;
+            return (
+              <li key={l.code} role="option" aria-selected={isCur}
+                onClick={() => { if (window.EVAD_setLang) window.EVAD_setLang(l.code); }}
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
+                  padding: '9px 12px', borderRadius: 8, cursor: 'pointer',
+                  fontFamily: "'Satoshi',sans-serif", fontSize: 14, fontWeight: 600,
+                  color: isCur ? '#018262' : '#0d2b22',
+                  background: isCur ? 'rgba(1,130,98,.08)' : 'transparent',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = isCur ? 'rgba(1,130,98,.12)' : 'rgba(1,130,98,.05)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = isCur ? 'rgba(1,130,98,.08)' : 'transparent'; }}>
+                <span>{l.label}</span>
+                {isCur && (
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#018262" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

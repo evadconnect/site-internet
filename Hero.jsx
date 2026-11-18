@@ -134,7 +134,7 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
   );
 };
 
-const NAV_LINKS = [['#ecosystem', 'Solutions'], ['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Spirale'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
+const NAV_LINKS = [['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#cycle', 'Spirale'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
 
 // Sélecteur de langue (menu déroulant). Le choix est mémorisé (localStorage)
 // et la page rechargée ; la traduction est faite au runtime par i18n.js.

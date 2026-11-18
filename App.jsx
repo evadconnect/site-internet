@@ -284,12 +284,11 @@ const Footer = () => (
       </div>
       {[
         { t: 'Découvrir', l: [
-          ['Les profils', '#roles'],
-          ['Les piliers', '#foundations'],
+          ['La vision', '#vision'],
+          ['Le jeu', '#jeu'],
           ['Deva', '#deva'],
         ] },
         { t: "L'association", l: [
-          ["L'objet", '#association'],
           ['Devenir membre', 'https://www.helloasso.com/associations/evad-connect/adhesions/devenir-membre-2026'],
           ['Conseil Régénératif', 'https://compte.evad.org/apps/forms/s/3YxDgfMCdPGf8gPyN7bmdM4w'],
           ['Nous contacter', 'mailto:contact@evad.org'],
@@ -300,8 +299,8 @@ const Footer = () => (
           ['Coopérer avec nous', 'https://compte.evad.org/apps/forms/s/MFdHsmKzPo9PSK3KjWo4czWn'],
         ] },
         { t: 'Suivre', l: [
-          ['Newsletter', '#cta'],
-          ['Nous suivre', '#suivre'],
+          ["Liste d'attente", '#jeu'],
+          ['Nous contacter', 'mailto:contact@evad.org'],
         ] },
       ].map(c => (
         <div key={c.t}>
@@ -403,7 +402,7 @@ const Footer = () => (
           Mentions légales &amp; RGPD
         </a>
         <span style={{ opacity: .5 }}>·</span>
-        <a href="#prologue" style={{ color: '#7ec9b0', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 5 }}
+        <a href="#hero" style={{ color: '#7ec9b0', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 5 }}
            onMouseEnter={e => { e.currentTarget.style.opacity = '1'; }}
            onMouseLeave={e => { e.currentTarget.style.opacity = ''; }}>
           Retour en haut
@@ -503,13 +502,10 @@ const App = () => {
 
   return (
     <div style={{ '--sec-pad': secPad }}>
-      <Prologue onChoose={choosePersona} persona={persona}/>
       <Hero role={role} setRole={(r) => { setRole(r); setTweak('heroRole', r); }} palette={tweaks.palette} persona={persona} onChoose={choosePersona}/>
-      <div data-fade><Roles onChoose={choosePersona} persona={persona}/></div>
-      <div data-fade><FoundationsSection/></div>
+      <div data-fade><VisionSection/></div>
+      <div data-fade><GameTeaser/></div>
       <div data-fade><DevaSection/></div>
-      <div data-fade><AssociationSection teamLayout={tweaks.teamLayout}/></div>
-      <CTASection role={persona}/>
       <Footer/>
       <BackToTop/>
       <CookieNotice/>

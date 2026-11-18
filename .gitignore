@@ -6,3 +6,4 @@ deva-config.php
 
 # Fichiers temporaires de prévisualisation
 _*.html
+.DS_Store

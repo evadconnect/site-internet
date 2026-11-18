@@ -66,16 +66,10 @@ const Section = ({ id, eyebrow, title, sub, children, dark, narrow, padded = tru
   </section>
 );
 
-// ─────────────────── Hero ───────────────────
+// ─────────────────── Hero (refonte teaser) ───────────────────
 const Hero = ({ role, setRole, palette, persona, onChoose }) => {
-  const r = ROLES[role];
-  const [mode, setMode] = React.useState('signup'); // 'signup' | 'login'
   const accent = palette === 'terracotta' ? '#c8732a' : palette === 'sky' ? '#3a6e8c' : '#018262';
-  React.useEffect(() => {
-    if (mode === 'login') {
-      document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [mode]);
+  const goto = (id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); };
   return (
     <section id="hero" style={{
       position: 'relative', minHeight: '92vh', padding: '80px 24px 64px',
@@ -84,48 +78,62 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
       overflow: 'hidden',
     }}>
       <NavBar accent={accent} onLogin={() => { window.location.href = 'https://app.evad.org/?login=1'; }} persona={persona} onChoose={onChoose}/>
-      <div style={{ maxWidth: 1180, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: 64, alignItems: 'center' }} className="hero-grid">
+      <div style={{ maxWidth: 1180, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: 56, alignItems: 'center' }} className="hero-grid">
         <div>
-          <div style={{ marginBottom: 28, display: 'flex', flexDirection: 'column', alignItems: 'center' }} className="hero-logo-block">
-            <div style={{ width: '100%', maxWidth: 520, display: 'flex', justifyContent: 'center' }}>
+          <div style={{ marginBottom: 26 }} className="hero-logo-block">
+            <div style={{ width: '100%', maxWidth: 460 }}>
               <Logo width="100%" fill="#018262"/>
             </div>
             <div style={{
               fontFamily: "'Satoshi',sans-serif", fontWeight: 600,
-              letterSpacing: '.28em', textTransform: 'uppercase',
-              color: '#018262', opacity: .85, marginTop: -28,
-              textAlign: 'center',
-              fontSize: 'clamp(11px, 2vw, 20px)',
-              maxWidth: '100%',
-              padding: '0 8px',
+              letterSpacing: '.26em', textTransform: 'uppercase',
+              color: '#018262', opacity: .85, marginTop: -22,
+              fontSize: 'clamp(10px, 1.6vw, 15px)', padding: '0 4px',
             }} className="hero-tagline">
               Écosystème Vivant Autonome &amp; Décentralisé
             </div>
           </div>
+
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 20,
+            fontFamily: 'var(--mono, monospace)', fontSize: 11, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase',
+            color: '#0d2b22', background: 'rgba(1,130,98,.12)', border: '1px solid rgba(1,130,98,.25)',
+            padding: '6px 12px', borderRadius: 100,
+          }}>
+            <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#c8732a' }}/>
+            Nouvelle version · Jeu en ligne rétro
+          </div>
+
           <h1 style={{
             fontFamily: "'Satoshi',sans-serif", fontWeight: 900,
             fontSize: 'clamp(32px, 4.5vw, 56px)', lineHeight: 1.05, letterSpacing: '-.02em',
-            color: '#0d2b22', margin: 0, marginBottom: 24,
+            color: '#0d2b22', margin: 0, marginBottom: 22,
           }}>
-            Imaginons un avenir durable <span style={{ fontStyle: 'italic', fontWeight: 600, color: accent }}>et réalisons-le ensemble.</span>
+            Un avenir solarpunk, <span style={{ fontStyle: 'italic', fontWeight: 600, color: accent }}>et si on le jouait&nbsp;?</span>
           </h1>
-          <p style={{ fontSize: 19, lineHeight: 1.55, color: '#3d6b5a', maxWidth: 540, marginBottom: 36 }}>
-            Du pixel à la terre, du rêve au lieu, de l'action à l'impact. Plongez dans un avenir solarpunk et rejoignez le mouvement qui transforme la transition écologique en économie régénérative.
+          <p style={{ fontSize: 19, lineHeight: 1.55, color: '#3d6b5a', maxWidth: 520, marginBottom: 34 }}>
+            EVAD, c'est une vision : un imaginaire désirable, une économie qui régénère le vivant, et le jeu comme moteur. Bientôt, cette vision devient un jeu en ligne rétro.
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-            <button onClick={() => document.getElementById('ecosystem').scrollIntoView({ behavior: 'smooth' })} style={{
+            <button onClick={() => goto('jeu')} style={{
               padding: '16px 28px', background: accent, color: '#e8f7f3', border: 'none', borderRadius: 12,
               fontFamily: "'Satoshi',sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: '.02em', cursor: 'pointer',
               boxShadow: '0 8px 24px ' + accent + '50', transition: 'transform .18s, box-shadow .18s',
             }} onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 28px ' + accent + '70'; }}
                onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 8px 24px ' + accent + '50'; }}>
-              En savoir plus ↓
+              Rejoindre la liste d'attente →
+            </button>
+            <button onClick={() => goto('vision')} style={{
+              padding: '16px 24px', background: 'transparent', color: '#018262', border: '1px solid rgba(1,130,98,.3)', borderRadius: 12,
+              fontFamily: "'Satoshi',sans-serif", fontSize: 15, fontWeight: 700, cursor: 'pointer', transition: 'background .18s',
+            }} onMouseEnter={e => { e.currentTarget.style.background = 'rgba(1,130,98,.07)'; }}
+               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
+              Découvrir la vision ↓
             </button>
           </div>
-
         </div>
 
-        <HeroVisual role={role} setRole={setRole} mode={mode} setMode={setMode}/>
+        <HeroRetroVisual onPlay={() => goto('jeu')}/>
       </div>
       <style>{`
         @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr !important; } }
@@ -134,7 +142,36 @@ const Hero = ({ role, setRole, palette, persona, onChoose }) => {
   );
 };
 
-const NAV_LINKS = [['#roles', 'Profils'], ['#foundations', 'Piliers'], ['#deva', 'Deva'], ['#association', "L'asso"], ['#agir', 'Nous soutenir'], ['#cta', 'Nous suivre']];
+// Visuel hybride : image solarpunk encadrée dans un « écran » rétro.
+const HeroRetroVisual = ({ onPlay }) => (
+  <div id="inscription" style={{
+    background: '#07201a', border: '3px solid rgba(13,43,34,.9)', borderRadius: 16,
+    boxShadow: '0 28px 64px rgba(1,130,98,.22), inset 0 0 60px rgba(74,171,143,.1)',
+    overflow: 'hidden', scrollMarginTop: 90,
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '12px 16px', background: '#0d2b22', borderBottom: '2px solid rgba(126,201,176,.2)' }}>
+      <span style={{ width: 11, height: 11, background: '#b84e35' }}/>
+      <span style={{ width: 11, height: 11, background: '#f0c84a' }}/>
+      <span style={{ width: 11, height: 11, background: '#4aab8f' }}/>
+      <span style={{ marginLeft: 'auto', fontFamily: 'var(--mono, monospace)', fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase', color: '#7ec9b0' }}>evad.exe</span>
+    </div>
+    <div style={{ position: 'relative' }}>
+      <img loading="lazy" decoding="async" src={window.__resources.minecraft} alt="Un monde solarpunk en pixels" style={{ width: '100%', height: 'auto', display: 'block', imageRendering: 'auto' }}/>
+      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,.14) 2px 4px)', pointerEvents: 'none', mixBlendMode: 'multiply' }}/>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '18px 16px', background: 'linear-gradient(0deg, rgba(7,32,26,.95), transparent)', display: 'flex', alignItems: 'center', gap: 12 }}>
+        <button onClick={onPlay} style={{
+          padding: '10px 18px', background: '#a8e6cf', color: '#07201a', border: 'none', borderRadius: 4,
+          fontFamily: 'var(--mono, monospace)', fontSize: 12, fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase',
+          cursor: 'pointer', boxShadow: '0 4px 0 #4aab8f',
+        }}>▸ Press start</button>
+        <span style={{ fontFamily: 'var(--mono, monospace)', fontSize: 11, letterSpacing: '.1em', color: '#cfeee7', opacity: .9, animation: 'hero-blink 1.2s steps(1) infinite' }}>Chargement du nouveau monde…</span>
+      </div>
+    </div>
+    <style>{`@keyframes hero-blink { 50% { opacity: .35; } }`}</style>
+  </div>
+);
+
+const NAV_LINKS = [['#vision', 'Vision'], ['#jeu', 'Le jeu'], ['#deva', 'Deva']];
 
 // Sélecteur de langue (menu déroulant). Le choix est mémorisé (localStorage)
 // et la page rechargée ; la traduction est faite au runtime par i18n.js.

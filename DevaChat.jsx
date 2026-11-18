@@ -55,7 +55,7 @@ const OFFSET_TEXT = "🌿 On a bien échangé ! Si vous souhaitez équilibrer l'
 const OFFSET_CTAS = [
   { label: '🌳 Soutenir un lieu pilote', href: DON_URL },
   { label: '🌱 Devenir membre & agir', href: MEMBER_URL },
-  { label: "☀️ D'autres façons d'agir", section: 'agir' },
+  { label: "🎮 Découvrir le jeu rétro", section: 'jeu' },
 ];
 
 // Endpoint du backend Deva en production : deva.php sur evad.org (Hostinger → Mistral).
@@ -225,9 +225,9 @@ const DevaChat = ({ role, setRole, onPersonaChange }) => {
     setMessages(m => [
       ...m,
       { role: 'user', text: `${p.emoji} Je suis ${p.short}` },
-      { role: 'deva', text: `Parfait. ${p.tagline}\n\nJ'ai adapté la page à votre profil.`, ctas: [
-        { label: 'Voir les piliers', section: 'foundations' },
-        { label: 'Nous soutenir',    section: 'agir' },
+      { role: 'deva', text: `Parfait. ${p.tagline}\n\nLa nouvelle version arrive : un jeu en ligne rétro.`, ctas: [
+        { label: 'Voir la vision', section: 'vision' },
+        { label: 'Le jeu rétro',   section: 'jeu' },
       ] },
     ]);
     setStage('onboard-confirm');

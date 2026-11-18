@@ -286,8 +286,6 @@ const Footer = () => (
         { t: 'Découvrir', l: [
           ['Les profils', '#roles'],
           ['Les piliers', '#foundations'],
-          ['La spirale VADE', '#cycle'],
-          ['Vadance & Vadité', '#vadite'],
           ['Deva', '#deva'],
         ] },
         { t: "L'association", l: [
@@ -509,8 +507,6 @@ const App = () => {
       <Hero role={role} setRole={(r) => { setRole(r); setTweak('heroRole', r); }} palette={tweaks.palette} persona={persona} onChoose={choosePersona}/>
       <div data-fade><Roles onChoose={choosePersona} persona={persona}/></div>
       <div data-fade><FoundationsSection/></div>
-      <div data-fade><Cycle role={persona} onChoose={choosePersona}/></div>
-      <div data-fade><VaditeSection/></div>
       <div data-fade><DevaSection/></div>
       <div data-fade><AssociationSection teamLayout={tweaks.teamLayout}/></div>
       <CTASection role={persona}/>
